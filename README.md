@@ -26,7 +26,7 @@ Architectures are named by what they do, not by who ships them: **file-based**, 
 **entity-and-time**, and **hybrid** (place plus time). Where a named system is measured, it is named
 and linked, and the description is drawn from its own documentation.
 
-| arm | write path | read path |
+| Arm | Write path | Read path |
 | --- | --- | --- |
 | **no-memory** | nothing is stored | nothing is retrieved (the floor) |
 | **file-based** | an LLM curates a `MEMORY.md` index plus topic files | index in context, then grep and read |
@@ -45,7 +45,7 @@ refusals, so "I don't know" scores correct only when the answer genuinely was no
 356 non-tuning questions. Post-stratified means re-weighted to the full 500-question category
 mix, so neither arm is flattered by the holdout's sample.
 
-| arm | raw | post-stratified |
+| Arm | Raw | Post-stratified |
 | --- | ---: | ---: |
 | no-memory | 0.0983 | 0.1095 |
 | file-based | 0.4410 | 0.4491 |
@@ -60,7 +60,7 @@ in context and no search tools, so nothing saved can be missed. It lands between
 splitting the gap into **read-path friction +0.1215 (42%)** and **write-path loss +0.1654 (58%)**:
 facts that were saved but not found, against facts never written down.
 
-| category | n | structured | file-based |
+| Category | n | Structured | File-based |
 | --- | ---: | ---: | ---: |
 | temporal-reasoning | 91 | 0.802 | 0.407 |
 | multi-session | 97 | 0.608 | 0.330 |
@@ -76,7 +76,7 @@ remembers less over-answers less.
 **Cost**, dev-144, chat tokens per question. The two arms pay in different currencies, so
 embedder tokens are never summed into the total.
 
-| | file-based | structured |
+| Chat tokens per question | File-based | Structured |
 | --- | ---: | ---: |
 | writing memory (LLM curation) | 246,118 | 0 (verified) |
 | answering | 40,393 | 19,322 |
@@ -89,7 +89,7 @@ embedder tokens are never summed into the total.
 300 questions, stratified across the 10 conversations. Published under both scopes because
 whether the adversarial category counts is itself disputed between vendors.
 
-| arm | all | excluding adversarial |
+| Arm | All | Excluding adversarial |
 | --- | ---: | ---: |
 | no-memory | 0.217 | 0.017 |
 | file-based | 0.387 | 0.356 |
@@ -99,7 +99,7 @@ Structured minus file-based: **+0.110** all, **+0.205** excluding adversarial. C
 intervals resample whole conversations, not questions, because the questions cluster inside them:
 structured, all questions, CI95 **[0.440, 0.553]**.
 
-| category | n | structured | file-based |
+| Category | n | Structured | File-based |
 | --- | ---: | ---: | ---: |
 | temporal | 62 | 0.694 | 0.306 |
 | temporal-inference | 54 | 0.519 | 0.259 |
@@ -114,7 +114,7 @@ Cost, ingest amortized per question: file-based **22.4k** chat tokens against st
 
 The long-haystack variant, ~500-session histories.
 
-| system | score | questions |
+| System | Score | Questions |
 | --- | ---: | --- |
 | hybrid (full agent loop) | 0.632 | 500 (complete set) |
 | place-organized (MemPalace, store-only) | 0.600 | 100 (pre-registered sample, seed 20260812) |
@@ -129,7 +129,7 @@ same sample was still going at publication.
 Every store stripped to its retrieval: its own top-20 for the same 1,540 non-adversarial LoCoMo
 questions, one frontier reader, one frontier judge, every column produced by the same script.
 
-| store | LoCoMo | LongMemEval-S | median context |
+| Store | LoCoMo | LongMemEval-S | Median context |
 | --- | ---: | ---: | ---: |
 | **hybrid** | **0.7825** | **0.80** | 4,048 chars |
 | place-organized (MemPalace) | 0.7792 | 0.60 | 3,536 chars |
@@ -139,7 +139,7 @@ questions, one frontier reader, one frontier judge, every column produced by the
 
 Paired McNemar over the same questions:
 
-| pair | discordant | χ² | verdict |
+| Pair | Discordant | χ² | Verdict |
 | --- | ---: | ---: | --- |
 | hybrid vs Zep Cloud | 188/132 | 9.45 | significant, p < 0.01 |
 | place-organized vs Zep Cloud | 174/123 | 8.42 | significant, p < 0.01 |
@@ -158,7 +158,7 @@ Memory here is an experience bank: training-split episodes distilled into entrie
 top-k into the acting model's prompt. Nothing is trained. "No memory" removes only the bank;
 the harness scaffolding stays, so the ablation isolates retrieved memory.
 
-| actor | ALFWorld macro SR | WebShop score / SR |
+| Actor | ALFWorld macro SR | WebShop score / SR |
 | --- | ---: | ---: |
 | local 35B, no memory | 0.603 | 63.5 / 0.376 |
 | local 35B + bank | 0.645 | 66.0 / 0.418 |
@@ -168,7 +168,7 @@ the harness scaffolding stays, so the ablation isolates retrieved memory.
 
 Paired ablations, memory rescued / cost:
 
-| column | rescued | cost | one-sided p | two-sided p |
+| Column | Rescued | Cost | One-sided p | Two-sided p |
 | --- | ---: | ---: | ---: | ---: |
 | ALFWorld, 35B | 16 | 10 | 0.163 | 0.327 |
 | ALFWorld, frontier | 2 | 0 | 0.250 | 0.500 |
