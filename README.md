@@ -75,7 +75,10 @@ facts that were saved but not found, against facts never written down.
 Abstention, questions whose right answer is "I don't know", is the one category the file-based arm
 wins here (0.889 against 0.778). It wins the equivalent category on LoCoMo too, where it is called
 adversarial (0.508 against 0.246, with the no-memory floor scoring 1.000 by refusing everything).
-Same mechanism twice: a store that remembers less over-answers less.
+The mechanism is the same in both places. Ranked retrieval nearly always surfaces *something*
+plausible enough to tempt an answer, so the structured arm answers when it should have declined. A
+curation-limited store often has nothing to offer, and the model then correctly says it does not
+know. Eager retrieval needs an abstention discipline bolted on; sparse memory gets one for free.
 
 **Cost**, dev-144, chat tokens per question. The two arms pay in different currencies, so
 embedder tokens are never summed into the total.
