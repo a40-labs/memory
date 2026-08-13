@@ -1,0 +1,10809 @@
+{
+ "store": "place_organized",
+ "judge_model": "gpt-4o-mini",
+ "manifest": {
+  "benchmark": "locomo",
+  "store": "mempalace",
+  "retrieval": "MemPalace dense top-20 over raw dialog turns (embedding-only, no rerank)",
+  "reader": {
+   "model": "gpt-4o-mini"
+  },
+  "judge": {
+   "model": "gpt-4o-mini",
+   "note": "prompt text is in grades.json \u2014 a grade file without its prompt is not checkable"
+  },
+  "headline": {
+   "correct": 1200,
+   "n": 1540,
+   "score": 0.779221
+  },
+  "harness_commit": "35f6f7b24ad5dfeff31f26b7c4da1febc2d97eab",
+  "deviations": [],
+  "limits": [
+   "Artifacts verify the RESULT, not the SYSTEM: they let a third party re-read and re-judge our retrieval, not rebuild the store.",
+   "Single run. OpenAI is not bit-deterministic at temperature 0; observed drift between identical reruns is ~0.3-0.4pt."
+  ]
+ },
+ "rows": [
+  {
+   "qa_id": "conv-0:0",
+   "category": null,
+   "context_chars": 5430,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:1",
+   "category": null,
+   "context_chars": 3267,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:2",
+   "category": null,
+   "context_chars": 3822,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:3",
+   "category": null,
+   "context_chars": 3354,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:4",
+   "category": null,
+   "context_chars": 2482,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:5",
+   "category": null,
+   "context_chars": 3198,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:6",
+   "category": null,
+   "context_chars": 4105,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:7",
+   "category": null,
+   "context_chars": 2986,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:8",
+   "category": null,
+   "context_chars": 3519,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:9",
+   "category": null,
+   "context_chars": 4274,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:10",
+   "category": null,
+   "context_chars": 3649,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:11",
+   "category": null,
+   "context_chars": 3828,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:12",
+   "category": null,
+   "context_chars": 2547,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:13",
+   "category": null,
+   "context_chars": 3617,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:14",
+   "category": null,
+   "context_chars": 5216,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:15",
+   "category": null,
+   "context_chars": 2867,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:16",
+   "category": null,
+   "context_chars": 3344,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:17",
+   "category": null,
+   "context_chars": 4928,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:18",
+   "category": null,
+   "context_chars": 3841,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:19",
+   "category": null,
+   "context_chars": 3015,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:20",
+   "category": null,
+   "context_chars": 2496,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:21",
+   "category": null,
+   "context_chars": 3545,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:22",
+   "category": null,
+   "context_chars": 3077,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:23",
+   "category": null,
+   "context_chars": 3071,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:24",
+   "category": null,
+   "context_chars": 3152,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:25",
+   "category": null,
+   "context_chars": 5165,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:26",
+   "category": null,
+   "context_chars": 2799,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:27",
+   "category": null,
+   "context_chars": 4074,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:28",
+   "category": null,
+   "context_chars": 4754,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:29",
+   "category": null,
+   "context_chars": 3438,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:30",
+   "category": null,
+   "context_chars": 3590,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:31",
+   "category": null,
+   "context_chars": 3842,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:32",
+   "category": null,
+   "context_chars": 5401,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:33",
+   "category": null,
+   "context_chars": 4973,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:34",
+   "category": null,
+   "context_chars": 4354,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:35",
+   "category": null,
+   "context_chars": 3891,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:36",
+   "category": null,
+   "context_chars": 4712,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:37",
+   "category": null,
+   "context_chars": 3267,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:38",
+   "category": null,
+   "context_chars": 3469,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:39",
+   "category": null,
+   "context_chars": 5696,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:40",
+   "category": null,
+   "context_chars": 2794,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:41",
+   "category": null,
+   "context_chars": 4766,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:42",
+   "category": null,
+   "context_chars": 3514,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:43",
+   "category": null,
+   "context_chars": 3451,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:44",
+   "category": null,
+   "context_chars": 2835,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:45",
+   "category": null,
+   "context_chars": 5073,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:46",
+   "category": null,
+   "context_chars": 4199,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:47",
+   "category": null,
+   "context_chars": 4624,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:48",
+   "category": null,
+   "context_chars": 3690,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:49",
+   "category": null,
+   "context_chars": 4571,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:50",
+   "category": null,
+   "context_chars": 3395,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:51",
+   "category": null,
+   "context_chars": 3276,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:52",
+   "category": null,
+   "context_chars": 2753,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:53",
+   "category": null,
+   "context_chars": 4525,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:54",
+   "category": null,
+   "context_chars": 3607,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:55",
+   "category": null,
+   "context_chars": 3402,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:56",
+   "category": null,
+   "context_chars": 3359,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:57",
+   "category": null,
+   "context_chars": 3790,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:58",
+   "category": null,
+   "context_chars": 3517,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:59",
+   "category": null,
+   "context_chars": 3176,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:60",
+   "category": null,
+   "context_chars": 2621,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:61",
+   "category": null,
+   "context_chars": 2874,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:62",
+   "category": null,
+   "context_chars": 3121,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:63",
+   "category": null,
+   "context_chars": 3460,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:64",
+   "category": null,
+   "context_chars": 2989,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:65",
+   "category": null,
+   "context_chars": 5409,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:66",
+   "category": null,
+   "context_chars": 4120,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:67",
+   "category": null,
+   "context_chars": 3853,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:68",
+   "category": null,
+   "context_chars": 3924,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:69",
+   "category": null,
+   "context_chars": 3119,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:70",
+   "category": null,
+   "context_chars": 5565,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:71",
+   "category": null,
+   "context_chars": 3095,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:72",
+   "category": null,
+   "context_chars": 3777,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:73",
+   "category": null,
+   "context_chars": 3141,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:74",
+   "category": null,
+   "context_chars": 3820,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:75",
+   "category": null,
+   "context_chars": 3148,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:76",
+   "category": null,
+   "context_chars": 3963,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:77",
+   "category": null,
+   "context_chars": 3718,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:78",
+   "category": null,
+   "context_chars": 2494,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:79",
+   "category": null,
+   "context_chars": 4334,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:80",
+   "category": null,
+   "context_chars": 3035,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:81",
+   "category": null,
+   "context_chars": 3584,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:82",
+   "category": null,
+   "context_chars": 4380,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:83",
+   "category": null,
+   "context_chars": 3445,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:84",
+   "category": null,
+   "context_chars": 3268,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:85",
+   "category": null,
+   "context_chars": 3129,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:86",
+   "category": null,
+   "context_chars": 4722,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:87",
+   "category": null,
+   "context_chars": 4700,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:88",
+   "category": null,
+   "context_chars": 4481,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:89",
+   "category": null,
+   "context_chars": 3553,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:90",
+   "category": null,
+   "context_chars": 2352,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:91",
+   "category": null,
+   "context_chars": 2986,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:92",
+   "category": null,
+   "context_chars": 2944,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:93",
+   "category": null,
+   "context_chars": 2957,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:94",
+   "category": null,
+   "context_chars": 3938,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:95",
+   "category": null,
+   "context_chars": 4396,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:96",
+   "category": null,
+   "context_chars": 4764,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:97",
+   "category": null,
+   "context_chars": 4021,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:98",
+   "category": null,
+   "context_chars": 5318,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:99",
+   "category": null,
+   "context_chars": 5408,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:100",
+   "category": null,
+   "context_chars": 3881,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:101",
+   "category": null,
+   "context_chars": 3208,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:102",
+   "category": null,
+   "context_chars": 2923,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:103",
+   "category": null,
+   "context_chars": 3066,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:104",
+   "category": null,
+   "context_chars": 3114,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:105",
+   "category": null,
+   "context_chars": 4389,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:106",
+   "category": null,
+   "context_chars": 2808,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:107",
+   "category": null,
+   "context_chars": 3599,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:108",
+   "category": null,
+   "context_chars": 3188,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:109",
+   "category": null,
+   "context_chars": 3629,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:110",
+   "category": null,
+   "context_chars": 3855,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:111",
+   "category": null,
+   "context_chars": 3696,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:112",
+   "category": null,
+   "context_chars": 3444,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:113",
+   "category": null,
+   "context_chars": 4037,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:114",
+   "category": null,
+   "context_chars": 3442,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:115",
+   "category": null,
+   "context_chars": 3515,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:116",
+   "category": null,
+   "context_chars": 3520,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:117",
+   "category": null,
+   "context_chars": 3735,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:118",
+   "category": null,
+   "context_chars": 3931,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:119",
+   "category": null,
+   "context_chars": 2878,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:120",
+   "category": null,
+   "context_chars": 2890,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:121",
+   "category": null,
+   "context_chars": 2991,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:122",
+   "category": null,
+   "context_chars": 3924,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:123",
+   "category": null,
+   "context_chars": 2750,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:124",
+   "category": null,
+   "context_chars": 2717,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:125",
+   "category": null,
+   "context_chars": 3363,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:126",
+   "category": null,
+   "context_chars": 3018,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:127",
+   "category": null,
+   "context_chars": 3244,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:128",
+   "category": null,
+   "context_chars": 3012,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:129",
+   "category": null,
+   "context_chars": 3868,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:130",
+   "category": null,
+   "context_chars": 2815,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:131",
+   "category": null,
+   "context_chars": 2757,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:132",
+   "category": null,
+   "context_chars": 3544,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:133",
+   "category": null,
+   "context_chars": 2881,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:134",
+   "category": null,
+   "context_chars": 4509,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:135",
+   "category": null,
+   "context_chars": 3154,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:136",
+   "category": null,
+   "context_chars": 3684,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:137",
+   "category": null,
+   "context_chars": 3258,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:138",
+   "category": null,
+   "context_chars": 3256,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:139",
+   "category": null,
+   "context_chars": 2931,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:140",
+   "category": null,
+   "context_chars": 3992,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-0:141",
+   "category": null,
+   "context_chars": 3712,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:142",
+   "category": null,
+   "context_chars": 3194,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:143",
+   "category": null,
+   "context_chars": 3698,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:144",
+   "category": null,
+   "context_chars": 3394,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:145",
+   "category": null,
+   "context_chars": 3503,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:146",
+   "category": null,
+   "context_chars": 3631,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:147",
+   "category": null,
+   "context_chars": 3471,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:148",
+   "category": null,
+   "context_chars": 4084,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:149",
+   "category": null,
+   "context_chars": 2913,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:150",
+   "category": null,
+   "context_chars": 3575,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-0:151",
+   "category": null,
+   "context_chars": 3759,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:0",
+   "category": null,
+   "context_chars": 3598,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:1",
+   "category": null,
+   "context_chars": 3693,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:2",
+   "category": null,
+   "context_chars": 2740,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:3",
+   "category": null,
+   "context_chars": 2304,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:4",
+   "category": null,
+   "context_chars": 3428,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:5",
+   "category": null,
+   "context_chars": 3687,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:6",
+   "category": null,
+   "context_chars": 2658,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:7",
+   "category": null,
+   "context_chars": 4017,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:8",
+   "category": null,
+   "context_chars": 2014,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:9",
+   "category": null,
+   "context_chars": 2556,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:10",
+   "category": null,
+   "context_chars": 3672,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:11",
+   "category": null,
+   "context_chars": 2229,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:12",
+   "category": null,
+   "context_chars": 3259,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:13",
+   "category": null,
+   "context_chars": 4322,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:14",
+   "category": null,
+   "context_chars": 4083,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:15",
+   "category": null,
+   "context_chars": 3355,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:16",
+   "category": null,
+   "context_chars": 4096,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:17",
+   "category": null,
+   "context_chars": 4596,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:18",
+   "category": null,
+   "context_chars": 3517,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:19",
+   "category": null,
+   "context_chars": 3698,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:20",
+   "category": null,
+   "context_chars": 3167,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:21",
+   "category": null,
+   "context_chars": 3562,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:22",
+   "category": null,
+   "context_chars": 3931,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:23",
+   "category": null,
+   "context_chars": 4682,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:24",
+   "category": null,
+   "context_chars": 3576,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:25",
+   "category": null,
+   "context_chars": 3899,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:26",
+   "category": null,
+   "context_chars": 3563,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:27",
+   "category": null,
+   "context_chars": 4097,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:28",
+   "category": null,
+   "context_chars": 1869,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:29",
+   "category": null,
+   "context_chars": 2513,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:30",
+   "category": null,
+   "context_chars": 3627,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:31",
+   "category": null,
+   "context_chars": 3786,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:32",
+   "category": null,
+   "context_chars": 4257,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:33",
+   "category": null,
+   "context_chars": 3391,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:34",
+   "category": null,
+   "context_chars": 4392,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:35",
+   "category": null,
+   "context_chars": 3484,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:36",
+   "category": null,
+   "context_chars": 4001,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:37",
+   "category": null,
+   "context_chars": 2538,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:38",
+   "category": null,
+   "context_chars": 3975,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:39",
+   "category": null,
+   "context_chars": 3521,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:40",
+   "category": null,
+   "context_chars": 3542,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:41",
+   "category": null,
+   "context_chars": 3935,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:42",
+   "category": null,
+   "context_chars": 4364,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:43",
+   "category": null,
+   "context_chars": 3763,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:44",
+   "category": null,
+   "context_chars": 3572,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:45",
+   "category": null,
+   "context_chars": 3492,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:46",
+   "category": null,
+   "context_chars": 3776,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:47",
+   "category": null,
+   "context_chars": 3956,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:48",
+   "category": null,
+   "context_chars": 4204,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:49",
+   "category": null,
+   "context_chars": 3876,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:50",
+   "category": null,
+   "context_chars": 2981,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:51",
+   "category": null,
+   "context_chars": 4094,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:52",
+   "category": null,
+   "context_chars": 2979,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:53",
+   "category": null,
+   "context_chars": 4349,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:54",
+   "category": null,
+   "context_chars": 3787,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:55",
+   "category": null,
+   "context_chars": 2857,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:56",
+   "category": null,
+   "context_chars": 3715,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:57",
+   "category": null,
+   "context_chars": 3472,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:58",
+   "category": null,
+   "context_chars": 2617,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:59",
+   "category": null,
+   "context_chars": 3890,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:60",
+   "category": null,
+   "context_chars": 3673,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:61",
+   "category": null,
+   "context_chars": 4227,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:62",
+   "category": null,
+   "context_chars": 4222,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:63",
+   "category": null,
+   "context_chars": 2667,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:64",
+   "category": null,
+   "context_chars": 4518,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:65",
+   "category": null,
+   "context_chars": 2285,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:66",
+   "category": null,
+   "context_chars": 3494,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:67",
+   "category": null,
+   "context_chars": 2262,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:68",
+   "category": null,
+   "context_chars": 2292,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:69",
+   "category": null,
+   "context_chars": 2491,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:70",
+   "category": null,
+   "context_chars": 2896,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:71",
+   "category": null,
+   "context_chars": 3166,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:72",
+   "category": null,
+   "context_chars": 3546,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:73",
+   "category": null,
+   "context_chars": 3921,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:74",
+   "category": null,
+   "context_chars": 3479,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:75",
+   "category": null,
+   "context_chars": 2265,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-1:76",
+   "category": null,
+   "context_chars": 3382,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:77",
+   "category": null,
+   "context_chars": 3698,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:78",
+   "category": null,
+   "context_chars": 3145,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:80",
+   "category": null,
+   "context_chars": 3265,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-1:81",
+   "category": null,
+   "context_chars": 3047,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:0",
+   "category": null,
+   "context_chars": 2662,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:1",
+   "category": null,
+   "context_chars": 3623,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:2",
+   "category": null,
+   "context_chars": 3585,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:3",
+   "category": null,
+   "context_chars": 4460,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:4",
+   "category": null,
+   "context_chars": 3576,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:5",
+   "category": null,
+   "context_chars": 3089,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:6",
+   "category": null,
+   "context_chars": 3221,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:7",
+   "category": null,
+   "context_chars": 3181,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:8",
+   "category": null,
+   "context_chars": 3630,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:9",
+   "category": null,
+   "context_chars": 4196,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:10",
+   "category": null,
+   "context_chars": 2692,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:11",
+   "category": null,
+   "context_chars": 4303,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:12",
+   "category": null,
+   "context_chars": 3288,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:13",
+   "category": null,
+   "context_chars": 3208,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:14",
+   "category": null,
+   "context_chars": 4197,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:15",
+   "category": null,
+   "context_chars": 3601,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:16",
+   "category": null,
+   "context_chars": 3166,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:17",
+   "category": null,
+   "context_chars": 3251,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:18",
+   "category": null,
+   "context_chars": 3737,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:19",
+   "category": null,
+   "context_chars": 3933,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:20",
+   "category": null,
+   "context_chars": 3548,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:21",
+   "category": null,
+   "context_chars": 3384,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:22",
+   "category": null,
+   "context_chars": 3858,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:23",
+   "category": null,
+   "context_chars": 2933,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:24",
+   "category": null,
+   "context_chars": 3676,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:25",
+   "category": null,
+   "context_chars": 3276,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:26",
+   "category": null,
+   "context_chars": 4123,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:27",
+   "category": null,
+   "context_chars": 4544,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:28",
+   "category": null,
+   "context_chars": 4497,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:29",
+   "category": null,
+   "context_chars": 4523,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:30",
+   "category": null,
+   "context_chars": 4456,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:31",
+   "category": null,
+   "context_chars": 3647,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:32",
+   "category": null,
+   "context_chars": 3990,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:33",
+   "category": null,
+   "context_chars": 3977,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:34",
+   "category": null,
+   "context_chars": 3587,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:35",
+   "category": null,
+   "context_chars": 3220,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:36",
+   "category": null,
+   "context_chars": 3479,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:37",
+   "category": null,
+   "context_chars": 4577,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:38",
+   "category": null,
+   "context_chars": 3261,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:39",
+   "category": null,
+   "context_chars": 3212,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:40",
+   "category": null,
+   "context_chars": 3301,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:41",
+   "category": null,
+   "context_chars": 3334,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:42",
+   "category": null,
+   "context_chars": 3609,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:43",
+   "category": null,
+   "context_chars": 3299,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:44",
+   "category": null,
+   "context_chars": 4067,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:45",
+   "category": null,
+   "context_chars": 3908,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:46",
+   "category": null,
+   "context_chars": 3703,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:47",
+   "category": null,
+   "context_chars": 3997,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:48",
+   "category": null,
+   "context_chars": 3713,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:49",
+   "category": null,
+   "context_chars": 4314,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:50",
+   "category": null,
+   "context_chars": 2827,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:51",
+   "category": null,
+   "context_chars": 4571,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:52",
+   "category": null,
+   "context_chars": 3036,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:53",
+   "category": null,
+   "context_chars": 4420,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:54",
+   "category": null,
+   "context_chars": 4666,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:55",
+   "category": null,
+   "context_chars": 4925,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:56",
+   "category": null,
+   "context_chars": 4556,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:57",
+   "category": null,
+   "context_chars": 3361,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:58",
+   "category": null,
+   "context_chars": 3010,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:59",
+   "category": null,
+   "context_chars": 3618,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:60",
+   "category": null,
+   "context_chars": 3480,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:61",
+   "category": null,
+   "context_chars": 4190,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:62",
+   "category": null,
+   "context_chars": 4398,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:63",
+   "category": null,
+   "context_chars": 3765,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:64",
+   "category": null,
+   "context_chars": 3121,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:65",
+   "category": null,
+   "context_chars": 4649,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:66",
+   "category": null,
+   "context_chars": 5162,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:67",
+   "category": null,
+   "context_chars": 4928,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:68",
+   "category": null,
+   "context_chars": 3808,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:69",
+   "category": null,
+   "context_chars": 3977,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:70",
+   "category": null,
+   "context_chars": 3594,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:71",
+   "category": null,
+   "context_chars": 4288,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:72",
+   "category": null,
+   "context_chars": 5093,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:73",
+   "category": null,
+   "context_chars": 4332,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:74",
+   "category": null,
+   "context_chars": 4653,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:75",
+   "category": null,
+   "context_chars": 4127,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:76",
+   "category": null,
+   "context_chars": 4458,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:77",
+   "category": null,
+   "context_chars": 3543,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:78",
+   "category": null,
+   "context_chars": 3366,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:79",
+   "category": null,
+   "context_chars": 3221,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:80",
+   "category": null,
+   "context_chars": 3387,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:81",
+   "category": null,
+   "context_chars": 2593,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:82",
+   "category": null,
+   "context_chars": 3545,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:83",
+   "category": null,
+   "context_chars": 4403,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:84",
+   "category": null,
+   "context_chars": 3673,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:85",
+   "category": null,
+   "context_chars": 4739,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:86",
+   "category": null,
+   "context_chars": 3645,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:87",
+   "category": null,
+   "context_chars": 3571,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:88",
+   "category": null,
+   "context_chars": 4379,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:89",
+   "category": null,
+   "context_chars": 4699,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:90",
+   "category": null,
+   "context_chars": 4338,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:91",
+   "category": null,
+   "context_chars": 3635,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:92",
+   "category": null,
+   "context_chars": 3605,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:93",
+   "category": null,
+   "context_chars": 4218,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:94",
+   "category": null,
+   "context_chars": 2964,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:95",
+   "category": null,
+   "context_chars": 2562,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:96",
+   "category": null,
+   "context_chars": 4314,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:97",
+   "category": null,
+   "context_chars": 4140,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:98",
+   "category": null,
+   "context_chars": 4541,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:99",
+   "category": null,
+   "context_chars": 4410,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:100",
+   "category": null,
+   "context_chars": 4697,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:101",
+   "category": null,
+   "context_chars": 4308,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:102",
+   "category": null,
+   "context_chars": 4117,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:103",
+   "category": null,
+   "context_chars": 3390,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:104",
+   "category": null,
+   "context_chars": 3647,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:105",
+   "category": null,
+   "context_chars": 3881,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:106",
+   "category": null,
+   "context_chars": 4009,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:107",
+   "category": null,
+   "context_chars": 3307,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:108",
+   "category": null,
+   "context_chars": 3350,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:109",
+   "category": null,
+   "context_chars": 3800,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:110",
+   "category": null,
+   "context_chars": 2751,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:111",
+   "category": null,
+   "context_chars": 4091,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:112",
+   "category": null,
+   "context_chars": 3465,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:113",
+   "category": null,
+   "context_chars": 4343,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:114",
+   "category": null,
+   "context_chars": 4059,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:115",
+   "category": null,
+   "context_chars": 3619,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:116",
+   "category": null,
+   "context_chars": 4374,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:117",
+   "category": null,
+   "context_chars": 4670,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:118",
+   "category": null,
+   "context_chars": 4722,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:119",
+   "category": null,
+   "context_chars": 3210,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:120",
+   "category": null,
+   "context_chars": 2991,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:121",
+   "category": null,
+   "context_chars": 4386,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:122",
+   "category": null,
+   "context_chars": 3473,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:123",
+   "category": null,
+   "context_chars": 2542,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:124",
+   "category": null,
+   "context_chars": 3679,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:125",
+   "category": null,
+   "context_chars": 4419,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:126",
+   "category": null,
+   "context_chars": 4224,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:127",
+   "category": null,
+   "context_chars": 4616,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:128",
+   "category": null,
+   "context_chars": 3194,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:129",
+   "category": null,
+   "context_chars": 3948,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:130",
+   "category": null,
+   "context_chars": 3760,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:131",
+   "category": null,
+   "context_chars": 3991,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:132",
+   "category": null,
+   "context_chars": 4691,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:133",
+   "category": null,
+   "context_chars": 3093,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:134",
+   "category": null,
+   "context_chars": 4553,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-2:135",
+   "category": null,
+   "context_chars": 4604,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:136",
+   "category": null,
+   "context_chars": 4424,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:137",
+   "category": null,
+   "context_chars": 3219,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:138",
+   "category": null,
+   "context_chars": 3800,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:139",
+   "category": null,
+   "context_chars": 4235,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:140",
+   "category": null,
+   "context_chars": 4666,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:141",
+   "category": null,
+   "context_chars": 4444,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:142",
+   "category": null,
+   "context_chars": 4516,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:143",
+   "category": null,
+   "context_chars": 3707,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:144",
+   "category": null,
+   "context_chars": 3883,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:145",
+   "category": null,
+   "context_chars": 3896,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:146",
+   "category": null,
+   "context_chars": 4501,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:147",
+   "category": null,
+   "context_chars": 3570,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:148",
+   "category": null,
+   "context_chars": 3942,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:149",
+   "category": null,
+   "context_chars": 4070,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:150",
+   "category": null,
+   "context_chars": 3596,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-2:151",
+   "category": null,
+   "context_chars": 3833,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:0",
+   "category": null,
+   "context_chars": 2700,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:1",
+   "category": null,
+   "context_chars": 2674,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:2",
+   "category": null,
+   "context_chars": 3194,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:3",
+   "category": null,
+   "context_chars": 4154,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:4",
+   "category": null,
+   "context_chars": 3426,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:5",
+   "category": null,
+   "context_chars": 3250,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:6",
+   "category": null,
+   "context_chars": 4023,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:7",
+   "category": null,
+   "context_chars": 4659,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:8",
+   "category": null,
+   "context_chars": 3854,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:9",
+   "category": null,
+   "context_chars": 3053,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:10",
+   "category": null,
+   "context_chars": 4769,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:11",
+   "category": null,
+   "context_chars": 3012,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:12",
+   "category": null,
+   "context_chars": 3085,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:13",
+   "category": null,
+   "context_chars": 4006,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:14",
+   "category": null,
+   "context_chars": 2456,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:15",
+   "category": null,
+   "context_chars": 2481,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:16",
+   "category": null,
+   "context_chars": 2302,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:17",
+   "category": null,
+   "context_chars": 3277,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:18",
+   "category": null,
+   "context_chars": 3097,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:19",
+   "category": null,
+   "context_chars": 3711,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:20",
+   "category": null,
+   "context_chars": 3043,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:21",
+   "category": null,
+   "context_chars": 2444,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:22",
+   "category": null,
+   "context_chars": 4094,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:23",
+   "category": null,
+   "context_chars": 4148,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:24",
+   "category": null,
+   "context_chars": 3634,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:25",
+   "category": null,
+   "context_chars": 2935,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:26",
+   "category": null,
+   "context_chars": 3990,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:27",
+   "category": null,
+   "context_chars": 4071,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:28",
+   "category": null,
+   "context_chars": 3438,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:29",
+   "category": null,
+   "context_chars": 2956,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:30",
+   "category": null,
+   "context_chars": 4640,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:31",
+   "category": null,
+   "context_chars": 4211,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:32",
+   "category": null,
+   "context_chars": 2567,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:33",
+   "category": null,
+   "context_chars": 3809,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:34",
+   "category": null,
+   "context_chars": 3099,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:35",
+   "category": null,
+   "context_chars": 3867,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:36",
+   "category": null,
+   "context_chars": 4314,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:37",
+   "category": null,
+   "context_chars": 3640,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:38",
+   "category": null,
+   "context_chars": 3328,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:39",
+   "category": null,
+   "context_chars": 3032,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:40",
+   "category": null,
+   "context_chars": 2940,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:41",
+   "category": null,
+   "context_chars": 3241,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:42",
+   "category": null,
+   "context_chars": 3360,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:43",
+   "category": null,
+   "context_chars": 4425,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:44",
+   "category": null,
+   "context_chars": 3966,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:45",
+   "category": null,
+   "context_chars": 4155,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:46",
+   "category": null,
+   "context_chars": 3610,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:47",
+   "category": null,
+   "context_chars": 3413,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:48",
+   "category": null,
+   "context_chars": 3285,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:49",
+   "category": null,
+   "context_chars": 4183,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:50",
+   "category": null,
+   "context_chars": 2963,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:51",
+   "category": null,
+   "context_chars": 2497,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:52",
+   "category": null,
+   "context_chars": 4420,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:53",
+   "category": null,
+   "context_chars": 3763,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:54",
+   "category": null,
+   "context_chars": 4139,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:55",
+   "category": null,
+   "context_chars": 3004,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:56",
+   "category": null,
+   "context_chars": 2835,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:57",
+   "category": null,
+   "context_chars": 2864,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:58",
+   "category": null,
+   "context_chars": 2632,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:59",
+   "category": null,
+   "context_chars": 3439,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:60",
+   "category": null,
+   "context_chars": 3118,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:61",
+   "category": null,
+   "context_chars": 3514,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:62",
+   "category": null,
+   "context_chars": 2574,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:63",
+   "category": null,
+   "context_chars": 3572,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:64",
+   "category": null,
+   "context_chars": 4005,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:65",
+   "category": null,
+   "context_chars": 3761,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:66",
+   "category": null,
+   "context_chars": 3584,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:67",
+   "category": null,
+   "context_chars": 3779,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:68",
+   "category": null,
+   "context_chars": 3131,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:69",
+   "category": null,
+   "context_chars": 3344,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:70",
+   "category": null,
+   "context_chars": 3797,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:71",
+   "category": null,
+   "context_chars": 3089,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:72",
+   "category": null,
+   "context_chars": 2771,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:73",
+   "category": null,
+   "context_chars": 2699,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:74",
+   "category": null,
+   "context_chars": 2579,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:75",
+   "category": null,
+   "context_chars": 3024,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:76",
+   "category": null,
+   "context_chars": 3747,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:77",
+   "category": null,
+   "context_chars": 3708,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:78",
+   "category": null,
+   "context_chars": 4063,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:79",
+   "category": null,
+   "context_chars": 4269,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:80",
+   "category": null,
+   "context_chars": 3737,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:81",
+   "category": null,
+   "context_chars": 3599,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:82",
+   "category": null,
+   "context_chars": 3120,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:83",
+   "category": null,
+   "context_chars": 2861,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:84",
+   "category": null,
+   "context_chars": 2804,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:85",
+   "category": null,
+   "context_chars": 4151,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:86",
+   "category": null,
+   "context_chars": 3385,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:87",
+   "category": null,
+   "context_chars": 2371,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:88",
+   "category": null,
+   "context_chars": 3208,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:89",
+   "category": null,
+   "context_chars": 2502,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:90",
+   "category": null,
+   "context_chars": 3254,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:91",
+   "category": null,
+   "context_chars": 2959,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:92",
+   "category": null,
+   "context_chars": 3270,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:93",
+   "category": null,
+   "context_chars": 3966,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:94",
+   "category": null,
+   "context_chars": 4306,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:95",
+   "category": null,
+   "context_chars": 3308,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:96",
+   "category": null,
+   "context_chars": 3092,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:97",
+   "category": null,
+   "context_chars": 2840,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:98",
+   "category": null,
+   "context_chars": 4414,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:99",
+   "category": null,
+   "context_chars": 3977,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:100",
+   "category": null,
+   "context_chars": 3939,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:101",
+   "category": null,
+   "context_chars": 3521,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:102",
+   "category": null,
+   "context_chars": 3571,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:103",
+   "category": null,
+   "context_chars": 2696,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:104",
+   "category": null,
+   "context_chars": 3637,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:105",
+   "category": null,
+   "context_chars": 3115,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:106",
+   "category": null,
+   "context_chars": 4173,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:107",
+   "category": null,
+   "context_chars": 3851,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:108",
+   "category": null,
+   "context_chars": 3874,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:109",
+   "category": null,
+   "context_chars": 2762,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:110",
+   "category": null,
+   "context_chars": 2665,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:111",
+   "category": null,
+   "context_chars": 3461,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:112",
+   "category": null,
+   "context_chars": 4223,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:113",
+   "category": null,
+   "context_chars": 3149,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:114",
+   "category": null,
+   "context_chars": 2976,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:115",
+   "category": null,
+   "context_chars": 3390,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:116",
+   "category": null,
+   "context_chars": 3383,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:117",
+   "category": null,
+   "context_chars": 3157,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:118",
+   "category": null,
+   "context_chars": 3479,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:119",
+   "category": null,
+   "context_chars": 2527,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:120",
+   "category": null,
+   "context_chars": 3126,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:121",
+   "category": null,
+   "context_chars": 3097,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:122",
+   "category": null,
+   "context_chars": 2541,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:123",
+   "category": null,
+   "context_chars": 2971,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:124",
+   "category": null,
+   "context_chars": 2194,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:125",
+   "category": null,
+   "context_chars": 3434,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:126",
+   "category": null,
+   "context_chars": 3703,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:127",
+   "category": null,
+   "context_chars": 3747,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:128",
+   "category": null,
+   "context_chars": 3067,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:129",
+   "category": null,
+   "context_chars": 3497,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:130",
+   "category": null,
+   "context_chars": 3694,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:131",
+   "category": null,
+   "context_chars": 2985,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:132",
+   "category": null,
+   "context_chars": 3354,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:133",
+   "category": null,
+   "context_chars": 3974,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:134",
+   "category": null,
+   "context_chars": 3138,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:135",
+   "category": null,
+   "context_chars": 3059,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:136",
+   "category": null,
+   "context_chars": 4071,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:137",
+   "category": null,
+   "context_chars": 3384,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:138",
+   "category": null,
+   "context_chars": 3419,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:139",
+   "category": null,
+   "context_chars": 4184,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:140",
+   "category": null,
+   "context_chars": 4263,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:141",
+   "category": null,
+   "context_chars": 2682,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:142",
+   "category": null,
+   "context_chars": 2840,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:143",
+   "category": null,
+   "context_chars": 3734,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:144",
+   "category": null,
+   "context_chars": 4967,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:145",
+   "category": null,
+   "context_chars": 3160,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:146",
+   "category": null,
+   "context_chars": 4748,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:147",
+   "category": null,
+   "context_chars": 3140,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:148",
+   "category": null,
+   "context_chars": 3565,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:149",
+   "category": null,
+   "context_chars": 4149,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:150",
+   "category": null,
+   "context_chars": 4533,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:151",
+   "category": null,
+   "context_chars": 3939,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:152",
+   "category": null,
+   "context_chars": 3965,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:153",
+   "category": null,
+   "context_chars": 3920,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:154",
+   "category": null,
+   "context_chars": 3810,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:155",
+   "category": null,
+   "context_chars": 2790,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:156",
+   "category": null,
+   "context_chars": 3800,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:157",
+   "category": null,
+   "context_chars": 3664,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:158",
+   "category": null,
+   "context_chars": 3259,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:159",
+   "category": null,
+   "context_chars": 4099,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:160",
+   "category": null,
+   "context_chars": 3395,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:161",
+   "category": null,
+   "context_chars": 3750,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:162",
+   "category": null,
+   "context_chars": 3670,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:163",
+   "category": null,
+   "context_chars": 3107,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:164",
+   "category": null,
+   "context_chars": 3740,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:165",
+   "category": null,
+   "context_chars": 2614,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:166",
+   "category": null,
+   "context_chars": 3018,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:167",
+   "category": null,
+   "context_chars": 3386,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:168",
+   "category": null,
+   "context_chars": 4038,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:169",
+   "category": null,
+   "context_chars": 4116,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:170",
+   "category": null,
+   "context_chars": 2995,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:171",
+   "category": null,
+   "context_chars": 3840,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:172",
+   "category": null,
+   "context_chars": 3331,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:173",
+   "category": null,
+   "context_chars": 3178,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:174",
+   "category": null,
+   "context_chars": 3187,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:175",
+   "category": null,
+   "context_chars": 3227,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:176",
+   "category": null,
+   "context_chars": 3253,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:177",
+   "category": null,
+   "context_chars": 3970,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:178",
+   "category": null,
+   "context_chars": 3957,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:179",
+   "category": null,
+   "context_chars": 4127,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:180",
+   "category": null,
+   "context_chars": 3578,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:181",
+   "category": null,
+   "context_chars": 3604,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:182",
+   "category": null,
+   "context_chars": 5027,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:183",
+   "category": null,
+   "context_chars": 3368,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:184",
+   "category": null,
+   "context_chars": 2675,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:185",
+   "category": null,
+   "context_chars": 3331,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:186",
+   "category": null,
+   "context_chars": 2955,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:187",
+   "category": null,
+   "context_chars": 3928,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:188",
+   "category": null,
+   "context_chars": 2688,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:189",
+   "category": null,
+   "context_chars": 3588,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:190",
+   "category": null,
+   "context_chars": 2895,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:191",
+   "category": null,
+   "context_chars": 2957,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:192",
+   "category": null,
+   "context_chars": 3245,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:193",
+   "category": null,
+   "context_chars": 3477,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:194",
+   "category": null,
+   "context_chars": 3807,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:195",
+   "category": null,
+   "context_chars": 2536,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-3:196",
+   "category": null,
+   "context_chars": 2405,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:197",
+   "category": null,
+   "context_chars": 4042,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-3:198",
+   "category": null,
+   "context_chars": 2469,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:0",
+   "category": null,
+   "context_chars": 5031,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:1",
+   "category": null,
+   "context_chars": 5329,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:2",
+   "category": null,
+   "context_chars": 2741,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:3",
+   "category": null,
+   "context_chars": 3664,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:4",
+   "category": null,
+   "context_chars": 3614,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:5",
+   "category": null,
+   "context_chars": 3240,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:6",
+   "category": null,
+   "context_chars": 4653,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:7",
+   "category": null,
+   "context_chars": 3302,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:8",
+   "category": null,
+   "context_chars": 3769,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:9",
+   "category": null,
+   "context_chars": 3816,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:10",
+   "category": null,
+   "context_chars": 2850,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:11",
+   "category": null,
+   "context_chars": 4609,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:12",
+   "category": null,
+   "context_chars": 2641,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:13",
+   "category": null,
+   "context_chars": 2982,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:14",
+   "category": null,
+   "context_chars": 3419,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:15",
+   "category": null,
+   "context_chars": 2618,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:16",
+   "category": null,
+   "context_chars": 4476,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:17",
+   "category": null,
+   "context_chars": 3746,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:18",
+   "category": null,
+   "context_chars": 3723,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:19",
+   "category": null,
+   "context_chars": 3923,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:20",
+   "category": null,
+   "context_chars": 3650,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:21",
+   "category": null,
+   "context_chars": 3298,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:22",
+   "category": null,
+   "context_chars": 4279,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:23",
+   "category": null,
+   "context_chars": 3566,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:24",
+   "category": null,
+   "context_chars": 2465,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:25",
+   "category": null,
+   "context_chars": 3248,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:26",
+   "category": null,
+   "context_chars": 2909,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:27",
+   "category": null,
+   "context_chars": 3731,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:28",
+   "category": null,
+   "context_chars": 2934,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:29",
+   "category": null,
+   "context_chars": 4689,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:30",
+   "category": null,
+   "context_chars": 3677,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:31",
+   "category": null,
+   "context_chars": 3009,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:32",
+   "category": null,
+   "context_chars": 3553,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:33",
+   "category": null,
+   "context_chars": 3588,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:34",
+   "category": null,
+   "context_chars": 5149,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:35",
+   "category": null,
+   "context_chars": 3332,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:36",
+   "category": null,
+   "context_chars": 3700,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:37",
+   "category": null,
+   "context_chars": 4671,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:38",
+   "category": null,
+   "context_chars": 3477,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:39",
+   "category": null,
+   "context_chars": 2454,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:40",
+   "category": null,
+   "context_chars": 2397,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:41",
+   "category": null,
+   "context_chars": 4172,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:42",
+   "category": null,
+   "context_chars": 2749,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:43",
+   "category": null,
+   "context_chars": 4125,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:44",
+   "category": null,
+   "context_chars": 3435,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:45",
+   "category": null,
+   "context_chars": 3439,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:46",
+   "category": null,
+   "context_chars": 2328,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:47",
+   "category": null,
+   "context_chars": 2675,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:48",
+   "category": null,
+   "context_chars": 3442,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:49",
+   "category": null,
+   "context_chars": 3958,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:50",
+   "category": null,
+   "context_chars": 3963,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:51",
+   "category": null,
+   "context_chars": 4423,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:52",
+   "category": null,
+   "context_chars": 5289,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:53",
+   "category": null,
+   "context_chars": 5318,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:54",
+   "category": null,
+   "context_chars": 3135,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:55",
+   "category": null,
+   "context_chars": 4099,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:56",
+   "category": null,
+   "context_chars": 2819,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:57",
+   "category": null,
+   "context_chars": 2911,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:58",
+   "category": null,
+   "context_chars": 4121,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:59",
+   "category": null,
+   "context_chars": 3902,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:60",
+   "category": null,
+   "context_chars": 4644,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:61",
+   "category": null,
+   "context_chars": 3173,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:62",
+   "category": null,
+   "context_chars": 3184,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:63",
+   "category": null,
+   "context_chars": 4732,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:64",
+   "category": null,
+   "context_chars": 3334,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:65",
+   "category": null,
+   "context_chars": 3448,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:66",
+   "category": null,
+   "context_chars": 3491,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:67",
+   "category": null,
+   "context_chars": 4249,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:68",
+   "category": null,
+   "context_chars": 4113,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:69",
+   "category": null,
+   "context_chars": 2632,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:70",
+   "category": null,
+   "context_chars": 3992,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:71",
+   "category": null,
+   "context_chars": 3360,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:72",
+   "category": null,
+   "context_chars": 3733,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:73",
+   "category": null,
+   "context_chars": 4071,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:74",
+   "category": null,
+   "context_chars": 4184,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:75",
+   "category": null,
+   "context_chars": 2835,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:76",
+   "category": null,
+   "context_chars": 4363,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:77",
+   "category": null,
+   "context_chars": 4436,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:78",
+   "category": null,
+   "context_chars": 3931,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:79",
+   "category": null,
+   "context_chars": 4789,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:80",
+   "category": null,
+   "context_chars": 3670,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:81",
+   "category": null,
+   "context_chars": 2465,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:82",
+   "category": null,
+   "context_chars": 2887,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:83",
+   "category": null,
+   "context_chars": 3133,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:84",
+   "category": null,
+   "context_chars": 4264,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:85",
+   "category": null,
+   "context_chars": 4226,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:86",
+   "category": null,
+   "context_chars": 2613,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:87",
+   "category": null,
+   "context_chars": 4259,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:88",
+   "category": null,
+   "context_chars": 4894,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:89",
+   "category": null,
+   "context_chars": 4797,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:90",
+   "category": null,
+   "context_chars": 4087,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:91",
+   "category": null,
+   "context_chars": 3596,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:92",
+   "category": null,
+   "context_chars": 3867,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:93",
+   "category": null,
+   "context_chars": 4440,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:94",
+   "category": null,
+   "context_chars": 4002,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:95",
+   "category": null,
+   "context_chars": 3080,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:96",
+   "category": null,
+   "context_chars": 3332,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:97",
+   "category": null,
+   "context_chars": 4426,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:98",
+   "category": null,
+   "context_chars": 3075,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:99",
+   "category": null,
+   "context_chars": 2611,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:100",
+   "category": null,
+   "context_chars": 5122,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:101",
+   "category": null,
+   "context_chars": 3380,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:102",
+   "category": null,
+   "context_chars": 3060,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:103",
+   "category": null,
+   "context_chars": 2747,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:104",
+   "category": null,
+   "context_chars": 2845,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:105",
+   "category": null,
+   "context_chars": 4056,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:106",
+   "category": null,
+   "context_chars": 3307,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:107",
+   "category": null,
+   "context_chars": 3117,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:108",
+   "category": null,
+   "context_chars": 5188,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:109",
+   "category": null,
+   "context_chars": 2878,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:110",
+   "category": null,
+   "context_chars": 3240,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:111",
+   "category": null,
+   "context_chars": 3409,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:112",
+   "category": null,
+   "context_chars": 3082,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:113",
+   "category": null,
+   "context_chars": 3572,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:114",
+   "category": null,
+   "context_chars": 4406,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:115",
+   "category": null,
+   "context_chars": 3682,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:116",
+   "category": null,
+   "context_chars": 3966,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:117",
+   "category": null,
+   "context_chars": 4485,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:118",
+   "category": null,
+   "context_chars": 3761,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:119",
+   "category": null,
+   "context_chars": 2643,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:120",
+   "category": null,
+   "context_chars": 4604,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:121",
+   "category": null,
+   "context_chars": 5393,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:122",
+   "category": null,
+   "context_chars": 5484,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:123",
+   "category": null,
+   "context_chars": 4544,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:124",
+   "category": null,
+   "context_chars": 3938,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:125",
+   "category": null,
+   "context_chars": 4576,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:126",
+   "category": null,
+   "context_chars": 4239,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:127",
+   "category": null,
+   "context_chars": 4489,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:128",
+   "category": null,
+   "context_chars": 2824,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:129",
+   "category": null,
+   "context_chars": 2991,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:130",
+   "category": null,
+   "context_chars": 3369,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:131",
+   "category": null,
+   "context_chars": 4027,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:132",
+   "category": null,
+   "context_chars": 4087,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:133",
+   "category": null,
+   "context_chars": 3196,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:134",
+   "category": null,
+   "context_chars": 3383,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:135",
+   "category": null,
+   "context_chars": 4087,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:136",
+   "category": null,
+   "context_chars": 2653,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:137",
+   "category": null,
+   "context_chars": 3699,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:138",
+   "category": null,
+   "context_chars": 4564,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:139",
+   "category": null,
+   "context_chars": 4690,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:140",
+   "category": null,
+   "context_chars": 5127,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:141",
+   "category": null,
+   "context_chars": 4031,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:142",
+   "category": null,
+   "context_chars": 3671,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:143",
+   "category": null,
+   "context_chars": 4852,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:144",
+   "category": null,
+   "context_chars": 3103,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:145",
+   "category": null,
+   "context_chars": 2842,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:146",
+   "category": null,
+   "context_chars": 4392,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:147",
+   "category": null,
+   "context_chars": 3391,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:148",
+   "category": null,
+   "context_chars": 3099,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:149",
+   "category": null,
+   "context_chars": 3399,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:150",
+   "category": null,
+   "context_chars": 3417,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:151",
+   "category": null,
+   "context_chars": 2502,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:152",
+   "category": null,
+   "context_chars": 4958,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:153",
+   "category": null,
+   "context_chars": 4499,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:154",
+   "category": null,
+   "context_chars": 4088,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:155",
+   "category": null,
+   "context_chars": 4179,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:156",
+   "category": null,
+   "context_chars": 2574,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:157",
+   "category": null,
+   "context_chars": 3095,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:158",
+   "category": null,
+   "context_chars": 3984,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:159",
+   "category": null,
+   "context_chars": 2744,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:160",
+   "category": null,
+   "context_chars": 3698,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:161",
+   "category": null,
+   "context_chars": 3539,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:162",
+   "category": null,
+   "context_chars": 3449,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:163",
+   "category": null,
+   "context_chars": 3585,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:164",
+   "category": null,
+   "context_chars": 3092,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:165",
+   "category": null,
+   "context_chars": 3194,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:166",
+   "category": null,
+   "context_chars": 3582,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:167",
+   "category": null,
+   "context_chars": 3579,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:168",
+   "category": null,
+   "context_chars": 3580,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:169",
+   "category": null,
+   "context_chars": 3103,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:170",
+   "category": null,
+   "context_chars": 3353,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:171",
+   "category": null,
+   "context_chars": 2682,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:172",
+   "category": null,
+   "context_chars": 3244,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:173",
+   "category": null,
+   "context_chars": 3256,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:174",
+   "category": null,
+   "context_chars": 4087,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:175",
+   "category": null,
+   "context_chars": 3106,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-4:176",
+   "category": null,
+   "context_chars": 3218,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-4:177",
+   "category": null,
+   "context_chars": 3099,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:0",
+   "category": null,
+   "context_chars": 3055,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:1",
+   "category": null,
+   "context_chars": 2509,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:2",
+   "category": null,
+   "context_chars": 3952,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:3",
+   "category": null,
+   "context_chars": 4068,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:4",
+   "category": null,
+   "context_chars": 3120,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:5",
+   "category": null,
+   "context_chars": 3039,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:6",
+   "category": null,
+   "context_chars": 2819,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:7",
+   "category": null,
+   "context_chars": 3286,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:8",
+   "category": null,
+   "context_chars": 3016,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:9",
+   "category": null,
+   "context_chars": 4549,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:10",
+   "category": null,
+   "context_chars": 3992,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:11",
+   "category": null,
+   "context_chars": 3083,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:12",
+   "category": null,
+   "context_chars": 3922,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:13",
+   "category": null,
+   "context_chars": 2783,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:14",
+   "category": null,
+   "context_chars": 4148,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:15",
+   "category": null,
+   "context_chars": 4028,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:16",
+   "category": null,
+   "context_chars": 3427,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:17",
+   "category": null,
+   "context_chars": 3077,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:18",
+   "category": null,
+   "context_chars": 2667,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:19",
+   "category": null,
+   "context_chars": 3558,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:20",
+   "category": null,
+   "context_chars": 3024,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:21",
+   "category": null,
+   "context_chars": 4104,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:22",
+   "category": null,
+   "context_chars": 3209,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:23",
+   "category": null,
+   "context_chars": 3457,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:24",
+   "category": null,
+   "context_chars": 3562,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:25",
+   "category": null,
+   "context_chars": 3233,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:26",
+   "category": null,
+   "context_chars": 4369,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:27",
+   "category": null,
+   "context_chars": 3314,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:28",
+   "category": null,
+   "context_chars": 3092,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:29",
+   "category": null,
+   "context_chars": 3042,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:30",
+   "category": null,
+   "context_chars": 3398,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:31",
+   "category": null,
+   "context_chars": 3110,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:32",
+   "category": null,
+   "context_chars": 2690,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:33",
+   "category": null,
+   "context_chars": 4118,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:34",
+   "category": null,
+   "context_chars": 3403,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:35",
+   "category": null,
+   "context_chars": 3057,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:36",
+   "category": null,
+   "context_chars": 2960,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:37",
+   "category": null,
+   "context_chars": 3244,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:38",
+   "category": null,
+   "context_chars": 3578,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:39",
+   "category": null,
+   "context_chars": 3319,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:40",
+   "category": null,
+   "context_chars": 4713,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:41",
+   "category": null,
+   "context_chars": 3421,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:42",
+   "category": null,
+   "context_chars": 3925,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:43",
+   "category": null,
+   "context_chars": 3239,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:44",
+   "category": null,
+   "context_chars": 4167,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:45",
+   "category": null,
+   "context_chars": 2963,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:46",
+   "category": null,
+   "context_chars": 3143,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:47",
+   "category": null,
+   "context_chars": 3617,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:48",
+   "category": null,
+   "context_chars": 3222,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:49",
+   "category": null,
+   "context_chars": 3219,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:50",
+   "category": null,
+   "context_chars": 4293,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:51",
+   "category": null,
+   "context_chars": 3842,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:52",
+   "category": null,
+   "context_chars": 3933,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:53",
+   "category": null,
+   "context_chars": 3917,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:54",
+   "category": null,
+   "context_chars": 4406,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:55",
+   "category": null,
+   "context_chars": 3271,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:56",
+   "category": null,
+   "context_chars": 3814,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:57",
+   "category": null,
+   "context_chars": 3815,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:58",
+   "category": null,
+   "context_chars": 2483,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:59",
+   "category": null,
+   "context_chars": 3336,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:60",
+   "category": null,
+   "context_chars": 3016,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:61",
+   "category": null,
+   "context_chars": 3105,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:62",
+   "category": null,
+   "context_chars": 3568,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:63",
+   "category": null,
+   "context_chars": 3382,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:64",
+   "category": null,
+   "context_chars": 3007,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:65",
+   "category": null,
+   "context_chars": 4016,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:66",
+   "category": null,
+   "context_chars": 3901,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:67",
+   "category": null,
+   "context_chars": 3646,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:68",
+   "category": null,
+   "context_chars": 4052,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:69",
+   "category": null,
+   "context_chars": 3465,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:70",
+   "category": null,
+   "context_chars": 3361,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:71",
+   "category": null,
+   "context_chars": 3289,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:72",
+   "category": null,
+   "context_chars": 4199,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:73",
+   "category": null,
+   "context_chars": 3737,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:74",
+   "category": null,
+   "context_chars": 3539,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:75",
+   "category": null,
+   "context_chars": 3775,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:76",
+   "category": null,
+   "context_chars": 3489,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:77",
+   "category": null,
+   "context_chars": 3441,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:78",
+   "category": null,
+   "context_chars": 2942,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:79",
+   "category": null,
+   "context_chars": 3416,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:80",
+   "category": null,
+   "context_chars": 3637,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:81",
+   "category": null,
+   "context_chars": 3409,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:82",
+   "category": null,
+   "context_chars": 2699,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:83",
+   "category": null,
+   "context_chars": 3413,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:84",
+   "category": null,
+   "context_chars": 3576,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:85",
+   "category": null,
+   "context_chars": 4261,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:86",
+   "category": null,
+   "context_chars": 3799,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:87",
+   "category": null,
+   "context_chars": 3686,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:88",
+   "category": null,
+   "context_chars": 3574,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:89",
+   "category": null,
+   "context_chars": 3787,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:90",
+   "category": null,
+   "context_chars": 3742,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:91",
+   "category": null,
+   "context_chars": 3686,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:92",
+   "category": null,
+   "context_chars": 3446,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:93",
+   "category": null,
+   "context_chars": 3886,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:94",
+   "category": null,
+   "context_chars": 3209,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:95",
+   "category": null,
+   "context_chars": 3067,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:96",
+   "category": null,
+   "context_chars": 3422,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:97",
+   "category": null,
+   "context_chars": 3109,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:98",
+   "category": null,
+   "context_chars": 3400,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:99",
+   "category": null,
+   "context_chars": 3440,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:100",
+   "category": null,
+   "context_chars": 4061,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:101",
+   "category": null,
+   "context_chars": 3338,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:102",
+   "category": null,
+   "context_chars": 3854,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:103",
+   "category": null,
+   "context_chars": 2753,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:104",
+   "category": null,
+   "context_chars": 3729,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:105",
+   "category": null,
+   "context_chars": 4309,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:106",
+   "category": null,
+   "context_chars": 3213,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:107",
+   "category": null,
+   "context_chars": 3377,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:108",
+   "category": null,
+   "context_chars": 3392,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:109",
+   "category": null,
+   "context_chars": 3804,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:110",
+   "category": null,
+   "context_chars": 3019,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:111",
+   "category": null,
+   "context_chars": 3010,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:112",
+   "category": null,
+   "context_chars": 3949,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:113",
+   "category": null,
+   "context_chars": 3352,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:114",
+   "category": null,
+   "context_chars": 2920,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:115",
+   "category": null,
+   "context_chars": 3297,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:116",
+   "category": null,
+   "context_chars": 2734,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:117",
+   "category": null,
+   "context_chars": 3950,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:118",
+   "category": null,
+   "context_chars": 4046,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:119",
+   "category": null,
+   "context_chars": 4412,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-5:120",
+   "category": null,
+   "context_chars": 4532,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:121",
+   "category": null,
+   "context_chars": 3246,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-5:122",
+   "category": null,
+   "context_chars": 3234,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:0",
+   "category": null,
+   "context_chars": 2380,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:1",
+   "category": null,
+   "context_chars": 2713,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:2",
+   "category": null,
+   "context_chars": 2978,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:3",
+   "category": null,
+   "context_chars": 3559,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:4",
+   "category": null,
+   "context_chars": 3029,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:5",
+   "category": null,
+   "context_chars": 3397,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:6",
+   "category": null,
+   "context_chars": 2190,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:7",
+   "category": null,
+   "context_chars": 3558,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:8",
+   "category": null,
+   "context_chars": 3441,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:9",
+   "category": null,
+   "context_chars": 3444,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:10",
+   "category": null,
+   "context_chars": 2631,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:11",
+   "category": null,
+   "context_chars": 2398,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:12",
+   "category": null,
+   "context_chars": 2693,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:13",
+   "category": null,
+   "context_chars": 2638,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:14",
+   "category": null,
+   "context_chars": 3030,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:15",
+   "category": null,
+   "context_chars": 3457,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:16",
+   "category": null,
+   "context_chars": 3734,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:17",
+   "category": null,
+   "context_chars": 4100,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:18",
+   "category": null,
+   "context_chars": 2832,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:19",
+   "category": null,
+   "context_chars": 3556,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:20",
+   "category": null,
+   "context_chars": 4347,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:21",
+   "category": null,
+   "context_chars": 3859,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:22",
+   "category": null,
+   "context_chars": 4678,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:23",
+   "category": null,
+   "context_chars": 2786,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:24",
+   "category": null,
+   "context_chars": 3575,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:25",
+   "category": null,
+   "context_chars": 2402,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:26",
+   "category": null,
+   "context_chars": 2777,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:27",
+   "category": null,
+   "context_chars": 4108,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:28",
+   "category": null,
+   "context_chars": 3874,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:29",
+   "category": null,
+   "context_chars": 2626,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:30",
+   "category": null,
+   "context_chars": 2813,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:31",
+   "category": null,
+   "context_chars": 3123,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:32",
+   "category": null,
+   "context_chars": 2000,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:33",
+   "category": null,
+   "context_chars": 2605,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:34",
+   "category": null,
+   "context_chars": 2810,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:35",
+   "category": null,
+   "context_chars": 3033,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:36",
+   "category": null,
+   "context_chars": 2499,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:37",
+   "category": null,
+   "context_chars": 3505,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:38",
+   "category": null,
+   "context_chars": 3053,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:39",
+   "category": null,
+   "context_chars": 3536,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:40",
+   "category": null,
+   "context_chars": 3213,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:41",
+   "category": null,
+   "context_chars": 2683,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:42",
+   "category": null,
+   "context_chars": 3489,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:43",
+   "category": null,
+   "context_chars": 2651,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:44",
+   "category": null,
+   "context_chars": 2513,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:45",
+   "category": null,
+   "context_chars": 2841,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:46",
+   "category": null,
+   "context_chars": 2279,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:47",
+   "category": null,
+   "context_chars": 2782,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:48",
+   "category": null,
+   "context_chars": 3069,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:49",
+   "category": null,
+   "context_chars": 4032,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:50",
+   "category": null,
+   "context_chars": 3768,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:51",
+   "category": null,
+   "context_chars": 3405,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:52",
+   "category": null,
+   "context_chars": 4007,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:53",
+   "category": null,
+   "context_chars": 4153,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:54",
+   "category": null,
+   "context_chars": 4877,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:55",
+   "category": null,
+   "context_chars": 4840,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:56",
+   "category": null,
+   "context_chars": 2795,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:57",
+   "category": null,
+   "context_chars": 2829,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:58",
+   "category": null,
+   "context_chars": 3471,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:59",
+   "category": null,
+   "context_chars": 4276,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:60",
+   "category": null,
+   "context_chars": 4398,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:61",
+   "category": null,
+   "context_chars": 2915,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:62",
+   "category": null,
+   "context_chars": 2970,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:63",
+   "category": null,
+   "context_chars": 3414,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:64",
+   "category": null,
+   "context_chars": 3492,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:65",
+   "category": null,
+   "context_chars": 2500,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:66",
+   "category": null,
+   "context_chars": 4233,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:67",
+   "category": null,
+   "context_chars": 4478,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:68",
+   "category": null,
+   "context_chars": 3022,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:69",
+   "category": null,
+   "context_chars": 3502,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:70",
+   "category": null,
+   "context_chars": 2745,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:71",
+   "category": null,
+   "context_chars": 3580,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:72",
+   "category": null,
+   "context_chars": 3241,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:73",
+   "category": null,
+   "context_chars": 2650,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:74",
+   "category": null,
+   "context_chars": 3534,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:75",
+   "category": null,
+   "context_chars": 3305,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:76",
+   "category": null,
+   "context_chars": 3725,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:77",
+   "category": null,
+   "context_chars": 3334,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:78",
+   "category": null,
+   "context_chars": 2407,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:79",
+   "category": null,
+   "context_chars": 3806,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:80",
+   "category": null,
+   "context_chars": 3439,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:81",
+   "category": null,
+   "context_chars": 4284,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:82",
+   "category": null,
+   "context_chars": 2685,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:83",
+   "category": null,
+   "context_chars": 2906,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:84",
+   "category": null,
+   "context_chars": 3802,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:85",
+   "category": null,
+   "context_chars": 3534,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:86",
+   "category": null,
+   "context_chars": 2506,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:87",
+   "category": null,
+   "context_chars": 2355,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:88",
+   "category": null,
+   "context_chars": 3029,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:89",
+   "category": null,
+   "context_chars": 3628,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:90",
+   "category": null,
+   "context_chars": 4223,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:91",
+   "category": null,
+   "context_chars": 4628,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:92",
+   "category": null,
+   "context_chars": 4224,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:93",
+   "category": null,
+   "context_chars": 3907,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:94",
+   "category": null,
+   "context_chars": 4054,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:95",
+   "category": null,
+   "context_chars": 2621,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:96",
+   "category": null,
+   "context_chars": 2823,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:97",
+   "category": null,
+   "context_chars": 2526,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:98",
+   "category": null,
+   "context_chars": 2693,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:99",
+   "category": null,
+   "context_chars": 4081,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:100",
+   "category": null,
+   "context_chars": 3852,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:101",
+   "category": null,
+   "context_chars": 2728,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:102",
+   "category": null,
+   "context_chars": 2957,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:103",
+   "category": null,
+   "context_chars": 2635,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:104",
+   "category": null,
+   "context_chars": 3284,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:105",
+   "category": null,
+   "context_chars": 2692,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:106",
+   "category": null,
+   "context_chars": 3824,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:107",
+   "category": null,
+   "context_chars": 4689,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:108",
+   "category": null,
+   "context_chars": 4372,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:109",
+   "category": null,
+   "context_chars": 3342,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:110",
+   "category": null,
+   "context_chars": 3867,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:111",
+   "category": null,
+   "context_chars": 3491,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:112",
+   "category": null,
+   "context_chars": 3634,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:113",
+   "category": null,
+   "context_chars": 2420,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:114",
+   "category": null,
+   "context_chars": 2971,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:115",
+   "category": null,
+   "context_chars": 3518,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:116",
+   "category": null,
+   "context_chars": 2657,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:117",
+   "category": null,
+   "context_chars": 3710,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:118",
+   "category": null,
+   "context_chars": 3972,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:119",
+   "category": null,
+   "context_chars": 4654,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:120",
+   "category": null,
+   "context_chars": 4034,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:121",
+   "category": null,
+   "context_chars": 3202,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:122",
+   "category": null,
+   "context_chars": 3161,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:123",
+   "category": null,
+   "context_chars": 3203,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:124",
+   "category": null,
+   "context_chars": 3842,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:125",
+   "category": null,
+   "context_chars": 3239,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:126",
+   "category": null,
+   "context_chars": 3686,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:127",
+   "category": null,
+   "context_chars": 2901,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:128",
+   "category": null,
+   "context_chars": 2202,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:129",
+   "category": null,
+   "context_chars": 2859,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:130",
+   "category": null,
+   "context_chars": 2569,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:131",
+   "category": null,
+   "context_chars": 3264,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:132",
+   "category": null,
+   "context_chars": 3267,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:133",
+   "category": null,
+   "context_chars": 3348,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:134",
+   "category": null,
+   "context_chars": 4364,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:135",
+   "category": null,
+   "context_chars": 4490,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:136",
+   "category": null,
+   "context_chars": 4517,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:137",
+   "category": null,
+   "context_chars": 3751,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:138",
+   "category": null,
+   "context_chars": 3442,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:139",
+   "category": null,
+   "context_chars": 3650,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:140",
+   "category": null,
+   "context_chars": 3613,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:141",
+   "category": null,
+   "context_chars": 3681,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:142",
+   "category": null,
+   "context_chars": 4476,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:143",
+   "category": null,
+   "context_chars": 2574,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:144",
+   "category": null,
+   "context_chars": 3082,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:145",
+   "category": null,
+   "context_chars": 3432,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:146",
+   "category": null,
+   "context_chars": 3106,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:147",
+   "category": null,
+   "context_chars": 3061,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-6:148",
+   "category": null,
+   "context_chars": 4148,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-6:149",
+   "category": null,
+   "context_chars": 3306,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:0",
+   "category": null,
+   "context_chars": 3100,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:1",
+   "category": null,
+   "context_chars": 2859,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:2",
+   "category": null,
+   "context_chars": 3381,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:3",
+   "category": null,
+   "context_chars": 2539,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:4",
+   "category": null,
+   "context_chars": 2286,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:5",
+   "category": null,
+   "context_chars": 2166,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:6",
+   "category": null,
+   "context_chars": 3342,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:7",
+   "category": null,
+   "context_chars": 3030,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:8",
+   "category": null,
+   "context_chars": 4482,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:9",
+   "category": null,
+   "context_chars": 3097,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:10",
+   "category": null,
+   "context_chars": 2500,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:11",
+   "category": null,
+   "context_chars": 2217,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:12",
+   "category": null,
+   "context_chars": 2932,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:13",
+   "category": null,
+   "context_chars": 3665,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:14",
+   "category": null,
+   "context_chars": 3948,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:15",
+   "category": null,
+   "context_chars": 2129,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:16",
+   "category": null,
+   "context_chars": 2876,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:17",
+   "category": null,
+   "context_chars": 2444,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:18",
+   "category": null,
+   "context_chars": 3155,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:19",
+   "category": null,
+   "context_chars": 2082,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:20",
+   "category": null,
+   "context_chars": 3670,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:21",
+   "category": null,
+   "context_chars": 2585,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:22",
+   "category": null,
+   "context_chars": 2862,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:23",
+   "category": null,
+   "context_chars": 3831,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:24",
+   "category": null,
+   "context_chars": 3453,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:25",
+   "category": null,
+   "context_chars": 2270,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:26",
+   "category": null,
+   "context_chars": 2185,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:27",
+   "category": null,
+   "context_chars": 2144,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:28",
+   "category": null,
+   "context_chars": 2192,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:29",
+   "category": null,
+   "context_chars": 4662,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:30",
+   "category": null,
+   "context_chars": 2217,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:31",
+   "category": null,
+   "context_chars": 2553,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:32",
+   "category": null,
+   "context_chars": 3255,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:33",
+   "category": null,
+   "context_chars": 2535,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:34",
+   "category": null,
+   "context_chars": 2503,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:35",
+   "category": null,
+   "context_chars": 2863,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:36",
+   "category": null,
+   "context_chars": 1761,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:37",
+   "category": null,
+   "context_chars": 2410,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:38",
+   "category": null,
+   "context_chars": 3410,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:39",
+   "category": null,
+   "context_chars": 3632,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:40",
+   "category": null,
+   "context_chars": 3065,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:41",
+   "category": null,
+   "context_chars": 4547,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:42",
+   "category": null,
+   "context_chars": 3720,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:43",
+   "category": null,
+   "context_chars": 3089,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:44",
+   "category": null,
+   "context_chars": 3156,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:45",
+   "category": null,
+   "context_chars": 3399,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:46",
+   "category": null,
+   "context_chars": 4174,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:47",
+   "category": null,
+   "context_chars": 3333,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:48",
+   "category": null,
+   "context_chars": 2922,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:49",
+   "category": null,
+   "context_chars": 4062,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:50",
+   "category": null,
+   "context_chars": 3739,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:51",
+   "category": null,
+   "context_chars": 2902,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:52",
+   "category": null,
+   "context_chars": 3446,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:53",
+   "category": null,
+   "context_chars": 3053,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:54",
+   "category": null,
+   "context_chars": 2942,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:55",
+   "category": null,
+   "context_chars": 2877,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:56",
+   "category": null,
+   "context_chars": 4005,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:57",
+   "category": null,
+   "context_chars": 3066,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:58",
+   "category": null,
+   "context_chars": 3578,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:59",
+   "category": null,
+   "context_chars": 2805,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:60",
+   "category": null,
+   "context_chars": 3560,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:61",
+   "category": null,
+   "context_chars": 4021,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:62",
+   "category": null,
+   "context_chars": 2934,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:63",
+   "category": null,
+   "context_chars": 2925,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:64",
+   "category": null,
+   "context_chars": 2965,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:65",
+   "category": null,
+   "context_chars": 1928,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:66",
+   "category": null,
+   "context_chars": 2751,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:67",
+   "category": null,
+   "context_chars": 2975,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:68",
+   "category": null,
+   "context_chars": 2341,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:69",
+   "category": null,
+   "context_chars": 3302,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:70",
+   "category": null,
+   "context_chars": 2991,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:71",
+   "category": null,
+   "context_chars": 3075,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:72",
+   "category": null,
+   "context_chars": 2585,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:73",
+   "category": null,
+   "context_chars": 3130,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:74",
+   "category": null,
+   "context_chars": 3569,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:75",
+   "category": null,
+   "context_chars": 2724,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:76",
+   "category": null,
+   "context_chars": 3888,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:77",
+   "category": null,
+   "context_chars": 4054,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:78",
+   "category": null,
+   "context_chars": 2513,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:79",
+   "category": null,
+   "context_chars": 3306,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:80",
+   "category": null,
+   "context_chars": 2950,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:81",
+   "category": null,
+   "context_chars": 3611,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:82",
+   "category": null,
+   "context_chars": 3828,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:83",
+   "category": null,
+   "context_chars": 4255,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:84",
+   "category": null,
+   "context_chars": 4949,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:85",
+   "category": null,
+   "context_chars": 4312,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:86",
+   "category": null,
+   "context_chars": 2317,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:87",
+   "category": null,
+   "context_chars": 2703,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:88",
+   "category": null,
+   "context_chars": 4386,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:89",
+   "category": null,
+   "context_chars": 2876,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:90",
+   "category": null,
+   "context_chars": 2270,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:91",
+   "category": null,
+   "context_chars": 3720,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:92",
+   "category": null,
+   "context_chars": 3578,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:93",
+   "category": null,
+   "context_chars": 4021,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:94",
+   "category": null,
+   "context_chars": 2934,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:95",
+   "category": null,
+   "context_chars": 2925,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:96",
+   "category": null,
+   "context_chars": 2975,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:97",
+   "category": null,
+   "context_chars": 3302,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:98",
+   "category": null,
+   "context_chars": 2585,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:99",
+   "category": null,
+   "context_chars": 3569,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:100",
+   "category": null,
+   "context_chars": 3594,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:101",
+   "category": null,
+   "context_chars": 2925,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:102",
+   "category": null,
+   "context_chars": 2956,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:103",
+   "category": null,
+   "context_chars": 3283,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:104",
+   "category": null,
+   "context_chars": 3524,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:105",
+   "category": null,
+   "context_chars": 2096,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:106",
+   "category": null,
+   "context_chars": 2168,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:107",
+   "category": null,
+   "context_chars": 4130,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:108",
+   "category": null,
+   "context_chars": 3502,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:109",
+   "category": null,
+   "context_chars": 2976,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:110",
+   "category": null,
+   "context_chars": 4383,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:111",
+   "category": null,
+   "context_chars": 4719,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:112",
+   "category": null,
+   "context_chars": 3600,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:113",
+   "category": null,
+   "context_chars": 3613,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:114",
+   "category": null,
+   "context_chars": 2299,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:115",
+   "category": null,
+   "context_chars": 4010,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:116",
+   "category": null,
+   "context_chars": 3441,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:117",
+   "category": null,
+   "context_chars": 3051,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:118",
+   "category": null,
+   "context_chars": 2526,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:119",
+   "category": null,
+   "context_chars": 3847,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:120",
+   "category": null,
+   "context_chars": 4357,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:121",
+   "category": null,
+   "context_chars": 2770,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:122",
+   "category": null,
+   "context_chars": 3443,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:123",
+   "category": null,
+   "context_chars": 3033,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:124",
+   "category": null,
+   "context_chars": 3730,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:125",
+   "category": null,
+   "context_chars": 3808,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:126",
+   "category": null,
+   "context_chars": 3768,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:127",
+   "category": null,
+   "context_chars": 3724,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:128",
+   "category": null,
+   "context_chars": 3943,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:129",
+   "category": null,
+   "context_chars": 2136,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:130",
+   "category": null,
+   "context_chars": 3947,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:131",
+   "category": null,
+   "context_chars": 3402,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:132",
+   "category": null,
+   "context_chars": 3146,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:133",
+   "category": null,
+   "context_chars": 2635,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:134",
+   "category": null,
+   "context_chars": 2929,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:135",
+   "category": null,
+   "context_chars": 2853,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:136",
+   "category": null,
+   "context_chars": 3311,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:137",
+   "category": null,
+   "context_chars": 4260,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:138",
+   "category": null,
+   "context_chars": 4274,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:139",
+   "category": null,
+   "context_chars": 2974,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:140",
+   "category": null,
+   "context_chars": 3572,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:141",
+   "category": null,
+   "context_chars": 2988,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:142",
+   "category": null,
+   "context_chars": 3570,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:143",
+   "category": null,
+   "context_chars": 3629,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:144",
+   "category": null,
+   "context_chars": 2323,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:145",
+   "category": null,
+   "context_chars": 3949,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:146",
+   "category": null,
+   "context_chars": 4149,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:147",
+   "category": null,
+   "context_chars": 4291,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:148",
+   "category": null,
+   "context_chars": 3462,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:149",
+   "category": null,
+   "context_chars": 3455,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:150",
+   "category": null,
+   "context_chars": 3441,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:151",
+   "category": null,
+   "context_chars": 3702,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:152",
+   "category": null,
+   "context_chars": 3440,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:153",
+   "category": null,
+   "context_chars": 4310,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:154",
+   "category": null,
+   "context_chars": 4339,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:155",
+   "category": null,
+   "context_chars": 4440,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:156",
+   "category": null,
+   "context_chars": 3949,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:157",
+   "category": null,
+   "context_chars": 3719,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:158",
+   "category": null,
+   "context_chars": 4496,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:159",
+   "category": null,
+   "context_chars": 3535,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:160",
+   "category": null,
+   "context_chars": 2545,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:161",
+   "category": null,
+   "context_chars": 5185,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:162",
+   "category": null,
+   "context_chars": 4374,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:163",
+   "category": null,
+   "context_chars": 2966,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:164",
+   "category": null,
+   "context_chars": 2341,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:165",
+   "category": null,
+   "context_chars": 3217,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:166",
+   "category": null,
+   "context_chars": 4634,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:167",
+   "category": null,
+   "context_chars": 2059,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:168",
+   "category": null,
+   "context_chars": 1956,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:169",
+   "category": null,
+   "context_chars": 4409,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:170",
+   "category": null,
+   "context_chars": 3760,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:171",
+   "category": null,
+   "context_chars": 3083,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:172",
+   "category": null,
+   "context_chars": 3484,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:173",
+   "category": null,
+   "context_chars": 3108,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:174",
+   "category": null,
+   "context_chars": 2911,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:175",
+   "category": null,
+   "context_chars": 2906,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:176",
+   "category": null,
+   "context_chars": 4967,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:177",
+   "category": null,
+   "context_chars": 4719,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:178",
+   "category": null,
+   "context_chars": 4565,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:179",
+   "category": null,
+   "context_chars": 3008,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:180",
+   "category": null,
+   "context_chars": 3274,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:181",
+   "category": null,
+   "context_chars": 2299,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:182",
+   "category": null,
+   "context_chars": 3965,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:183",
+   "category": null,
+   "context_chars": 2368,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:184",
+   "category": null,
+   "context_chars": 3097,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:185",
+   "category": null,
+   "context_chars": 3329,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:186",
+   "category": null,
+   "context_chars": 2990,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:187",
+   "category": null,
+   "context_chars": 2176,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:188",
+   "category": null,
+   "context_chars": 3513,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-7:189",
+   "category": null,
+   "context_chars": 2755,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-7:190",
+   "category": null,
+   "context_chars": 3068,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:0",
+   "category": null,
+   "context_chars": 3200,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:1",
+   "category": null,
+   "context_chars": 3038,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:2",
+   "category": null,
+   "context_chars": 3315,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:3",
+   "category": null,
+   "context_chars": 3039,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:4",
+   "category": null,
+   "context_chars": 2807,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:5",
+   "category": null,
+   "context_chars": 3168,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:6",
+   "category": null,
+   "context_chars": 3431,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:7",
+   "category": null,
+   "context_chars": 3597,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:8",
+   "category": null,
+   "context_chars": 3086,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:9",
+   "category": null,
+   "context_chars": 3431,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:10",
+   "category": null,
+   "context_chars": 3410,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:11",
+   "category": null,
+   "context_chars": 4729,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:12",
+   "category": null,
+   "context_chars": 4257,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:13",
+   "category": null,
+   "context_chars": 3704,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:14",
+   "category": null,
+   "context_chars": 3105,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:15",
+   "category": null,
+   "context_chars": 3257,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:16",
+   "category": null,
+   "context_chars": 3355,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:17",
+   "category": null,
+   "context_chars": 3785,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:18",
+   "category": null,
+   "context_chars": 3930,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:19",
+   "category": null,
+   "context_chars": 3735,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:20",
+   "category": null,
+   "context_chars": 3836,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:21",
+   "category": null,
+   "context_chars": 3258,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:22",
+   "category": null,
+   "context_chars": 3117,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:23",
+   "category": null,
+   "context_chars": 3859,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:24",
+   "category": null,
+   "context_chars": 3075,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:25",
+   "category": null,
+   "context_chars": 4278,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:26",
+   "category": null,
+   "context_chars": 3949,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:27",
+   "category": null,
+   "context_chars": 3541,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:28",
+   "category": null,
+   "context_chars": 5044,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:29",
+   "category": null,
+   "context_chars": 3290,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:30",
+   "category": null,
+   "context_chars": 3209,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:31",
+   "category": null,
+   "context_chars": 4332,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:32",
+   "category": null,
+   "context_chars": 3000,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:33",
+   "category": null,
+   "context_chars": 2886,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:34",
+   "category": null,
+   "context_chars": 3692,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:35",
+   "category": null,
+   "context_chars": 3607,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:36",
+   "category": null,
+   "context_chars": 3398,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:37",
+   "category": null,
+   "context_chars": 4597,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:38",
+   "category": null,
+   "context_chars": 3800,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:39",
+   "category": null,
+   "context_chars": 4734,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:40",
+   "category": null,
+   "context_chars": 3750,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:41",
+   "category": null,
+   "context_chars": 2945,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:42",
+   "category": null,
+   "context_chars": 4043,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:43",
+   "category": null,
+   "context_chars": 4217,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:44",
+   "category": null,
+   "context_chars": 3970,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:45",
+   "category": null,
+   "context_chars": 3518,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:46",
+   "category": null,
+   "context_chars": 3300,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:47",
+   "category": null,
+   "context_chars": 3888,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:48",
+   "category": null,
+   "context_chars": 3919,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:49",
+   "category": null,
+   "context_chars": 3849,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:50",
+   "category": null,
+   "context_chars": 2947,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:51",
+   "category": null,
+   "context_chars": 3996,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:52",
+   "category": null,
+   "context_chars": 2914,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:53",
+   "category": null,
+   "context_chars": 3866,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:54",
+   "category": null,
+   "context_chars": 4571,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:55",
+   "category": null,
+   "context_chars": 2872,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:56",
+   "category": null,
+   "context_chars": 3631,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:57",
+   "category": null,
+   "context_chars": 3209,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:58",
+   "category": null,
+   "context_chars": 4028,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:59",
+   "category": null,
+   "context_chars": 3134,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:60",
+   "category": null,
+   "context_chars": 3390,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:61",
+   "category": null,
+   "context_chars": 3583,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:62",
+   "category": null,
+   "context_chars": 4517,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:63",
+   "category": null,
+   "context_chars": 4102,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:64",
+   "category": null,
+   "context_chars": 4294,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:65",
+   "category": null,
+   "context_chars": 2941,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:66",
+   "category": null,
+   "context_chars": 3207,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:67",
+   "category": null,
+   "context_chars": 2923,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:68",
+   "category": null,
+   "context_chars": 2422,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:69",
+   "category": null,
+   "context_chars": 3239,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:70",
+   "category": null,
+   "context_chars": 2969,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:71",
+   "category": null,
+   "context_chars": 3093,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:72",
+   "category": null,
+   "context_chars": 3238,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:73",
+   "category": null,
+   "context_chars": 3305,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:74",
+   "category": null,
+   "context_chars": 3092,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:75",
+   "category": null,
+   "context_chars": 3405,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:76",
+   "category": null,
+   "context_chars": 3926,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:77",
+   "category": null,
+   "context_chars": 3196,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:78",
+   "category": null,
+   "context_chars": 2871,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:79",
+   "category": null,
+   "context_chars": 3614,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:80",
+   "category": null,
+   "context_chars": 2724,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:81",
+   "category": null,
+   "context_chars": 3049,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:82",
+   "category": null,
+   "context_chars": 3344,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:83",
+   "category": null,
+   "context_chars": 3344,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:84",
+   "category": null,
+   "context_chars": 3907,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:85",
+   "category": null,
+   "context_chars": 4049,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:86",
+   "category": null,
+   "context_chars": 3221,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:87",
+   "category": null,
+   "context_chars": 3458,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:88",
+   "category": null,
+   "context_chars": 3895,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:89",
+   "category": null,
+   "context_chars": 3895,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:90",
+   "category": null,
+   "context_chars": 3196,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:91",
+   "category": null,
+   "context_chars": 3426,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:92",
+   "category": null,
+   "context_chars": 3467,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:93",
+   "category": null,
+   "context_chars": 2740,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:94",
+   "category": null,
+   "context_chars": 3393,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:95",
+   "category": null,
+   "context_chars": 3299,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:96",
+   "category": null,
+   "context_chars": 3137,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:97",
+   "category": null,
+   "context_chars": 2956,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:98",
+   "category": null,
+   "context_chars": 3325,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:99",
+   "category": null,
+   "context_chars": 3026,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:100",
+   "category": null,
+   "context_chars": 2905,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:101",
+   "category": null,
+   "context_chars": 3790,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:102",
+   "category": null,
+   "context_chars": 3178,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:103",
+   "category": null,
+   "context_chars": 2865,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:104",
+   "category": null,
+   "context_chars": 3390,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:105",
+   "category": null,
+   "context_chars": 3833,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:106",
+   "category": null,
+   "context_chars": 4177,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:107",
+   "category": null,
+   "context_chars": 4260,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:108",
+   "category": null,
+   "context_chars": 3858,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:109",
+   "category": null,
+   "context_chars": 2524,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:110",
+   "category": null,
+   "context_chars": 4119,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:111",
+   "category": null,
+   "context_chars": 4129,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:112",
+   "category": null,
+   "context_chars": 4236,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:113",
+   "category": null,
+   "context_chars": 3494,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:114",
+   "category": null,
+   "context_chars": 4127,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:115",
+   "category": null,
+   "context_chars": 4180,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:116",
+   "category": null,
+   "context_chars": 3544,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:117",
+   "category": null,
+   "context_chars": 3395,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:118",
+   "category": null,
+   "context_chars": 3446,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:119",
+   "category": null,
+   "context_chars": 3654,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:120",
+   "category": null,
+   "context_chars": 4158,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:121",
+   "category": null,
+   "context_chars": 3370,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:122",
+   "category": null,
+   "context_chars": 4850,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:123",
+   "category": null,
+   "context_chars": 2697,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:124",
+   "category": null,
+   "context_chars": 3571,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:125",
+   "category": null,
+   "context_chars": 3806,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:126",
+   "category": null,
+   "context_chars": 2921,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:127",
+   "category": null,
+   "context_chars": 4596,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:128",
+   "category": null,
+   "context_chars": 2954,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:129",
+   "category": null,
+   "context_chars": 3851,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:130",
+   "category": null,
+   "context_chars": 3612,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:131",
+   "category": null,
+   "context_chars": 3947,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:132",
+   "category": null,
+   "context_chars": 3155,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:133",
+   "category": null,
+   "context_chars": 2387,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:134",
+   "category": null,
+   "context_chars": 3227,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:135",
+   "category": null,
+   "context_chars": 3073,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:136",
+   "category": null,
+   "context_chars": 4134,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:137",
+   "category": null,
+   "context_chars": 4166,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:138",
+   "category": null,
+   "context_chars": 4113,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:139",
+   "category": null,
+   "context_chars": 2669,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:140",
+   "category": null,
+   "context_chars": 3978,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:141",
+   "category": null,
+   "context_chars": 3076,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:142",
+   "category": null,
+   "context_chars": 4088,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:143",
+   "category": null,
+   "context_chars": 2912,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:144",
+   "category": null,
+   "context_chars": 3436,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:145",
+   "category": null,
+   "context_chars": 3647,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:146",
+   "category": null,
+   "context_chars": 3459,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:147",
+   "category": null,
+   "context_chars": 4008,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:148",
+   "category": null,
+   "context_chars": 3636,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:149",
+   "category": null,
+   "context_chars": 4260,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:150",
+   "category": null,
+   "context_chars": 4323,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:151",
+   "category": null,
+   "context_chars": 3865,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:152",
+   "category": null,
+   "context_chars": 4017,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:153",
+   "category": null,
+   "context_chars": 3853,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-8:154",
+   "category": null,
+   "context_chars": 3209,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-8:155",
+   "category": null,
+   "context_chars": 3295,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:0",
+   "category": null,
+   "context_chars": 4135,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:1",
+   "category": null,
+   "context_chars": 2664,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:2",
+   "category": null,
+   "context_chars": 3709,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:3",
+   "category": null,
+   "context_chars": 4085,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:4",
+   "category": null,
+   "context_chars": 2869,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:5",
+   "category": null,
+   "context_chars": 2933,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:6",
+   "category": null,
+   "context_chars": 4358,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:7",
+   "category": null,
+   "context_chars": 3344,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:8",
+   "category": null,
+   "context_chars": 4606,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:9",
+   "category": null,
+   "context_chars": 3626,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:10",
+   "category": null,
+   "context_chars": 4231,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:11",
+   "category": null,
+   "context_chars": 3472,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:12",
+   "category": null,
+   "context_chars": 3922,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:13",
+   "category": null,
+   "context_chars": 3978,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:14",
+   "category": null,
+   "context_chars": 4288,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:15",
+   "category": null,
+   "context_chars": 4046,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:16",
+   "category": null,
+   "context_chars": 3338,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:17",
+   "category": null,
+   "context_chars": 4273,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:18",
+   "category": null,
+   "context_chars": 4105,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:19",
+   "category": null,
+   "context_chars": 4056,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:20",
+   "category": null,
+   "context_chars": 5207,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:21",
+   "category": null,
+   "context_chars": 3812,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:22",
+   "category": null,
+   "context_chars": 3329,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:23",
+   "category": null,
+   "context_chars": 3619,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:24",
+   "category": null,
+   "context_chars": 5014,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:25",
+   "category": null,
+   "context_chars": 3327,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:26",
+   "category": null,
+   "context_chars": 3056,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:27",
+   "category": null,
+   "context_chars": 3217,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:28",
+   "category": null,
+   "context_chars": 3872,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:29",
+   "category": null,
+   "context_chars": 4840,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:30",
+   "category": null,
+   "context_chars": 3624,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:31",
+   "category": null,
+   "context_chars": 2648,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:32",
+   "category": null,
+   "context_chars": 5147,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:33",
+   "category": null,
+   "context_chars": 3475,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:34",
+   "category": null,
+   "context_chars": 3044,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:35",
+   "category": null,
+   "context_chars": 4371,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:36",
+   "category": null,
+   "context_chars": 3384,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:37",
+   "category": null,
+   "context_chars": 4518,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:38",
+   "category": null,
+   "context_chars": 3464,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:39",
+   "category": null,
+   "context_chars": 4521,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:40",
+   "category": null,
+   "context_chars": 4171,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:41",
+   "category": null,
+   "context_chars": 3010,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:42",
+   "category": null,
+   "context_chars": 3342,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:43",
+   "category": null,
+   "context_chars": 3166,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:44",
+   "category": null,
+   "context_chars": 4974,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:45",
+   "category": null,
+   "context_chars": 3102,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:46",
+   "category": null,
+   "context_chars": 3183,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:47",
+   "category": null,
+   "context_chars": 4893,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:48",
+   "category": null,
+   "context_chars": 2663,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:49",
+   "category": null,
+   "context_chars": 4831,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:50",
+   "category": null,
+   "context_chars": 4221,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:51",
+   "category": null,
+   "context_chars": 4904,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:52",
+   "category": null,
+   "context_chars": 4146,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:53",
+   "category": null,
+   "context_chars": 3521,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:54",
+   "category": null,
+   "context_chars": 4262,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:55",
+   "category": null,
+   "context_chars": 4847,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:56",
+   "category": null,
+   "context_chars": 2937,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:57",
+   "category": null,
+   "context_chars": 3374,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:58",
+   "category": null,
+   "context_chars": 5353,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:59",
+   "category": null,
+   "context_chars": 4009,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:60",
+   "category": null,
+   "context_chars": 4086,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:61",
+   "category": null,
+   "context_chars": 4716,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:62",
+   "category": null,
+   "context_chars": 4823,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:63",
+   "category": null,
+   "context_chars": 3045,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:64",
+   "category": null,
+   "context_chars": 3422,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:65",
+   "category": null,
+   "context_chars": 3583,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:66",
+   "category": null,
+   "context_chars": 4956,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:67",
+   "category": null,
+   "context_chars": 2488,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:68",
+   "category": null,
+   "context_chars": 5116,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:69",
+   "category": null,
+   "context_chars": 3356,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:70",
+   "category": null,
+   "context_chars": 4614,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:71",
+   "category": null,
+   "context_chars": 4292,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:72",
+   "category": null,
+   "context_chars": 3966,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:73",
+   "category": null,
+   "context_chars": 3893,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:74",
+   "category": null,
+   "context_chars": 3653,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:75",
+   "category": null,
+   "context_chars": 3272,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:76",
+   "category": null,
+   "context_chars": 4668,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:77",
+   "category": null,
+   "context_chars": 3874,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:78",
+   "category": null,
+   "context_chars": 3412,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:79",
+   "category": null,
+   "context_chars": 4261,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:80",
+   "category": null,
+   "context_chars": 3870,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:81",
+   "category": null,
+   "context_chars": 3415,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:82",
+   "category": null,
+   "context_chars": 2995,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:83",
+   "category": null,
+   "context_chars": 4011,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:84",
+   "category": null,
+   "context_chars": 4107,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:85",
+   "category": null,
+   "context_chars": 4086,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:86",
+   "category": null,
+   "context_chars": 5133,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:87",
+   "category": null,
+   "context_chars": 3965,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:88",
+   "category": null,
+   "context_chars": 3487,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:89",
+   "category": null,
+   "context_chars": 4018,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:90",
+   "category": null,
+   "context_chars": 4150,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:91",
+   "category": null,
+   "context_chars": 3732,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:92",
+   "category": null,
+   "context_chars": 3455,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:93",
+   "category": null,
+   "context_chars": 3109,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:94",
+   "category": null,
+   "context_chars": 3439,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:95",
+   "category": null,
+   "context_chars": 4903,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:96",
+   "category": null,
+   "context_chars": 4490,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:97",
+   "category": null,
+   "context_chars": 4401,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:98",
+   "category": null,
+   "context_chars": 4155,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:99",
+   "category": null,
+   "context_chars": 5172,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:100",
+   "category": null,
+   "context_chars": 4813,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:101",
+   "category": null,
+   "context_chars": 3141,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:102",
+   "category": null,
+   "context_chars": 4005,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:103",
+   "category": null,
+   "context_chars": 3096,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:104",
+   "category": null,
+   "context_chars": 3645,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:105",
+   "category": null,
+   "context_chars": 3047,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:106",
+   "category": null,
+   "context_chars": 5042,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:107",
+   "category": null,
+   "context_chars": 4743,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:108",
+   "category": null,
+   "context_chars": 3030,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:109",
+   "category": null,
+   "context_chars": 3978,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:110",
+   "category": null,
+   "context_chars": 4046,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:111",
+   "category": null,
+   "context_chars": 3164,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:112",
+   "category": null,
+   "context_chars": 3592,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:113",
+   "category": null,
+   "context_chars": 4722,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:114",
+   "category": null,
+   "context_chars": 4235,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:115",
+   "category": null,
+   "context_chars": 3749,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:116",
+   "category": null,
+   "context_chars": 5003,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:117",
+   "category": null,
+   "context_chars": 4818,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:118",
+   "category": null,
+   "context_chars": 3287,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:119",
+   "category": null,
+   "context_chars": 5110,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:120",
+   "category": null,
+   "context_chars": 4866,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:121",
+   "category": null,
+   "context_chars": 4020,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:122",
+   "category": null,
+   "context_chars": 4201,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:123",
+   "category": null,
+   "context_chars": 3904,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:124",
+   "category": null,
+   "context_chars": 4391,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:125",
+   "category": null,
+   "context_chars": 5008,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:126",
+   "category": null,
+   "context_chars": 4126,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:127",
+   "category": null,
+   "context_chars": 3816,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:128",
+   "category": null,
+   "context_chars": 3653,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:129",
+   "category": null,
+   "context_chars": 4423,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:130",
+   "category": null,
+   "context_chars": 3648,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:131",
+   "category": null,
+   "context_chars": 4036,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:132",
+   "category": null,
+   "context_chars": 3786,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:133",
+   "category": null,
+   "context_chars": 5081,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:134",
+   "category": null,
+   "context_chars": 4806,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:135",
+   "category": null,
+   "context_chars": 4404,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:136",
+   "category": null,
+   "context_chars": 5080,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:137",
+   "category": null,
+   "context_chars": 4056,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:138",
+   "category": null,
+   "context_chars": 4329,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:139",
+   "category": null,
+   "context_chars": 4384,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:140",
+   "category": null,
+   "context_chars": 3407,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:141",
+   "category": null,
+   "context_chars": 3738,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:142",
+   "category": null,
+   "context_chars": 3778,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:143",
+   "category": null,
+   "context_chars": 3536,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:144",
+   "category": null,
+   "context_chars": 3905,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:145",
+   "category": null,
+   "context_chars": 3169,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:146",
+   "category": null,
+   "context_chars": 3506,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:147",
+   "category": null,
+   "context_chars": 4162,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:148",
+   "category": null,
+   "context_chars": 4505,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:149",
+   "category": null,
+   "context_chars": 4818,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:150",
+   "category": null,
+   "context_chars": 4323,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:151",
+   "category": null,
+   "context_chars": 3854,
+   "n_hits": null,
+   "correct": false
+  },
+  {
+   "qa_id": "conv-9:152",
+   "category": null,
+   "context_chars": 2939,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:153",
+   "category": null,
+   "context_chars": 3209,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:154",
+   "category": null,
+   "context_chars": 4757,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:155",
+   "category": null,
+   "context_chars": 4576,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:156",
+   "category": null,
+   "context_chars": 3185,
+   "n_hits": null,
+   "correct": true
+  },
+  {
+   "qa_id": "conv-9:157",
+   "category": null,
+   "context_chars": 4106,
+   "n_hits": null,
+   "correct": true
+  }
+ ]
+}
