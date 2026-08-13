@@ -3,8 +3,8 @@
  "judge_model": "gpt-4o-mini",
  "manifest": {
   "benchmark": "locomo",
-  "store": "shubo",
-  "retrieval": "Shubo SearchMemory top-20 (docTypeFilter=drawer), hybrid dense+BM25 with Qwen3-VL-Embedding-2B (2048-d), Stage-2 cross-encoder rerank over k*4 candidates, recency boost on",
+  "store": "hybrid",
+  "retrieval": "hybrid dense + BM25 retrieval over dated atomic units, top-20, cross-encoder rerank over 4x candidates, recency boost on; 2048-d embedder",
   "reader": {
    "model": "gpt-4o-mini"
   },
@@ -17,7 +17,6 @@
    "n": 1540,
    "score": 0.782468
   },
-  "harness_commit": "35f6f7b24ad5dfeff31f26b7c4da1febc2d97eab",
   "deviations": [
    "store-only: one retrieval + one reader call, NOT the product agent loop",
    "per-conversation purge+reseed; 1540 non-category-5 questions",

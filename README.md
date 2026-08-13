@@ -18,8 +18,13 @@ python3 scripts/verify_all.py     # standard library only, no install step
 
 ## What was measured
 
-One fixed open-weight model (`Qwen3.6-35B-A3B-mxfp4`, temperature 0) answers long-term-memory
+One fixed open-weight model ([`Qwen3.6-35B-A3B-mxfp4`](https://huggingface.co/mlx-community/Qwen3.6-35B-A3B-mxfp4),
+temperature 0) answers long-term-memory
 benchmarks through one shared minimal agent loop. Only the memory layer changes between arms.
+
+Architectures are named by what they do, not by who ships them: **file-based**, **place-organized**,
+**entity-and-time**, and **hybrid** (place plus time). Where a named system is measured, it is named
+and linked, and the description is drawn from its own documentation.
 
 | arm | write path | read path |
 | --- | --- | --- |

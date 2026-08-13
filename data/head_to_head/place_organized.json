@@ -17,7 +17,6 @@
    "n": 1540,
    "score": 0.779221
   },
-  "harness_commit": "35f6f7b24ad5dfeff31f26b7c4da1febc2d97eab",
   "deviations": [],
   "limits": [
    "Artifacts verify the RESULT, not the SYSTEM: they let a third party re-read and re-judge our retrieval, not rebuild the store.",

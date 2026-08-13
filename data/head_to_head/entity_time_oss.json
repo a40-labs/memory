@@ -17,7 +17,6 @@
    "n": 1540,
    "score": 0.533766
   },
-  "harness_commit": "35f6f7b24ad5dfeff31f26b7c4da1febc2d97eab",
   "deviations": [
    "extraction gpt-4o-mini, embedder text-embedding-3-small (1536-d)"
   ],

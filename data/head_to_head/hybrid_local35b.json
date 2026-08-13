@@ -3,8 +3,8 @@
  "judge_model": "Qwen3.6-35B-A3B-mxfp4",
  "manifest": {
   "benchmark": "locomo",
-  "store": "shubo_35b",
-  "retrieval": "identical to locomo__shubo \u2014 the SAME shubo_contexts.jsonl; only the reader+judge model differs",
+  "store": "hybrid_local35b",
+  "retrieval": "identical retrieval to the hybrid row (same dumped contexts), read and judged by the local 35B instead of the frontier model",
   "reader": {
    "model": "Qwen3.6-35B-A3B-mxfp4"
   },
@@ -17,7 +17,6 @@
    "n": 1540,
    "score": 0.712987
   },
-  "harness_commit": "35f6f7b24ad5dfeff31f26b7c4da1febc2d97eab",
   "deviations": [
    "same-stack control: isolates reader/judge model effect at +6.95pt vs the gpt-4o-mini row"
   ],
