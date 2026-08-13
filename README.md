@@ -229,13 +229,19 @@ that swing beside the architectural gaps it is competing with:
 Read a row as: hold everything else fixed, change this one thing, and the score falls by that much.
 Changing the reader costs more than changing between any two of the three stores that work. The only
 thing that costs more is dropping to Graphiti OSS, and the last row is the cheapest route there: the
-other five store-to-Graphiti pairings cost 21.8 to 25.4. Two different models are in play and they should not be
-conflated. The **reader** answers from whatever context it receives and is identical across every
-column, which is what makes the store comparison valid; swapping it is the 6.9-point row. The
-**extractor** runs inside the store at ingest and decides what is ever written down. The gap between
-the two entity-and-time columns is not the extractor's capability, since the open engine ran with the
-same class of model the vendor's published numbers were built with and still landed at 0.53. It is
-the pipeline that model sits in, which pulls several times more facts per message on the hosted side.
+other five store-to-Graphiti pairings cost 21.8 to 25.4. Three things sit behind these numbers and should not be
+conflated:
+
+- **The reader** answers from whatever context it receives. Identical across every column, which is
+  what makes the store comparison valid; swapping it is the 6.9-point row.
+- **The extractor** runs inside the store at ingest and decides what is ever written down. Part of
+  the store being compared, not of the harness around it.
+- **The pipeline** is what the extractor runs in: how many passes per message, what it resolves,
+  what it keeps.
+
+The 21-point gap between the two entity-and-time columns is the third, not the second: the open
+engine ran with the same class of extraction model the vendor's published numbers were built with and
+still landed at 0.53, while the hosted side pulls several times more facts per message.
 `head_to_head.py` recomputes the whole comparison, so the ranking is derived rather than quoted.
 
 ### Agentic benchmarks
