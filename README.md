@@ -4,12 +4,26 @@ Per-question results and verification scripts for a controlled comparison of age
 architectures: **files the model curates**, an **auto-mined structured store**, and a **trained
 experience bank**.
 
-This repository exists because published memory numbers are, at present, almost impossible to
-compare. The same system has been reported at 84, 75.14 and 58.44 on the same benchmark depending
-on who scored it and which question categories they counted; retrieval recall and answer accuracy
-are quoted side by side as though they measured the same thing; and the reader and judge behind a
-figure, which move it by more than most architectural choices do, usually go unstated. A number
-published that way cannot be checked, only believed.
+This repository exists because published memory numbers are, at present, hard to compare.
+
+One system's LoCoMo result has appeared as **84**, **58.44** and **75.14**: Zep first reported 84;
+mem0's CTO [filed an issue against Zep's evaluation code](https://github.com/getzep/zep-papers/issues/5)
+arguing the correct figure was 58.44, the adversarial category having been counted in the numerator
+but excluded from the denominator; Zep
+[re-ran with that error fixed and reported 75.14](https://blog.getzep.com/lies-damn-lies-statistics-is-mem0-really-sota-in-agent-memory/),
+while noting mem0's own LoCoMo number has been
+[cited at both 67 and 92.5](https://arxiv.org/abs/2504.19413). One benchmark, one system, a
+25-point spread, and the memory architecture never changed.
+
+Two more habits make figures incomparable. **Retrieval recall and answer accuracy get quoted side
+by side** as though they measured the same thing: [MemPalace](https://github.com/mempalace/mempalace)
+publishes R@N and says so plainly, while the QA numbers people quote elsewhere are LLM-judged
+answer accuracy, and the two differ by a wide margin on the same store. And **the reader and judge
+behind a figure usually go unstated**, though they move it more than most architectural choices do:
+in [the head-to-head below](#store-only-head-to-head), the same retrieval read by a different model
+scores 0.7130 instead of 0.7825, a 6.9-point swing with the store held byte-identical.
+
+A number published without those attached cannot be checked, only believed.
 
 So the aim here is narrow and complete: **publish the evidence, not the conclusions.** Every
 per-question row behind every table in
