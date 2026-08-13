@@ -225,8 +225,16 @@ LoCoMo result reproduces from their own artifacts, and 0.7461 is that same conte
 under this comparison's shared reader and judge, which is a different number for a stated reason,
 not a contradiction of theirs.
 
-Other systems measured here: [MemPalace](https://github.com/mempalace/mempalace),
-[Graphiti](https://github.com/getzep/graphiti), and
+**MemPalace** (MIT, [mempalace/mempalace](https://github.com/mempalace/mempalace)) is measured here
+through its own retrieval, read by the shared reader. Worth stating plainly, since a comparison
+should describe a rival accurately: it stores conversation text verbatim rather than extracting
+facts, indexes it spatially (wings, rooms, drawers), and ships a temporal entity graph with
+validity windows of its own. It also publishes its own per-question results and reproduction
+commands, which is the standard this repo is trying to meet. Its published benchmark numbers are
+retrieval recall (R@N), not QA accuracy, so they are not comparable to the answer-accuracy figures
+above; the 0.7792 here is its retrieval read end-to-end by this comparison's reader and judge.
+
+Also measured: [Graphiti](https://github.com/getzep/graphiti), and
 [MemHarness](https://github.com/KnowledgeXLab/MemHarness), whose ALFWorld and WebShop figures are
 quoted from its paper. Benchmarks: [LongMemEval](https://arxiv.org/abs/2410.10813),
 [LoCoMo](https://arxiv.org/abs/2402.17753), [ALFWorld](https://alfworld.github.io/), and
