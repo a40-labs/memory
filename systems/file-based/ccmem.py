@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A2 markdown arm — the Claude Code auto-memory directory model.
+"""The file-based memory mechanism: a Claude Code auto-memory reconstruction.
 
 Faithful reimplementation of the harness-side machinery from README.md
 (section 6 checklist items 1-6, 8): per-question memory directory
@@ -216,7 +216,7 @@ class CCMemory:
 
     def update_topic_file(self, relpath, body):
         """Replace the body, keeping existing frontmatter (an in-place file
-        edit — the A2 update semantics under study)."""
+        edit)."""
         p = self._resolve(relpath)
         if p == self.index_path:
             return self.rewrite_index(body)
@@ -261,12 +261,12 @@ class CCMemory:
         return self.post_write_check()
 
     def rewrite_index(self, content, force=False):
-        """Full index rewrite. SHRINK GUARD (transplant hardening, not in
-        real CC — disclosed deviation): a rewrite that would drop MEMORY.md
-        below 50% of its current line count is rejected (nothing written)
-        with a corrective message, unless force=True. Guards against the
-        p0gate 18bc8abd failure mode where a curation round collapsed a
-        50-line index to a handful of lines."""
+        """Full index rewrite. SHRINK GUARD (a disclosed deviation, not in
+        real CC): a rewrite that would drop MEMORY.md below 50% of its
+        current line count is rejected (nothing written) with a corrective
+        message, unless force=True. Guards against the observed failure mode
+        where one curation round collapsed a 50-line index to a handful of
+        lines."""
         cur_lines, _ = self.index_stats()
         new_stripped = strip_frontmatter_and_comments(
             content.rstrip("\n")).rstrip("\n")

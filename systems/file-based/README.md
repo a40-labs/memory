@@ -33,6 +33,11 @@ mem.post_write_check()  # the near-limit nag / over-limit error the harness issu
 Standard library only, no install step. The limits are module constants (`INDEX_MAX_LINES`,
 `INDEX_MAX_BYTES`, `STALENESS_DAYS`) so they can be swept rather than hard-coded into an experiment.
 
+`test_ccmem.py` pins the behaviour to the survey: each test cites the section whose claim it
+verifies, from the 200-line/25KB cutoff measured after frontmatter stripping, through the
+near-limit and over-limit post-write checks, to the staleness notice, bounded grep, and the
+disclosed shrink-guard deviation. Run it with `python3 test_ccmem.py`.
+
 ---
 
 ## 0. Three systems, one comparison target
