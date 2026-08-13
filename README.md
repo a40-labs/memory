@@ -216,18 +216,19 @@ The second is that **the reader outweighs every architectural difference among t
 work.** Reading byte-identical retrieval with a weaker model scores 0.7130 instead of 0.7825. Set
 that swing beside the architectural gaps it is competing with:
 
-| Change | Points |
-| --- | ---: |
-| **Swap the reader** (retrieval byte-identical) | **6.9** |
-| Hybrid → place-organized | 0.3 |
-| Graphiti OSS → Graphiti bge-m3 | 0.5 |
-| Place-organized → Zep Cloud | 3.3 |
-| Hybrid → Zep Cloud | 3.6 |
-| Any working store → either Graphiti | 21.2 to 25.4 |
+| One thing changed, everything else held | Score before | Score after | Points lost |
+| --- | ---: | ---: | ---: |
+| **The reader**: frontier model to local 35B, same retrieval | **0.7825** | **0.7130** | **6.9** |
+| The store: hybrid to place-organized, same reader | 0.7825 | 0.7792 | 0.3 |
+| The store: hybrid to Zep Cloud | 0.7825 | 0.7461 | 3.6 |
+| The store: place-organized to Zep Cloud | 0.7792 | 0.7461 | 3.3 |
+| The store: Graphiti OSS to its bge-m3 variant | 0.5338 | 0.5286 | 0.5 |
+| The store: any working store to either Graphiti | 0.7825 to 0.7461 | 0.5338 to 0.5286 | 21.2 to 25.4 |
 
-Swapping the reader moves a score further than switching between any two of the three stores that
-work. Only the starved open engine sits further away than the reader does. `head_to_head.py` prints
-this comparison, so the ranking is recomputed rather than quoted.
+Read a row as: hold everything else fixed, change this one thing, and the score falls by that much.
+Changing the reader costs more than changing between any two of the three stores that work; only
+dropping to the starved open engine costs more than changing the reader. `head_to_head.py`
+recomputes the whole comparison, so the ranking is derived rather than quoted.
 
 ### Agentic benchmarks
 
