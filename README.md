@@ -224,11 +224,11 @@ that swing beside the architectural gaps it is competing with:
 | The store: hybrid to Zep Cloud | 0.7825 | 0.7461 | 3.6 |
 | The store: place-organized to Zep Cloud | 0.7792 | 0.7461 | 3.3 |
 | The store: Graphiti OSS to its bge-m3 variant | 0.5338 | 0.5286 | 0.5 |
-| The store: any working store to either Graphiti | 0.7825 to 0.7461 | 0.5338 to 0.5286 | 21.2 to 25.4 |
+| The store: any of those three to either Graphiti OSS column | 0.7825 to 0.7461 | 0.5338 to 0.5286 | 21.2 to 25.4 |
 
 Read a row as: hold everything else fixed, change this one thing, and the score falls by that much.
 Changing the reader costs more than changing between any two of the three stores that work; only
-dropping to the starved open engine costs more than changing the reader. `head_to_head.py`
+dropping to Graphiti OSS, the open-source engine starved by its own thin extraction, costs more. `head_to_head.py`
 recomputes the whole comparison, so the ranking is derived rather than quoted.
 
 ### Agentic benchmarks
@@ -339,7 +339,7 @@ benchmarks themselves keep their own licenses.
 ## Caveats carried with every number
 
 - **Single runs**, and the frontier reader is not bit-deterministic at temperature 0.
-- **Graphiti-OSS is a best-effort parity configuration** of the open engine, not Zep's hosted product.
+- **Graphiti OSS is a best-effort parity configuration** of the vendor's open-source engine, not their hosted product.
 - **The file-based arm is a reconstruction** of a documented design, not a measurement of any
   shipping product; deviations are disclosed in the post, and several favour that arm.
 - **One model family judged the main experiment.** An independent frontier judge later audited the
