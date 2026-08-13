@@ -224,22 +224,16 @@ that survives: **memory's value is inversely proportional to the actor's headroo
 ## How to reproduce
 
 ```bash
-python3 scripts/verify_all.py     # standard library only, no install step
-```
-
-From a clean checkout:
-
-```bash
 git clone https://github.com/a40-labs/memory
 cd memory
 python3 scripts/verify_all.py          # every table above, rebuilt and checked
 python3 scripts/longmemeval_s.py       # or run one benchmark at a time
 ```
 
-No dependencies. Python 3.9+ (uses `math.comb`). Every script exits non-zero if any published
-number fails to reproduce, so the results carry their own regression test: if a row is edited or a
-statistic is implemented differently, the run goes red rather than silently disagreeing with the
-post.
+No install step and no dependencies: standard library only, Python 3.9+ (for `math.comb`). Every
+script exits non-zero if any published number fails to reproduce, so the results carry their own
+regression test: edit a row or implement a statistic differently and the run goes red rather than
+silently disagreeing with the post.
 
 ### What the data files contain
 
