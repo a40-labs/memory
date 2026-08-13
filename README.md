@@ -229,10 +229,13 @@ that swing beside the architectural gaps it is competing with:
 Read a row as: hold everything else fixed, change this one thing, and the score falls by that much.
 Changing the reader costs more than changing between any two of the three stores that work. The only
 thing that costs more is dropping to Graphiti OSS, and the last row is the cheapest route there: the
-other five store-to-Graphiti pairings cost 21.8 to 25.4. That gap is not a model-quality difference
-between the two columns from the same vendor. The open engine ran with the same class of model the
-cloud's published numbers used and still landed at 0.53; what separates them is the hosted ingestion
-pipeline, which extracts several times more facts per message.
+other five store-to-Graphiti pairings cost 21.8 to 25.4. Two different models are in play and they should not be
+conflated. The **reader** answers from whatever context it receives and is identical across every
+column, which is what makes the store comparison valid; swapping it is the 6.9-point row. The
+**extractor** runs inside the store at ingest and decides what is ever written down. The gap between
+the two entity-and-time columns is not the extractor's capability, since the open engine ran with the
+same class of model the vendor's published numbers were built with and still landed at 0.53. It is
+the pipeline that model sits in, which pulls several times more facts per message on the hosted side.
 `head_to_head.py` recomputes the whole comparison, so the ranking is derived rather than quoted.
 
 ### Agentic benchmarks
