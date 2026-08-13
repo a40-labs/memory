@@ -224,12 +224,15 @@ that swing beside the architectural gaps it is competing with:
 | The store: hybrid to Zep Cloud | 0.7825 | 0.7461 | 3.6 |
 | The store: place-organized to Zep Cloud | 0.7792 | 0.7461 | 3.3 |
 | The store: Graphiti OSS to its bge-m3 variant | 0.5338 | 0.5286 | 0.5 |
-| The store: Zep Cloud to Graphiti OSS, the *smallest* drop to the starved engine | 0.7461 | 0.5338 | 21.2 |
+| The store: Zep Cloud to Graphiti OSS, the *smallest* drop between the two | 0.7461 | 0.5338 | 21.2 |
 
 Read a row as: hold everything else fixed, change this one thing, and the score falls by that much.
 Changing the reader costs more than changing between any two of the three stores that work. The only
-thing that costs more is dropping to Graphiti OSS, whose thin extraction starves it, and the last row
-is the cheapest route there: the other five store-to-Graphiti pairings cost 21.8 to 25.4.
+thing that costs more is dropping to Graphiti OSS, and the last row is the cheapest route there: the
+other five store-to-Graphiti pairings cost 21.8 to 25.4. That gap is not a model-quality difference
+between the two columns from the same vendor. The open engine ran with the same class of model the
+cloud's published numbers used and still landed at 0.53; what separates them is the hosted ingestion
+pipeline, which extracts several times more facts per message.
 `head_to_head.py` recomputes the whole comparison, so the ranking is derived rather than quoted.
 
 ### Agentic benchmarks
