@@ -209,13 +209,25 @@ Paired McNemar over the same questions:
 | Graphiti OSS vs bge-m3 | 216/208 | 0.12 | Not significant |
 | Every store vs either Graphiti | 442–485 / 80–115 | 191–276 | Significant |
 
-Two findings worth stating against interest. The hybrid **ties a plain vector index** on LoCoMo, so
-place-plus-time buys nothing there. And **the reader outweighs every architectural difference among
-the stores that work**: reading byte-identical retrieval with a weaker model scores 0.7130 instead
-of 0.7825, a 6.9-point swing, against 0.3 points between the hybrid and the flat index, 3.3 and 3.6
-to the hosted graph. Only the starved open engine sits further away than the reader does, at 21 to
-25 points. Swap the reader and you move a score more than switching between three of the four
-architectures here would.
+Two findings worth stating against interest. The first: the hybrid **ties a plain vector index** on
+LoCoMo, so place-plus-time buys nothing there.
+
+The second is that **the reader outweighs every architectural difference among the stores that
+work.** Reading byte-identical retrieval with a weaker model scores 0.7130 instead of 0.7825. Set
+that swing beside the architectural gaps it is competing with:
+
+| Change | Points |
+| --- | ---: |
+| **Swap the reader** (retrieval byte-identical) | **6.9** |
+| Hybrid → place-organized | 0.3 |
+| Graphiti OSS → Graphiti bge-m3 | 0.5 |
+| Place-organized → Zep Cloud | 3.3 |
+| Hybrid → Zep Cloud | 3.6 |
+| Any working store → either Graphiti | 21.2 to 25.4 |
+
+Swapping the reader moves a score further than switching between any two of the three stores that
+work. Only the starved open engine sits further away than the reader does. `head_to_head.py` prints
+this comparison, so the ranking is recomputed rather than quoted.
 
 ### Agentic benchmarks
 
