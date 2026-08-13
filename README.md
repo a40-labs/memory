@@ -224,7 +224,7 @@ that swing beside the architectural gaps it is competing with:
 | The store: hybrid to Zep Cloud | 0.7825 | 0.7461 | 3.6 |
 | The store: place-organized to Zep Cloud | 0.7792 | 0.7461 | 3.3 |
 | The store: Graphiti OSS to its bge-m3 variant | 0.5338 | 0.5286 | 0.5 |
-| The store: any of those three to either Graphiti OSS column | 0.7825 to 0.7461 | 0.5338 to 0.5286 | 21.2 to 25.4 |
+| The store: any of the three above to either Graphiti OSS variant, six pairings in all | 0.7461 to 0.7825 | 0.5286 to 0.5338 | 21.2 to 25.4 |
 
 Read a row as: hold everything else fixed, change this one thing, and the score falls by that much.
 Changing the reader costs more than changing between any two of the three stores that work; only
