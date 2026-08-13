@@ -90,9 +90,9 @@ they are specified here:
 - **File-based.** A reconstruction of a shipping coding agent's auto-memory, a `MEMORY.md` index
   over model-curated topic files, rather than a reimplementation written to lose. The original is
   closed-source, so it cannot be lifted: every mechanism decision is instead traced to a cited
-  public source in [`systems/file-based/CCMEM_SPEC.md`](systems/file-based/CCMEM_SPEC.md), and the
-  harness-side machinery is published as
-  [`systems/file-based/ccmem.py`](systems/file-based/ccmem.py) (stdlib only). The spec labels every
+  public source in [`systems/file-based/`](systems/file-based), where the survey it implements and the
+  harness-side machinery, [`ccmem.py`](systems/file-based/ccmem.py), are published together (stdlib
+  only). The survey labels every
   claim `[official]`, `[corroborated]`, `[single-source]` or `[rumor]`, so a reader can see exactly
   how well-evidenced each behaviour is. Validation against the shipping CLI was deliberately
   re-scoped out: a closed-product run is a snapshot of whatever version shipped that week, which
@@ -340,7 +340,7 @@ data/
   agentic/          {alfworld,webshop}_{35b,frontier}_{baseline,memory}.json
 systems/
   file-based/       ccmem.py          the file-based arm's mechanism, stdlib only
-                    CCMEM_SPEC.md     the per-claim sourced spec it implements
+                    README.md         the per-claim sourced survey it implements
 ```
 
 Rows carry the per-question verdict, category, token counts, and (for the conversational arms)

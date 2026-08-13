@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """A2 markdown arm — the Claude Code auto-memory directory model.
 
-Faithful reimplementation of the harness-side machinery from CCMEM_SPEC.md
+Faithful reimplementation of the harness-side machinery from README.md
 (section 6 checklist items 1-6, 8): per-question memory directory
 (`MEMORY.md` index + topic files), index-only preload with the 200-line /
 25KB cutoff measured AFTER stripping YAML frontmatter and block HTML
@@ -20,7 +20,7 @@ import json
 import os
 import re
 
-# --- Limits (CCMEM_SPEC.md §1 "Loading" / "Harness-side machinery") ------
+# --- Limits (README.md §1 "Loading" / "Harness-side machinery") ------
 INDEX_MAX_LINES = 200
 INDEX_MAX_BYTES = 25 * 1024
 INDEX_NEAR_LINES = 180          # post-write "near the limit" threshold
