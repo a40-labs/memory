@@ -26,12 +26,12 @@ Architectures are named by what they do, not by who ships them: **file-based**, 
 **entity-and-time**, and **hybrid** (place plus time). Where a named system is measured, it is named
 and linked, and the description is drawn from its own documentation.
 
-| Arm | Write path | Read path |
-| --- | --- | --- |
-| **no-memory** | nothing is stored | nothing is retrieved (the floor) |
-| **file-based** | an LLM curates a `MEMORY.md` index plus topic files | index in context, then grep and read |
-| **structured** | atomic dated facts, embedded, no LLM on the write path | ranked hybrid search |
-| **oracle** | the file-based arm's store, unchanged | the entire memory directory in context, no tools |
+| Arm | Write path | Read path | What it is there to establish |
+| --- | --- | --- | --- |
+| **No-memory** | Nothing is stored | Nothing is retrieved | The floor. Sizes how much of each score is memory rather than the model, and proves refusing everything cannot game the judge. |
+| **File-based** | An LLM curates a `MEMORY.md` index plus topic files | Index in context, then grep and read | One of the two architectures under test: memory as files the model decides what to write. |
+| **Structured** | Atomic dated facts, embedded, no LLM on the write path | Ranked hybrid search | The other: memory as a store that keeps everything and ranks at read time. |
+| **Oracle** | The file-based arm's store, unchanged | The entire memory directory in context, no tools | Splits the file-based arm's losses in two. With its whole store in context nothing saved can be missed, so what it still gets wrong was never written down, and what it recovers was saved but not found. |
 
 The judge is identical across arms: a model judge plus a deterministic pass that re-classifies
 refusals, so "I don't know" scores correct only when the answer genuinely was not in the history.
@@ -47,10 +47,10 @@ mix, so neither arm is flattered by the holdout's sample.
 
 | Arm | Raw | Post-stratified |
 | --- | ---: | ---: |
-| no-memory | 0.0983 | 0.1095 |
-| file-based | 0.4410 | 0.4491 |
-| oracle | 0.5618 | 0.5706 |
-| **structured** | **0.7303** | **0.7361** |
+| No-memory | 0.0983 | 0.1095 |
+| File-based | 0.4410 | 0.4491 |
+| Oracle | 0.5618 | 0.5706 |
+| **Structured** | **0.7303** | **0.7361** |
 
 Paired difference, structured minus file-based: **+0.2869** post-stratified, McNemar discordant
 134/31, exact p ≈ 1.8e-16.
@@ -62,13 +62,13 @@ facts that were saved but not found, against facts never written down.
 
 | Category | n | Structured | File-based |
 | --- | ---: | ---: | ---: |
-| temporal-reasoning | 91 | 0.802 | 0.407 |
-| multi-session | 97 | 0.608 | 0.330 |
-| knowledge-update | 36 | 0.833 | 0.528 |
-| single-session-user | 52 | 0.923 | 0.673 |
-| single-session-assistant | 44 | 0.568 | 0.273 |
-| single-session-preference | 18 | 0.611 | 0.333 |
-| **abstention** | 18 | 0.778 | **0.889** |
+| Temporal-reasoning | 91 | 0.802 | 0.407 |
+| Multi-session | 97 | 0.608 | 0.330 |
+| Knowledge-update | 36 | 0.833 | 0.528 |
+| Single-session-user | 52 | 0.923 | 0.673 |
+| Single-session-assistant | 44 | 0.568 | 0.273 |
+| Single-session-preference | 18 | 0.611 | 0.333 |
+| **Abstention** | 18 | 0.778 | **0.889** |
 
 Abstention is the one category the file-based arm wins, on both benchmarks: a store that
 remembers less over-answers less.
@@ -78,11 +78,11 @@ embedder tokens are never summed into the total.
 
 | Chat tokens per question | File-based | Structured |
 | --- | ---: | ---: |
-| writing memory (LLM curation) | 246,118 | 0 (verified) |
-| answering | 40,393 | 19,322 |
-| **total per question** | **286,512** | **19,322** |
-| total per *correct* answer | 665,447 | 27,013 |
-| embedder tokens (separate currency) | 0 | 107,797 |
+| Writing memory (LLM curation) | 246,118 | 0 (Verified) |
+| Answering | 40,393 | 19,322 |
+| **Total per question** | **286,512** | **19,322** |
+| Total per *correct* answer | 665,447 | 27,013 |
+| Embedder tokens (separate currency) | 0 | 107,797 |
 
 ### LoCoMo (`scripts/locomo.py`)
 
@@ -91,9 +91,9 @@ whether the adversarial category counts is itself disputed between vendors.
 
 | Arm | All | Excluding adversarial |
 | --- | ---: | ---: |
-| no-memory | 0.217 | 0.017 |
-| file-based | 0.387 | 0.356 |
-| **structured** | **0.497** | **0.561** |
+| No-memory | 0.217 | 0.017 |
+| File-based | 0.387 | 0.356 |
+| **Structured** | **0.497** | **0.561** |
 
 Structured minus file-based: **+0.110** all, **+0.205** excluding adversarial. Confidence
 intervals resample whole conversations, not questions, because the questions cluster inside them:
@@ -101,11 +101,11 @@ structured, all questions, CI95 **[0.440, 0.553]**.
 
 | Category | n | Structured | File-based |
 | --- | ---: | ---: | ---: |
-| temporal | 62 | 0.694 | 0.306 |
-| temporal-inference | 54 | 0.519 | 0.259 |
-| open-domain | 61 | 0.656 | 0.410 |
-| single-hop | 62 | 0.371 | **0.435** |
-| adversarial | 61 | 0.246 | **0.508** |
+| Temporal | 62 | 0.694 | 0.306 |
+| Temporal-inference | 54 | 0.519 | 0.259 |
+| Open-domain | 61 | 0.656 | 0.410 |
+| Single-hop | 62 | 0.371 | **0.435** |
+| Adversarial | 61 | 0.246 | **0.508** |
 
 Cost, ingest amortized per question: file-based **22.4k** chat tokens against structured
 **11.6k**; per correct answer **58k** against **23k**.
@@ -116,9 +116,9 @@ The long-haystack variant, ~500-session histories.
 
 | System | Score | Questions |
 | --- | ---: | --- |
-| hybrid (full agent loop) | 0.632 | 500 (complete set) |
-| place-organized (MemPalace, store-only) | 0.600 | 100 (pre-registered sample, seed 20260812) |
-| entity-and-time (Graphiti OSS) | none | ingest alone ≈ 12 GPU-days, or ≈ $7,000 hosted |
+| Hybrid (full agent loop) | 0.632 | 500 (Complete set) |
+| Place-organized (MemPalace, store-only) | 0.600 | 100 (Pre-registered sample, seed 20260812) |
+| Entity-and-time (Graphiti OSS) | None | Ingest alone ≈ 12 GPU-days, or ≈ $7,000 hosted |
 
 Only the place-organized row is reproducible here. The two scored rows use different harnesses
 *and* different samples, so the gap between them is directional; the store-only hybrid run on the
@@ -131,21 +131,21 @@ questions, one frontier reader, one frontier judge, every column produced by the
 
 | Store | LoCoMo | LongMemEval-S | Median context |
 | --- | ---: | ---: | ---: |
-| **hybrid** | **0.7825** | **0.80** | 4,048 chars |
-| place-organized (MemPalace) | 0.7792 | 0.60 | 3,536 chars |
-| entity-and-time (Zep Cloud) | 0.7461 | not run | 21,529 chars |
-| entity-and-time (Graphiti OSS) | 0.5338 | 0.35 | 7,857 chars |
-| entity-and-time (Graphiti, bge-m3) | 0.5286 | not run | 7,896 chars |
+| **Hybrid** | **0.7825** | **0.80** | 4,048 chars |
+| Place-organized (MemPalace) | 0.7792 | 0.60 | 3,536 chars |
+| Entity-and-time (Zep Cloud) | 0.7461 | Not run | 21,529 chars |
+| Entity-and-time (Graphiti OSS) | 0.5338 | 0.35 | 7,857 chars |
+| Entity-and-time (Graphiti, bge-m3) | 0.5286 | Not run | 7,896 chars |
 
 Paired McNemar over the same questions:
 
 | Pair | Discordant | χ² | Verdict |
 | --- | ---: | ---: | --- |
-| hybrid vs Zep Cloud | 188/132 | 9.45 | significant, p < 0.01 |
-| place-organized vs Zep Cloud | 174/123 | 8.42 | significant, p < 0.01 |
-| hybrid vs place-organized | 141/136 | 0.06 | **not significant** |
-| Graphiti OSS vs bge-m3 | 216/208 | 0.12 | not significant |
-| every store vs either Graphiti | 442–485 / 80–115 | 191–276 | significant |
+| Hybrid vs Zep Cloud | 188/132 | 9.45 | Significant, p < 0.01 |
+| Place-organized vs Zep Cloud | 174/123 | 8.42 | Significant, p < 0.01 |
+| Hybrid vs Place-organized | 141/136 | 0.06 | **Not significant** |
+| Graphiti OSS vs bge-m3 | 216/208 | 0.12 | Not significant |
+| Every store vs either Graphiti | 442–485 / 80–115 | 191–276 | Significant |
 
 Two findings worth stating against interest. The hybrid **ties a plain vector index** on LoCoMo,
 so place-plus-time buys nothing there. And the **reader is worth more than most of the
@@ -160,10 +160,10 @@ the harness scaffolding stays, so the ablation isolates retrieved memory.
 
 | Actor | ALFWorld macro SR | WebShop score / SR |
 | --- | ---: | ---: |
-| local 35B, no memory | 0.603 | 63.5 / 0.376 |
-| local 35B + bank | 0.645 | 66.0 / 0.418 |
-| frontier, no memory | 0.959 | 65.1 / 0.444 |
-| frontier + bank | 0.973 | 65.2 / 0.450 |
+| Local 35B, no memory | 0.603 | 63.5 / 0.376 |
+| Local 35B + bank | 0.645 | 66.0 / 0.418 |
+| Frontier, no memory | 0.959 | 65.1 / 0.444 |
+| Frontier + bank | 0.973 | 65.2 / 0.450 |
 | MemHarness (GRPO-trained 7B), published | 0.852 / 0.859 OOD | 87.4 / 0.756 |
 
 Paired ablations, memory rescued / cost:
