@@ -70,19 +70,27 @@ facts that were saved but not found, against facts never written down.
 | Single-session-preference | 18 | 0.611 | 0.333 |
 | **Abstention** | 18 | 0.778 | **0.889** |
 
-Abstention is the one category the file-based arm wins, on both benchmarks: a store that
-remembers less over-answers less.
+Abstention, questions whose right answer is "I don't know", is the one category the file-based arm
+wins here (0.889 against 0.778). It wins the equivalent category on LoCoMo too, where it is called
+adversarial (0.508 against 0.246, with the no-memory floor scoring 1.000 by refusing everything).
+Same mechanism twice: a store that remembers less over-answers less.
 
 **Cost**, dev-144, chat tokens per question. The two arms pay in different currencies, so
 embedder tokens are never summed into the total.
 
 | Chat tokens per question | File-based | Structured |
 | --- | ---: | ---: |
-| Writing memory (LLM curation) | 246,118 | 0 (Verified) |
+| Writing memory (LLM curation) | 246,118 | 0 |
 | Answering | 40,393 | 19,322 |
 | **Total per question** | **286,512** | **19,322** |
 | Total per *correct* answer | 665,447 | 27,013 |
 | Embedder tokens (separate currency) | 0 | 107,797 |
+
+The structured arm's zero on the write path is measured, not assumed: its ingest path only embeds
+and upserts, with no model call in it, and a live query over the orchestration layer across the
+whole ingest window found no model-invoking jobs running. Completion-token counts are lower bounds
+throughout, since hidden reasoning tokens are not always reported, and the two currencies are never
+summed or differenced: an embedder token and a reasoning token are not the same thing.
 
 ### LoCoMo (`scripts/locomo.py`)
 
