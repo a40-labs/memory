@@ -34,6 +34,27 @@ gold answer, re-run the statistics under different assumptions, or discover that
 which has already happened twice and is recorded rather than quietly fixed. Nothing here is a
 summary you have to trust.
 
+## TL;DR
+
+The same findings as the post, each with the figure it rests on and the section that rebuilds it.
+
+- **The structured store beats files on accuracy and on cost at once.** +28.7 points on held-out
+  LongMemEval-S questions (0.7361 against 0.4491, post-stratified), at 19.3k reasoning tokens per
+  question against 286.5k. [Details](#longmemeval-s-held-out)
+- **Files win where the right answer is "I don't know".** Abstention 0.889 against 0.778, and the
+  equivalent LoCoMo category 0.508 against 0.246: eager retrieval needs an abstention discipline
+  that sparse memory gets for free. [Details](#locomo)
+- **Against interest: the hybrid ties a plain vector index** on LoCoMo (χ² = 0.06), so
+  place-plus-time buys nothing there. Whether structure pays once histories grow long is still
+  open, and the run that would settle it was unfinished at publication.
+  [Details](#store-only-head-to-head)
+- **The reader and judge move a score more than most architecture does.** Identical retrieval read
+  by a different model: 0.7825 against 0.7130. Numbers do not travel across protocols.
+  [Details](#store-only-head-to-head)
+- **On agentic benchmarks, memory earns in proportion to the actor's headroom.** Real points for a
+  weak actor (WebShop success +4.2, the only significant memory effect in the campaign), noise at
+  the frontier, and a bar that only training reaches. [Details](#agentic-benchmarks)
+
 ---
 
 ## What was measured
