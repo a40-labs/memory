@@ -40,7 +40,9 @@ refusals, so "I don't know" scores correct only when the answer genuinely was no
 
 ## Results
 
-### LongMemEval-S, held out (`scripts/longmemeval_s.py`)
+### LongMemEval-S, held out
+
+[`scripts/longmemeval_s.py`](scripts/longmemeval_s.py)
 
 356 non-tuning questions. Post-stratified means re-weighted to the full 500-question category
 mix, so neither arm is flattered by the holdout's sample.
@@ -92,7 +94,25 @@ whole ingest window found no model-invoking jobs running. Completion-token count
 throughout, since hidden reasoning tokens are not always reported, and the two currencies are never
 summed or differenced: an embedder token and a reasoning token are not the same thing.
 
-### LoCoMo (`scripts/locomo.py`)
+### LongMemEval-M
+
+[`scripts/longmemeval_m.py`](scripts/longmemeval_m.py)
+
+The long-haystack variant, ~500-session histories.
+
+| System | Score | Questions |
+| --- | ---: | --- |
+| Hybrid (full agent loop) | 0.632 | 500 (complete set) |
+| Place-organized (MemPalace, store-only) | 0.600 | 100 (pre-registered sample, seed 20260812) |
+| Entity-and-time (Graphiti OSS) | None | Ingest alone ≈ 12 GPU-days, or ≈ $7,000 hosted |
+
+Only the place-organized row is reproducible here. The two scored rows use different harnesses
+*and* different samples, so the gap between them is directional; the store-only hybrid run on the
+same sample was still going at publication.
+
+### LoCoMo
+
+[`scripts/locomo.py`](scripts/locomo.py)
 
 300 questions, stratified across the 10 conversations. Published under both scopes because
 whether the adversarial category counts is itself disputed between vendors.
@@ -118,21 +138,9 @@ structured, all questions, CI95 **[0.440, 0.553]**.
 Cost, ingest amortized per question: file-based **22.4k** chat tokens against structured
 **11.6k**; per correct answer **58k** against **23k**.
 
-### LongMemEval-M (`scripts/longmemeval_m.py`)
+### Store-only head-to-head
 
-The long-haystack variant, ~500-session histories.
-
-| System | Score | Questions |
-| --- | ---: | --- |
-| Hybrid (full agent loop) | 0.632 | 500 (Complete set) |
-| Place-organized (MemPalace, store-only) | 0.600 | 100 (Pre-registered sample, seed 20260812) |
-| Entity-and-time (Graphiti OSS) | None | Ingest alone ≈ 12 GPU-days, or ≈ $7,000 hosted |
-
-Only the place-organized row is reproducible here. The two scored rows use different harnesses
-*and* different samples, so the gap between them is directional; the store-only hybrid run on the
-same sample was still going at publication.
-
-### Store-only head-to-head (`scripts/head_to_head.py`)
+[`scripts/head_to_head.py`](scripts/head_to_head.py)
 
 Every store stripped to its retrieval: its own top-20 for the same 1,540 non-adversarial LoCoMo
 questions, one frontier reader, one frontier judge, every column produced by the same script.
@@ -160,7 +168,9 @@ so place-plus-time buys nothing there. And the **reader is worth more than most 
 architecture**: the same retrieval read by the local 35B instead of the frontier model scores
 0.7130 against 0.7825, a 6.9-point swing with the store held byte-identical.
 
-### Agentic benchmarks (`scripts/agentic.py`)
+### Agentic benchmarks
+
+[`scripts/agentic.py`](scripts/agentic.py)
 
 Memory here is an experience bank: training-split episodes distilled into entries, retrieved
 top-k into the acting model's prompt. Nothing is trained. "No memory" removes only the bank;
