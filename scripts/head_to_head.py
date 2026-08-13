@@ -47,10 +47,19 @@ def main():
             rows.append([f"{LABEL[a]} vs {LABEL[b]}", f"{bo}/{co}", f"{chi2:.2f}", f"{p:.2e}", verdict])
     table(["pair", "discordant", "chi2", "p", "verdict"], rows, ["<", ">", ">", ">", "<"])
 
-    print("\n== The reader is worth more than most of the architecture ==")
+    print("\n== The reader, measured against the architectural differences ==")
     a, b = data["hybrid"]["rows"], data["hybrid_local35b"]["rows"]
+    swing = (rate(a) - rate(b)) * 100
     print(f"  identical retrieval, frontier reader {rate(a):.4f} vs local 35B reader {rate(b):.4f}"
-          f"  ({(rate(a)-rate(b))*100:+.1f} points)")
+          f"  ({swing:+.1f} points)")
+    diffs = sorted(((abs(rate(data[x]["rows"]) - rate(data[y]["rows"])) * 100, x, y)
+                    for i, x in enumerate(STORES) for y in STORES[i + 1:]), reverse=True)
+    smaller = [d for d in diffs if d[0] < swing]
+    print(f"  that swing is larger than {len(smaller)} of the {len(diffs)} store-vs-store differences:")
+    for d, x, y in reversed(smaller):
+        print(f"     {d:5.1f}  {LABEL[x]} vs {LABEL[y]}")
+    print(f"  and smaller than the {len(diffs)-len(smaller)} that involve the starved open engine "
+          f"({min(d for d, _, _ in diffs if d > swing):.1f} to {max(d for d, _, _ in diffs):.1f} points).")
     return ok
 
 

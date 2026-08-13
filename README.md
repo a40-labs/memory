@@ -19,9 +19,10 @@ Two more habits make figures incomparable. **Retrieval recall and answer accurac
 by side** as though they measured the same thing: [MemPalace](https://github.com/mempalace/mempalace)
 publishes R@N and says so plainly, while the QA numbers people quote elsewhere are LLM-judged
 answer accuracy, and the two differ by a wide margin on the same store. And **the reader and judge
-behind a figure usually go unstated**, though they move it more than most architectural choices do:
-in [the head-to-head below](#store-only-head-to-head), the same retrieval read by a different model
-scores 0.7130 instead of 0.7825, a 6.9-point swing with the store held byte-identical.
+behind a figure usually go unstated**, though swapping them can outweigh the architecture: in
+[the head-to-head below](#store-only-head-to-head), the same retrieval read by a different model
+scores 0.7130 instead of 0.7825, a 6.9-point swing that exceeds every difference between the three
+stores that work.
 
 A number published without those attached cannot be checked, only believed.
 
@@ -48,8 +49,9 @@ The same findings as the post, each with the figure it rests on and the section 
   place-plus-time buys nothing there. Whether structure pays once histories grow long is still
   open, and the run that would settle it was unfinished at publication.
   [Details](#store-only-head-to-head)
-- **The reader and judge move a score more than most architecture does.** Identical retrieval read
-  by a different model: 0.7825 against 0.7130. Numbers do not travel across protocols.
+- **The ruler can outweigh the architecture.** Identical retrieval read by a different model scores
+  0.7825 against 0.7130, a bigger move than any difference between the three stores that work
+  (0.3 to 3.6 points). Numbers do not travel across protocols.
   [Details](#store-only-head-to-head)
 - **On agentic benchmarks, memory earns in proportion to the actor's headroom.** Real points for a
   weak actor (WebShop success +4.2, the only significant memory effect in the campaign), noise at
@@ -207,10 +209,13 @@ Paired McNemar over the same questions:
 | Graphiti OSS vs bge-m3 | 216/208 | 0.12 | Not significant |
 | Every store vs either Graphiti | 442–485 / 80–115 | 191–276 | Significant |
 
-Two findings worth stating against interest. The hybrid **ties a plain vector index** on LoCoMo,
-so place-plus-time buys nothing there. And the **reader is worth more than most of the
-architecture**: the same retrieval read by the local 35B instead of the frontier model scores
-0.7130 against 0.7825, a 6.9-point swing with the store held byte-identical.
+Two findings worth stating against interest. The hybrid **ties a plain vector index** on LoCoMo, so
+place-plus-time buys nothing there. And **the reader outweighs every architectural difference among
+the stores that work**: reading byte-identical retrieval with a weaker model scores 0.7130 instead
+of 0.7825, a 6.9-point swing, against 0.3 points between the hybrid and the flat index, 3.3 and 3.6
+to the hosted graph. Only the starved open engine sits further away than the reader does, at 21 to
+25 points. Swap the reader and you move a score more than switching between three of the four
+architectures here would.
 
 ### Agentic benchmarks
 
