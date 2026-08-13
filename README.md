@@ -76,6 +76,29 @@ and linked, and the description is drawn from its own documentation.
 | **Structured** | Atomic dated facts, embedded, no LLM on the write path | Ranked hybrid search | The other: memory as a store that keeps everything and ranks at read time. |
 | **Oracle** | The file-based arm's store, unchanged | The entire memory directory in context, no tools | Splits the file-based arm's losses in two. With its whole store in context nothing saved can be missed, so what it still gets wrong was never written down, and what it recovers was saved but not found. |
 
+Two of these arms were built for this study and have no external documentation to draw from, so
+they are specified here:
+
+- **Structured (the hybrid).** A place-organized write path files dated atomic facts with no LLM at
+  ingest. Validity windows, borrowed from the entity-and-time lineage, let a new fact close an old
+  one's window rather than compete with it at recall. A third layer neither lineage has, an
+  associative graph learned from which places co-occur in retrievals beyond chance, lets recall
+  reach items the query never ranked. The place-plus-time combination is not unique to it, since
+  [MemPalace](https://github.com/mempalace/mempalace) ships validity windows of its own; the
+  usage-learned layer is what differs. It deliberately omits the graph lineage's expensive half:
+  no LLM at ingest, so no entity resolution and no maintained entity summaries.
+- **File-based.** A reconstruction of a shipping coding agent's auto-memory, a `MEMORY.md` index
+  over model-curated topic files, rather than a reimplementation written to lose. The original is
+  closed-source, so it cannot be lifted: every mechanism decision is instead traced to a cited
+  public source in [`systems/file-based/CCMEM_SPEC.md`](systems/file-based/CCMEM_SPEC.md), and the
+  harness-side machinery is published as
+  [`systems/file-based/ccmem.py`](systems/file-based/ccmem.py) (stdlib only). The spec labels every
+  claim `[official]`, `[corroborated]`, `[single-source]` or `[rumor]`, so a reader can see exactly
+  how well-evidenced each behaviour is. Validation against the shipping CLI was deliberately
+  re-scoped out: a closed-product run is a snapshot of whatever version shipped that week, which
+  cannot serve a reproducibility-first artifact. The spec's envelope check (save rates, index
+  shapes, read patterns) is published instead, for anyone with the real tool to falsify it.
+
 The judge is identical across arms: a model judge plus a deterministic pass that re-classifies
 refusals, so "I don't know" scores correct only when the answer genuinely was not in the history.
 
@@ -217,14 +240,14 @@ The second is that **the reader outweighs every architectural difference among t
 work.** Reading byte-identical retrieval with a weaker model scores 0.7130 instead of 0.7825. Set
 that swing beside the architectural gaps it is competing with:
 
-| One thing changed, everything else held | Score before | Score after | Points lost |
-| --- | ---: | ---: | ---: |
-| **The reader**: `gpt-4o-mini` to the local 35B, same retrieval | **0.7825** | **0.7130** | **6.9** |
-| The store: hybrid to place-organized, same reader | 0.7825 | 0.7792 | 0.3 |
-| The store: hybrid to Zep Cloud | 0.7825 | 0.7461 | 3.6 |
-| The store: place-organized to Zep Cloud | 0.7792 | 0.7461 | 3.3 |
-| The store: Graphiti OSS to its bge-m3 variant | 0.5338 | 0.5286 | 0.5 |
-| The store: Zep Cloud to Graphiti OSS, the *smallest* drop between the two | 0.7461 | 0.5338 | 21.2 |
+| What changed | From | To | Points lost |
+| --- | --- | --- | ---: |
+| **The reader**, same retrieval | **`gpt-4o-mini` 0.7825** | **`Qwen3.6-35B-A3B-mxfp4` 0.7130** | **6.9** |
+| The store, same reader | Hybrid 0.7825 | Place-organized 0.7792 | 0.3 |
+| The store, same reader | Hybrid 0.7825 | Zep Cloud 0.7461 | 3.6 |
+| The store, same reader | Place-organized 0.7792 | Zep Cloud 0.7461 | 3.3 |
+| The embedder inside one store | Graphiti OSS 0.5338 | Graphiti bge-m3 0.5286 | 0.5 |
+| The store, the *cheapest* route into the open engine | Zep Cloud 0.7461 | Graphiti OSS 0.5338 | 21.2 |
 
 Read a row as: hold everything else fixed, change this one thing, and the score falls by that much.
 Changing the reader costs more than changing between any two of the three stores that work. The only
@@ -241,9 +264,25 @@ conflated:
 
 So which explains the 21 points between Zep Cloud and Graphiti OSS? Not the reader: it is the same
 model for both. Not the extraction model's capability either, since the open engine ran with the same
-class of extractor the vendor's published numbers were built with and still landed at 0.53. It is the
-pipeline around that extractor, which pulls several times more facts per message on the hosted side.
-`head_to_head.py` recomputes the whole comparison, so the ranking is derived rather than quoted.
+class of extractor the vendor's published numbers were built with and still landed at 0.53. What is
+left is everything the hosted service does around that extractor, and that is where this comparison
+reaches the edge of what it can honestly claim. `head_to_head.py` recomputes the ranking itself, so
+the ordering is derived rather than quoted.
+
+**What this study cannot see.** Zep Cloud is a hosted product, and its row here is Zep's own published
+context. What is measurable is what reaches the reader on each side, not the ingestion or ranking that
+produced it. The open engine's contexts are visibly thinner, carrying fewer stored facts and much shorter
+entity summaries, but that is a property of the released artifacts rather than a description of anyone's
+internals. One known difference does not favour Zep: their published ingestion reads a `blip_captions`
+key where the LoCoMo field is `blip_caption`
+([zep-papers#9](https://github.com/getzep/zep-papers/issues/9)), dropping image captions that the runs
+here kept.
+
+None of this suggests their published number is wrong. It reproduces from their own released grades, and
+their contexts re-scored under this study's reader and judge give 0.7461, within a point of their
+published 75.14. The 21-point gap is real
+and reproducible; its cause is not observable from outside. Read "the hosted pipeline" as a label for the
+unobserved remainder, not a mechanism verified here.
 
 ### Agentic benchmarks
 
@@ -299,6 +338,9 @@ data/
   longmemeval_m/    place_organized_sample100.json                          100 rows
   head_to_head/     {hybrid,place_organized,entity_time_cloud,...}.json     1,540 rows each
   agentic/          {alfworld,webshop}_{35b,frontier}_{baseline,memory}.json
+systems/
+  file-based/       ccmem.py          the file-based arm's mechanism, stdlib only
+                    CCMEM_SPEC.md     the per-claim sourced spec it implements
 ```
 
 Rows carry the per-question verdict, category, token counts, and (for the conversational arms)
@@ -308,11 +350,18 @@ rather than the context itself; see the provenance note below.
 
 ### What these artifacts can and cannot settle
 
-They verify the **result**, not the **system**. A third party can re-tally every score, inspect
-the answers, and re-run the statistics. Rebuilding the stores themselves needs the memory
-services, which are not in this repo. Every row is a single run, and the frontier reader is not
+They verify the **result**, not the **system**. A third party can re-tally every score, inspect the
+answers, and re-run the statistics. Every row is a single run, and the hosted reader is not
 bit-deterministic at temperature 0: identical re-runs drifted 0.3 to 0.4 points, so the fourth
 decimal is noise.
+
+Rebuilding the systems is a separate matter, and only partly possible here. The structured, place-organized
+and entity-and-time stores need memory services that are not in this repo. For the file-based arm,
+`systems/file-based/` publishes the mechanism and the spec it implements, which is enough to inspect or
+re-implement how memory was written, capped, aged and searched, but not enough to re-run the arm
+end to end: the curation prompt, the agent loop and the benchmark runner stay unpublished, and the
+answering model was served locally. Read it as an auditable specification of the arm, not a
+turnkey reproduction of it.
 
 ---
 
@@ -352,7 +401,7 @@ benchmarks themselves keep their own licenses.
 
 ## Caveats carried with every number
 
-- **Single runs**, and the frontier reader is not bit-deterministic at temperature 0.
+- **Single runs**, and the hosted reader is not bit-deterministic at temperature 0.
 - **Graphiti OSS is a best-effort parity configuration** of the vendor's open-source engine, not their hosted product.
 - **The file-based arm is a reconstruction** of a documented design, not a measurement of any
   shipping product; deviations are disclosed in the post, and several favour that arm.
