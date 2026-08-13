@@ -4,15 +4,21 @@ Per-question results and verification scripts for a controlled comparison of age
 architectures: **files the model curates**, an **auto-mined structured store**, and a **trained
 experience bank**.
 
-Every number published in
-[*The Shapes of Agent Memory*](https://pinglin.tw/blog/the-shapes-of-agent-memory) is recomputed
-here from the rows it came from. Nothing in this repo is a summary you have to trust: run
-`python3 scripts/verify_all.py` and the tables in the post are rebuilt in front of you, each one
-checked against the figure it is published under.
+This repository exists because published memory numbers are, at present, almost impossible to
+compare. The same system has been reported at 84, 75.14 and 58.44 on the same benchmark depending
+on who scored it and which question categories they counted; retrieval recall and answer accuracy
+are quoted side by side as though they measured the same thing; and the reader and judge behind a
+figure, which move it by more than most architectural choices do, usually go unstated. A number
+published that way cannot be checked, only believed.
 
-```
-python3 scripts/verify_all.py     # standard library only, no install step
-```
+So the aim here is narrow and complete: **publish the evidence, not the conclusions.** Every
+per-question row behind every table in
+[*The Shapes of Agent Memory*](https://pinglin.tw/blog/the-shapes-of-agent-memory) is committed,
+together with a script that recomputes each published figure from those rows and fails loudly if
+it does not match. A reader can re-tally the scores, inspect what each system answered against the
+gold answer, re-run the statistics under different assumptions, or discover that a number is wrong,
+which has already happened twice and is recorded rather than quietly fixed. Nothing here is a
+summary you have to trust.
 
 ---
 
@@ -201,17 +207,25 @@ that survives: **memory's value is inversely proportional to the actor's headroo
 
 ---
 
-## Reproducing
+## How to reproduce
+
+```bash
+python3 scripts/verify_all.py     # standard library only, no install step
+```
+
+From a clean checkout:
 
 ```bash
 git clone https://github.com/a40-labs/memory
 cd memory
 python3 scripts/verify_all.py          # every table above, rebuilt and checked
-python3 scripts/longmemeval_s.py       # or run one at a time
+python3 scripts/longmemeval_s.py       # or run one benchmark at a time
 ```
 
 No dependencies. Python 3.9+ (uses `math.comb`). Every script exits non-zero if any published
-number fails to reproduce, so it works as a regression test on the results themselves.
+number fails to reproduce, so the results carry their own regression test: if a row is edited or a
+statistic is implemented differently, the run goes red rather than silently disagreeing with the
+post.
 
 ### What the data files contain
 
@@ -266,6 +280,13 @@ quoted from its paper. Benchmarks: [LongMemEval](https://arxiv.org/abs/2410.1081
 [LoCoMo](https://arxiv.org/abs/2402.17753), [ALFWorld](https://alfworld.github.io/), and
 [WebShop](https://webshop-pnlp.github.io/) (community mirror of the 1,000-product setting, the
 official files being organization-locked).
+
+## License
+
+MIT, see [LICENSE](LICENSE). That covers the scripts and the result rows produced here. It does not
+extend to third-party material this repository measures but does not contain: Zep Cloud's retrieval
+contexts stay under [their repository's terms](https://github.com/getzep/zep-papers), and the
+benchmarks themselves keep their own licenses.
 
 ## Caveats carried with every number
 
