@@ -342,6 +342,7 @@ systems/
   file-based/       ccmem.py          the file-based arm's mechanism, stdlib only
                     README.md         the per-claim sourced survey it implements
                     test_ccmem.py     22 tests pinning the mechanism to the survey
+                    chatbot.py        a toy chatbot running the whole loop live
 ```
 
 Rows carry the per-question verdict, category, token counts, and (for the conversational arms)

@@ -38,6 +38,21 @@ verifies, from the 200-line/25KB cutoff measured after frontmatter stripping, th
 near-limit and over-limit post-write checks, to the staleness notice, bounded grep, and the
 disclosed shrink-guard deviation. Run it with `python3 test_ccmem.py`.
 
+`chatbot.py` is the same mechanism running live: a toy chatbot against any OpenAI-compatible
+endpoint (Ollama, LM Studio, a hosted key) that chats, curates what mattered into the memory
+directory at session end, and in the *next* session, whose only link to the last one is what
+curation wrote to disk, finds it again by index preload, grep and read:
+
+```
+export CCMEM_BASE_URL=http://localhost:11434/v1
+export CCMEM_MODEL=<any chat model>
+python3 chatbot.py ~/ccmem-demo     # tell it something; /end to curate
+python3 chatbot.py ~/ccmem-demo     # a fresh session; ask it back
+```
+
+Its curation and chat prompts are the survey-derived reconstruction (README §1 "Writing"): the
+documented discretion phrasing, the four-type taxonomy, and the index contract.
+
 ---
 
 ## 0. Three systems, one comparison target
