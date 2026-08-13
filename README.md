@@ -49,8 +49,8 @@ The same findings as the post, each with the figure it rests on and the section 
   place-plus-time buys nothing there. Whether structure pays once histories grow long is still
   open, and the run that would settle it was unfinished at publication.
   [Details](#store-only-head-to-head)
-- **The ruler can outweigh the architecture.** Identical retrieval read by a different model scores
-  0.7825 against 0.7130, a bigger move than any difference between the three stores that work
+- **The ruler can outweigh the architecture.** Identical retrieval read by `gpt-4o-mini` instead of the local
+  35B scores 0.7825 against 0.7130, a bigger move than any difference between the three stores that work
   (0.3 to 3.6 points). Numbers do not travel across protocols.
   [Details](#store-only-head-to-head)
 - **On agentic benchmarks, memory earns in proportion to the actor's headroom.** Real points for a
@@ -189,7 +189,8 @@ Cost, ingest amortized per question: file-based **22.4k** chat tokens against st
 [`scripts/head_to_head.py`](scripts/head_to_head.py)
 
 Every store stripped to its retrieval: its own top-20 for the same 1,540 non-adversarial LoCoMo
-questions, one frontier reader, one frontier judge, every column produced by the same script.
+questions, one shared reader and judge (`gpt-4o-mini`, the model the graph vendor's own published numbers
+were scored with), every column produced by the same script.
 
 | Store | LoCoMo | LongMemEval-S | Median context |
 | --- | ---: | ---: | ---: |
@@ -218,7 +219,7 @@ that swing beside the architectural gaps it is competing with:
 
 | One thing changed, everything else held | Score before | Score after | Points lost |
 | --- | ---: | ---: | ---: |
-| **The reader**: frontier model to local 35B, same retrieval | **0.7825** | **0.7130** | **6.9** |
+| **The reader**: `gpt-4o-mini` to the local 35B, same retrieval | **0.7825** | **0.7130** | **6.9** |
 | The store: hybrid to place-organized, same reader | 0.7825 | 0.7792 | 0.3 |
 | The store: hybrid to Zep Cloud | 0.7825 | 0.7461 | 3.6 |
 | The store: place-organized to Zep Cloud | 0.7792 | 0.7461 | 3.3 |
@@ -242,8 +243,8 @@ the harness scaffolding stays, so the ablation isolates retrieved memory.
 | --- | ---: | ---: |
 | Local 35B, no memory | 0.603 | 63.5 / 0.376 |
 | Local 35B + bank | 0.645 | 66.0 / 0.418 |
-| Frontier, no memory | 0.959 | 65.1 / 0.444 |
-| Frontier + bank | 0.973 | 65.2 / 0.450 |
+| Frontier actor (`claude-sonnet-5`), no memory | 0.959 | 65.1 / 0.444 |
+| Frontier actor + bank | 0.973 | 65.2 / 0.450 |
 | MemHarness (GRPO-trained 7B), published | 0.852 / 0.859 OOD | 87.4 / 0.756 |
 
 Paired ablations, memory rescued / cost:
