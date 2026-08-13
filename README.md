@@ -190,7 +190,7 @@ Cost, ingest amortized per question: file-based **22.4k** chat tokens against st
 
 Every store stripped to its retrieval: its own top-20 for the same 1,540 non-adversarial LoCoMo
 questions, one shared reader and judge (`gpt-4o-mini`, the model the graph vendor's own published numbers
-were scored with), every column produced by the same script.
+were scored with), every store's row produced by the same script.
 
 | Store | LoCoMo | LongMemEval-S | Median context |
 | --- | ---: | ---: | ---: |
@@ -232,16 +232,17 @@ thing that costs more is dropping to Graphiti OSS, and the last row is the cheap
 other five store-to-Graphiti pairings cost 21.8 to 25.4. Three things sit behind these numbers and should not be
 conflated:
 
-- **The reader** answers from whatever context it receives. Identical across every column, which is
+- **The reader** answers from whatever context it receives. Identical for every store, which is
   what makes the store comparison valid; swapping it is the 6.9-point row.
 - **The extractor** runs inside the store at ingest and decides what is ever written down. Part of
   the store being compared, not of the harness around it.
 - **The pipeline** is what the extractor runs in: how many passes per message, what it resolves,
   what it keeps.
 
-The 21-point gap between the two entity-and-time columns is the third, not the second: the open
-engine ran with the same class of extraction model the vendor's published numbers were built with and
-still landed at 0.53, while the hosted side pulls several times more facts per message.
+So which explains the 21 points between Zep Cloud and Graphiti OSS? Not the reader: it is the same
+model for both. Not the extraction model's capability either, since the open engine ran with the same
+class of extractor the vendor's published numbers were built with and still landed at 0.53. It is the
+pipeline around that extractor, which pulls several times more facts per message on the hosted side.
 `head_to_head.py` recomputes the whole comparison, so the ranking is derived rather than quoted.
 
 ### Agentic benchmarks
@@ -317,7 +318,7 @@ decimal is noise.
 
 ## Provenance and credit
 
-**Zep Cloud's column is Zep's data, not ours.** The retrieval contexts for that row are the
+**Zep Cloud's row is Zep's data, not ours.** The retrieval contexts for that row are the
 published outputs from [`getzep/zep-papers`](https://github.com/getzep/zep-papers), used verbatim
 so their production system speaks for itself rather than through a proxy. This repo therefore
 publishes only *measurements over* that data (per-question verdict, context length), never the
@@ -356,5 +357,5 @@ benchmarks themselves keep their own licenses.
 - **The file-based arm is a reconstruction** of a documented design, not a measurement of any
   shipping product; deviations are disclosed in the post, and several favour that arm.
 - **One model family judged the main experiment.** An independent frontier judge later audited the
-  head-to-head columns and preserved every ranking; the main experiment's judge remains unaudited.
+  head-to-head stores and preserved every ranking; the main experiment's judge remains unaudited.
 - **Consolidation never ran during a scored question**, so the structured arm's numbers are a floor.
