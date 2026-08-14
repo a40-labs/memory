@@ -17,11 +17,12 @@ swapping the reader alone moves a score by
 [more than the architecture does](#store-only-head-to-head). A number published without its frame
 cannot be checked, only believed.
 
-So the aim here is narrow and complete: **publish the evidence, not the conclusions.** Every
-per-question row behind every table in
-[*The Shapes of Agent Memory*](https://pinglin.tw/blog/the-shapes-of-agent-memory) is committed,
-with a script that recomputes each published figure from those rows and fails loudly on any
-mismatch. A reader can re-tally the scores, inspect answers against gold, re-run the statistics
+So the aim here is narrow: **publish the evidence, not the conclusions.** The per-question rows
+behind the tables in
+[*The Shapes of Agent Memory*](https://pinglin.tw/blog/the-shapes-of-agent-memory) are committed,
+with a script that recomputes each row-backed figure and fails loudly on any mismatch; the few
+published scores whose rows could not be released are listed by the verifier itself, with
+reasons. A reader can re-tally the scores, inspect answers against gold, re-run the statistics
 under different assumptions, or discover that a number is wrong, which has already happened twice
 and is recorded rather than quietly fixed.
 
@@ -171,10 +172,10 @@ reader call each, official per-question-type judging, so the comparison is paire
 
 | System | Score | Questions |
 | --- | ---: | --- |
-| **Hybrid (store-only)** | **0.750** | 100 (pre-registered sample, seed 20260812) |
+| **Hybrid (store-only)** | **0.750** | 100 (pre-drawn sample, seed 20260812) |
 | Place-organized (MemPalace, store-only) | 0.600 | The same 100 |
 | Hybrid (full agent loop) | 0.632 | 500 (complete set; different harness, directional only) |
-| Entity-and-time (Graphiti OSS) | None | Ingest alone ≈ 12 GPU-days, or ≈ $7,000 hosted |
+| Entity-and-time (Graphiti OSS) | None | Ingest alone ≈ 600 single-stream GPU-days, or ≈ $7,000 hosted |
 
 Paired McNemar on the store-only pair: rescued 22 / lost 7, exact two-sided **p = 0.008**, a
 +15-point gap that clears the sample's CI95 of ±10. One reading discipline: the two arms differ

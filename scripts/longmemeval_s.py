@@ -70,7 +70,25 @@ def main():
     bo, co, chi2, p = mcnemar(arms["structured"], arms["file_based"])
     lo, hi = paired_bootstrap(arms["structured"], arms["file_based"], n=2000)
     print(f"  discordant {bo}/{co}   chi2 {chi2:.2f}   exact p {p:.2e}")
-    print(f"  paired difference CI95 [{lo:+.4f}, {hi:+.4f}] (2k resamples)")
+    print(f"  unweighted paired difference CI95 [{lo:+.4f}, {hi:+.4f}] (2k resamples)")
+    # The published CI is post-stratified: each resample is re-weighted to the
+    # full category mix before differencing, matching the headline estimate.
+    import random as _random
+    rng = _random.Random(1234)
+    st, fb = arms["structured"], arms["file_based"]
+    n_rows = len(st)
+    diffs = []
+    for _ in range(10000):
+        idx = [rng.randrange(n_rows) for _ in range(n_rows)]
+        diffs.append(post_stratified([st[i] for i in idx], MIX)
+                     - post_stratified([fb[i] for i in idx], MIX))
+    diffs.sort()
+    plo, phi = diffs[250], diffs[9750]
+    print(f"  post-stratified paired difference CI95 [{plo:+.4f}, {phi:+.4f}]")
+    print("  (published as [22.1, 35.1] points; bootstrap endpoints wobble ~0.1pt with")
+    print("   seed and resampling detail)")
+    ok &= check("post-strat CI low (pts)", plo * 100, 22.1, tol=0.2)
+    ok &= check("post-strat CI high (pts)", phi * 100, 35.1, tol=0.2)
 
     print("\n== Token ledger, dev-144 (Table 2) ==")
     g = lambda r, k: r.get(k) or 0
@@ -95,7 +113,7 @@ def main():
 def sample100():
     """The head-to-head's LongMemEval-S column, official per-category rubric."""
     ok = True
-    print("\n== Store-only LongMemEval-S, pre-registered 100-question sample ==")
+    print("\n== Store-only LongMemEval-S, pre-drawn 100-question sample ==")
     g = load("longmemeval_s", "graphiti_oss_sample100.json")
     h = load("longmemeval_s", "hybrid_agentloop_sample100.json")
     sg = sum(bool(r["official_judge"]) for r in g) / len(g)

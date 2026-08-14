@@ -2,7 +2,7 @@
 """LoCoMo: the second opinion, published under both scopes (with and without adversarial)."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib import load, rate, by, cluster_bootstrap, table, check
+from lib import load, rate, by, cluster_bootstrap, cluster_paired_bootstrap, table, check
 
 PUBLISHED = {
     ("no_memory", "all"): 0.217, ("file_based", "all"): 0.387, ("structured", "all"): 0.497,
@@ -36,7 +36,20 @@ def main():
         f = [x for x in arms["file_based"] if keep(x)]
         print(f"  {label:18} {rate(s) - rate(f):+.3f}")
 
-    print("\n== Cluster bootstrap over the 10 conversations (structured, all) ==")
+    print("\n== Cluster bootstraps over the 10 conversations ==")
+    key = lambda r: (r["conv_id"], str(r.get("qa_id") or r.get("question_id") or ""))
+    st = sorted(arms["structured"], key=key)
+    fb = sorted(arms["file_based"], key=key)
+    lo_d, hi_d = cluster_paired_bootstrap(st, fb)
+    print(f"  paired difference, all questions: CI95 [{lo_d:+.3f}, {hi_d:+.3f}]")
+    ok &= check("diff CI all, low", lo_d, -0.007, tol=2e-3)
+    ok &= check("diff CI all, high", hi_d, 0.240, tol=2e-3)
+    st_x = [r for r in st if r["category"] != "Adversarial"]
+    fb_x = [r for r in fb if r["category"] != "Adversarial"]
+    lo_d, hi_d = cluster_paired_bootstrap(st_x, fb_x)
+    print(f"  paired difference, excluding adversarial: CI95 [{lo_d:+.3f}, {hi_d:+.3f}]")
+    ok &= check("diff CI excl-adv, low", lo_d, 0.063, tol=2e-3)
+    ok &= check("diff CI excl-adv, high", hi_d, 0.356, tol=2e-3)
     lo, hi = cluster_bootstrap(arms["structured"], n=2000)
     print(f"  CI95 [{lo:.3f}, {hi:.3f}]  (questions cluster inside conversations, so"
           f" conversations are resampled, not questions)")

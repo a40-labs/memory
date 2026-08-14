@@ -22,7 +22,7 @@
    "qa_id canonicalised to full-qa-list indices (their rows index the cat-5-filtered list)"
   ],
   "limits": [
-   "Artifacts verify the RESULT, not the SYSTEM: they let a third party re-read and re-judge our retrieval, not rebuild the store.",
+   "Artifacts verify the RESULT, not the SYSTEM: per-question verdicts, hit counts and context lengths support re-tallying and re-deriving the statistics, not re-reading the retrieval, re-judging, or rebuilding the store.",
    "Single run. OpenAI is not bit-deterministic at temperature 0; observed drift between identical reruns is ~0.3-0.4pt."
   ]
  },

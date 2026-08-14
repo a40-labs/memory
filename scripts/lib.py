@@ -65,7 +65,7 @@ def mcnemar(a, b, key="correct"):
 def mcnemar_one_sided(a, b, key="correct"):
     """One-sided exact McNemar: P(a beats b is this lopsided or more, by chance).
 
-    The agentic memory ablations were pre-registered one-sided, direction "memory helps",
+    The agentic memory ablations were pre-declared one-sided in the study log ("memory helps"),
     so this is the convention their p-values are quoted under.
     """
     bo, co, _, _ = mcnemar(a, b, key)
@@ -121,6 +121,23 @@ def cluster_bootstrap(rows, cluster="conv_id", n=10000, seed=1234, key="correct"
         pick = [groups[rng.randrange(len(groups))] for _ in groups]
         flat = [r for g in pick for r in g]
         out.append(rate(flat, key))
+    out.sort()
+    return out[int(0.025 * n)], out[int(0.975 * n)]
+
+
+def cluster_paired_bootstrap(a, b, cluster="conv_id", n=10000, seed=1234, key="correct"):
+    """Percentile CI for the paired difference mean(a) - mean(b), resampling
+    whole clusters (LoCoMo's conversations) with pairs kept together."""
+    assert_aligned(a, b)
+    rng = random.Random(seed)
+    convs = sorted({r[cluster] for r in a})
+    by_c = {c: [(x, y) for x, y in zip(a, b) if x[cluster] == c] for c in convs}
+    out = []
+    for _ in range(n):
+        pick = [convs[rng.randrange(len(convs))] for _ in convs]
+        pairs = [p for c in pick for p in by_c[c]]
+        out.append(sum(x[key] for x, _ in pairs) / len(pairs)
+                   - sum(y[key] for _, y in pairs) / len(pairs))
     out.sort()
     return out[int(0.025 * n)], out[int(0.975 * n)]
 

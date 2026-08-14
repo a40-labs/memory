@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """LongMemEval-M: the long-haystack variant (~500-session histories).
 
-Both store-only arms ran on the same pre-registered 100-question sample
+Both store-only arms ran on the same pre-drawn 100-question sample
 (seed 20260812), one retrieval and one reader call each, judged with the
 benchmark's official per-question-type prompts. That makes the comparison
-paired, and it is the run that settles whether structure pays at long
-histories.
+paired. The two arms differ in more than place-plus-time structure, so the
+result compares the implementation bundles end to end.
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +22,7 @@ def main():
     assert [r["question_id"] for r in place] == [r["question_id"] for r in hyb], \
         "arms must pair on the same questions"
 
-    print("== LongMemEval-M, pre-registered 100-question sample (seed 20260812) ==")
+    print("== LongMemEval-M, pre-drawn 100-question sample (seed 20260812) ==")
     sp = sum(r["correct"] for r in place) / len(place)
     sh = sum(r["correct"] for r in hyb) / len(hyb)
     print(f"  hybrid (store-only):                     {sh:.3f}  (n={len(hyb)})")
@@ -47,8 +47,8 @@ def main():
     print("   - hybrid agent-loop 0.632: over the complete 500 questions, a different harness")
     print("     and sample, so it is directional beside the paired rows above.")
     print("   - an earlier place-organized run scored 0.530 on a sample whose per-question rows")
-    print("     were lost; both arms were re-drawn on this pre-registered sample as a result.")
-    print("   - entity-and-time: not run. Ingest alone measures ~12 GPU-days, or ~$7,000 hosted.")
+    print("     were lost; both arms were re-drawn on this pre-drawn sample as a result.")
+    print("   - entity-and-time: not run. Ingest alone measures ~600 single-stream GPU-days, or ~$7,000 hosted.")
     return ok
 
 
