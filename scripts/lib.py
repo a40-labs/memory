@@ -36,7 +36,9 @@ def assert_aligned(a, b):
     """Paired stats are only valid on identically ordered questions. Every
     recognised id field present in both row sets must match pairwise; a
     single field is not enough where ids repeat across clusters (LoCoMo's
-    qa_index restarts per conversation, so conv_id must agree too)."""
+    qa_index restarts per conversation, so conv_id must agree too). Rows
+    with no recognised identifier are refused rather than waved through:
+    a paired statistic over unverifiable pairing is not a statistic."""
     assert len(a) == len(b), "paired test needs equal-length, aligned rows"
     checked = False
     for f in PAIR_ID_FIELDS:
@@ -45,6 +47,8 @@ def assert_aligned(a, b):
             ids_b = [r[f] for r in b]
             assert ids_a == ids_b, f"paired rows misaligned on {f}"
             checked = True
+    assert checked, ("paired rows carry no recognised identifier "
+                     f"(known: {', '.join(PAIR_ID_FIELDS)}); refusing to pair by position")
     return checked
 
 

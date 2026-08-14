@@ -2,7 +2,7 @@
 """Run every verification script and report whether the published numbers reproduce."""
 import subprocess, sys, os
 HERE = os.path.dirname(os.path.abspath(__file__))
-SCRIPTS = ["longmemeval_s.py", "longmemeval_m.py", "locomo.py", "head_to_head.py", "judge_audit.py", "agentic.py"]
+SCRIPTS = ["test_lib.py", "longmemeval_s.py", "longmemeval_m.py", "locomo.py", "head_to_head.py", "judge_audit.py", "agentic.py"]
 
 def main():
     failed = []

@@ -268,8 +268,8 @@ swing beside the store gaps it is competing with:
 | The store, the *cheapest* route into the open engine | Zep Cloud 0.7461 | Graphiti OSS 0.5338 | 21.2 |
 
 Read a row as: hold everything else fixed, change this one thing, and the score falls by that much.
-Changing the reader costs more than changing between any two of the three stores that work. The only
-thing that costs more is dropping to Graphiti OSS, and the last row is the cheapest route there: the
+Changing the reader-and-judge stack costs more than changing between any two of the three stores that
+work. The only thing that costs more is dropping to Graphiti OSS, and the last row is the cheapest route there: the
 other five store-to-Graphiti pairings cost 21.8 to 25.4. Three things sit behind these numbers and should not be
 conflated:
 
@@ -376,8 +376,8 @@ python3 systems/file-based/test_ccmem.py   # the file-based mechanism against it
 ```
 
 No install step and no dependencies: standard library only, Python 3.9+. Every script exits
-non-zero if any published number fails to reproduce, so the results carry their own regression
-test. [`systems/file-based/`](systems/file-based) also ships a toy chatbot that runs the
+non-zero if any row-backed number fails to reproduce, so those results carry their own regression
+test; the published scores without rows here are printed by the verifier as an explicit ledger. [`systems/file-based/`](systems/file-based) also ships a toy chatbot that runs the
 file-based loop live against any OpenAI-compatible endpoint: chat, curate at session end, recall
 in a fresh session.
 
