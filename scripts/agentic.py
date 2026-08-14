@@ -74,6 +74,11 @@ def main():
         _, _, p1 = mcnemar_one_sided(m, b)
         bo, co, _, p2 = mcnemar(m, b)
         print(f"  {tier:9} memory rescued {bo}, cost {co}   one-sided p {p1:.3f}   two-sided p {p2:.3f}")
+    print("\n== The frozen released model on this stack (the cross-stack disclosure) ==")
+    frozen = load("agentic", "alfworld_frozen7b_baseline.json")
+    ok &= check("alfworld frozen released model, macro", macro(frozen), 0.581, tol=1e-3)
+    print("  (their published no-memory 0.830; the ~25pt residual is serving numerics, disclosed)")
+
     print("\n== The store swap: the trained system's own bank on its own frozen actor (Table 12) ==")
     swap = {a: load("agentic", f"webshop_frozen7b_{a}.json") for a in
             ("baseline", "their_bank", "situation_match")}

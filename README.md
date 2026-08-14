@@ -206,11 +206,17 @@ were scored with), every store's row produced by the same script.
 
 | Store | LoCoMo | LongMemEval-S | Median context |
 | --- | ---: | ---: | ---: |
-| **Hybrid** | **0.7825** | **0.80** | 4,048 chars |
-| Place-organized (MemPalace) | 0.7792 | 0.60 | 3,536 chars |
+| **Hybrid** | **0.7825** | **0.80** † | 4,048 chars |
+| Place-organized (MemPalace) | 0.7792 | 0.60 † | 3,536 chars |
 | Entity-and-time (Zep Cloud) | 0.7461 | Not run | 21,529 chars |
 | Entity-and-time (Graphiti OSS) | 0.5338 | 0.35 | 7,857 chars |
 | Entity-and-time (Graphiti, bge-m3) | 0.5286 | Not run | 7,896 chars |
+
+† The LongMemEval-S column's Graphiti row (0.35) and the agent-loop row it is compared against
+(0.72) reproduce from published rows (`scripts/longmemeval_s.py`); the hybrid store-only 0.80 and
+MemPalace 0.60 do not, because those runs never persisted per-question contexts, and re-deriving
+contexts now would pair answers with retrievals that did not produce them. Both scores carry that
+caveat wherever they appear.
 
 Paired McNemar over the same questions:
 
@@ -274,6 +280,18 @@ their contexts re-scored under this study's reader and judge give 0.7461, within
 published 75.14. The 21-point gap is real and reproducible; its cause is not observable from
 outside. Read "the hosted pipeline" as a label for the unobserved remainder, not a mechanism
 verified here.
+
+### Cross-family judge audit
+
+[`scripts/judge_audit.py`](scripts/judge_audit.py)
+
+The head-to-head's judge could favour answers that resemble its own style, so an independent
+frontier judge from a different vendor (`claude-sonnet-5`) re-judged all five stores' published
+responses on a frozen 100-question sample. Recomputed here from the per-question rows: the
+independent judge grades a uniform 4 to 7 points stricter, agreement is 0.91 to 0.96 with kappa
+0.82 to 0.89 and a 0.05 agreement spread (no arm-differential bias), and **every ranking is
+preserved**, with the hybrid's win over Zep Cloud significant under the independent judge alone
+(21/8, p = 0.024) and the hybrid-MemPalace tie holding. The level shifts; the order does not.
 
 ### Agentic benchmarks
 
@@ -342,11 +360,14 @@ in a fresh session.
 data/
   longmemeval_s/    holdout_{no_memory,file_based,structured,oracle}.json   356 rows each
                     dev144_{file_based,structured}.json                     the token ledger
+                    {graphiti_oss,hybrid_agentloop}_sample100.json          the store-only sample
   locomo/           {no_memory,file_based,structured}.json                  300 rows each
   longmemeval_m/    {hybrid_storeonly,place_organized}_sample100.json       100 paired rows each
   head_to_head/     {hybrid,place_organized,entity_time_cloud,...}.json     1,540 rows each
   agentic/          {alfworld,webshop}_{35b,frontier}_{baseline,memory}.json
                     webshop_frozen7b_{baseline,their_bank,situation_match}.json   the store swap
+                    alfworld_frozen7b_baseline.json                         the cross-stack disclosure
+judge_audit/        sonnet_rows.json    all five stores under an independent frontier judge
 systems/
   file-based/       ccmem.py          the file-based arm's mechanism, stdlib only
                     README.md         the per-claim sourced survey it implements
@@ -412,6 +433,7 @@ benchmarks themselves keep their own licenses.
 - **Graphiti OSS is a best-effort parity configuration** of the vendor's open-source engine, not their hosted product.
 - **The file-based arm is a reconstruction** of a documented design, not a measurement of any
   shipping product; deviations are disclosed in the post, and several favour that arm.
-- **One model family judged the main experiment.** An independent frontier judge later audited the
-  head-to-head stores and preserved every ranking; the main experiment's judge remains unaudited.
+- **One model family judged the main experiment.** An independent frontier judge audited the
+  head-to-head stores and preserved every ranking (`scripts/judge_audit.py` recomputes it); the
+  main experiment's file-versus-structured judge remains unaudited.
 - **Consolidation never ran during a scored question**, so the structured arm's numbers are a floor.

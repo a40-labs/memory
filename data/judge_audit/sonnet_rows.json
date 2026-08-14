@@ -1,0 +1,3502 @@
+[
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:122",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:13",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:138",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:141",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:143",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:146",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:34",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:40",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:45",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:49",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:67",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:7",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-0:90",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-1:34",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-1:38",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-1:66",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-2:147",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-2:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-2:23",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-2:36",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-2:40",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-2:56",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-2:62",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-2:76",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-2:83",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-3:102",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-3:135",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-3:155",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-3:156",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-3:193",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-3:32",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-3:42",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-3:64",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-3:87",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-3:96",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-4:109",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-4:110",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-4:125",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-4:144",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-4:149",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-4:23",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-4:24",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-4:55",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-4:74",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-4:75",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-4:89",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-4:99",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-5:102",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-5:113",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-5:22",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-5:28",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-5:34",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-5:46",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-5:71",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-6:133",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-6:140",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-6:142",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-6:3",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-6:30",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-6:51",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-6:82",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-6:9",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-6:90",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-6:94",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-7:10",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-7:118",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-7:124",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-7:137",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-7:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-7:23",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-7:27",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-7:46",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-7:57",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-7:72",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-7:8",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-7:95",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-8:105",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-8:125",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-8:136",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-8:49",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-8:69",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-8:87",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-8:90",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-8:96",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-8:97",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:100",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:108",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:127",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:134",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:141",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:27",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:37",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:41",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:42",
+  "category": 3,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:43",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:48",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:56",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:7",
+  "category": 3,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_cloud",
+  "qa_id": "conv-9:89",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:122",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:13",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:138",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:141",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:143",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:146",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:34",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:40",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:45",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:49",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:67",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:7",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-0:90",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-1:34",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-1:38",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-1:66",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-2:147",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-2:149",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-2:23",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-2:36",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-2:40",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-2:56",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-2:62",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-2:76",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-2:83",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-3:102",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-3:135",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-3:155",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-3:156",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-3:193",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-3:32",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-3:42",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-3:64",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-3:87",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-3:96",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-4:109",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-4:110",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-4:125",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-4:144",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-4:149",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-4:23",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-4:24",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-4:55",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-4:74",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-4:75",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-4:89",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-4:99",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-5:102",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-5:113",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-5:22",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-5:28",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-5:34",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-5:46",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-5:71",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-6:133",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-6:140",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-6:142",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-6:3",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-6:30",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-6:51",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-6:82",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-6:9",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-6:90",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-6:94",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-7:10",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-7:118",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-7:124",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-7:137",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-7:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-7:23",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-7:27",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-7:46",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-7:57",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-7:72",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-7:8",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-7:95",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-8:105",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-8:125",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-8:136",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-8:49",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-8:69",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-8:87",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-8:90",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-8:96",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-8:97",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:100",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:108",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:127",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:134",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:141",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:27",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:37",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:41",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:42",
+  "category": 3,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:43",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:48",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:56",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:7",
+  "category": 3,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss",
+  "qa_id": "conv-9:89",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:122",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:13",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:138",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:141",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:143",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:146",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:34",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:40",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:45",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:49",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:67",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:7",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-0:90",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-1:34",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-1:38",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-1:66",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-2:147",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-2:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-2:23",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-2:36",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-2:40",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-2:56",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-2:62",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-2:76",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-2:83",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-3:102",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-3:135",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-3:155",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-3:156",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-3:193",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-3:32",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-3:42",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-3:64",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-3:87",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-3:96",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-4:109",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-4:110",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-4:125",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-4:144",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-4:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-4:23",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-4:24",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-4:55",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-4:74",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-4:75",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-4:89",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-4:99",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-5:102",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-5:113",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-5:22",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-5:28",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-5:34",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-5:46",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-5:71",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-6:133",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-6:140",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-6:142",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-6:3",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-6:30",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-6:51",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-6:82",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-6:9",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-6:90",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-6:94",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-7:10",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-7:118",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-7:124",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-7:137",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-7:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-7:23",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-7:27",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-7:46",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-7:57",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-7:72",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-7:8",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-7:95",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-8:105",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-8:125",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-8:136",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-8:49",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-8:69",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-8:87",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-8:90",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-8:96",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-8:97",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:100",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:108",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:127",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:134",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:141",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:27",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:37",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:41",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:42",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:43",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:48",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:56",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:7",
+  "category": 3,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "entity_time_oss_bge",
+  "qa_id": "conv-9:89",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:122",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:13",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:138",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:141",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:143",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:146",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:34",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:40",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:45",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:49",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:67",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:7",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-0:90",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-1:34",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-1:38",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-1:66",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-2:147",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-2:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-2:23",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-2:36",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-2:40",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-2:56",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-2:62",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-2:76",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-2:83",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-3:102",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-3:135",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-3:155",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-3:156",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-3:193",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-3:32",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-3:42",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-3:64",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-3:87",
+  "category": 3,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-3:96",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-4:109",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-4:110",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-4:125",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-4:144",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-4:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-4:23",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-4:24",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-4:55",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-4:74",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-4:75",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-4:89",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-4:99",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-5:102",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-5:113",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-5:22",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-5:28",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-5:34",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-5:46",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-5:71",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-6:133",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-6:140",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-6:142",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-6:3",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-6:30",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-6:51",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-6:82",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-6:9",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-6:90",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-6:94",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-7:10",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-7:118",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-7:124",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-7:137",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-7:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-7:23",
+  "category": 3,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-7:27",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-7:46",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-7:57",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-7:72",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-7:8",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-7:95",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-8:105",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-8:125",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-8:136",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-8:49",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-8:69",
+  "category": 1,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-8:87",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-8:90",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-8:96",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-8:97",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:100",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:108",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:127",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:134",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:141",
+  "category": 4,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:149",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:27",
+  "category": 2,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:37",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:41",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:42",
+  "category": 3,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:43",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:48",
+  "category": 2,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:56",
+  "category": 1,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:7",
+  "category": 3,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "hybrid",
+  "qa_id": "conv-9:89",
+  "category": 4,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:122",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:13",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:138",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:141",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:143",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:146",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:34",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:40",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:45",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:49",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:67",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:7",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-0:90",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-1:34",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-1:38",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-1:66",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-2:147",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-2:149",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-2:23",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-2:36",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-2:40",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-2:56",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-2:62",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-2:76",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-2:83",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-3:102",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-3:135",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-3:155",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-3:156",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-3:193",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-3:32",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-3:42",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-3:64",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-3:87",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-3:96",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-4:109",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-4:110",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-4:125",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-4:144",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-4:149",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-4:23",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-4:24",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-4:55",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-4:74",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-4:75",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-4:89",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-4:99",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-5:102",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-5:113",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-5:22",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-5:28",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-5:34",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-5:46",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-5:71",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-6:133",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-6:140",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-6:142",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-6:3",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-6:30",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-6:51",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-6:82",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-6:9",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-6:90",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-6:94",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-7:10",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-7:118",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-7:124",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-7:137",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-7:149",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-7:23",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-7:27",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-7:46",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-7:57",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-7:72",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-7:8",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-7:95",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-8:105",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-8:125",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-8:136",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-8:49",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-8:69",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-8:87",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-8:90",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-8:96",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-8:97",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:100",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:108",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:127",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:134",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:141",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:149",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:27",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:37",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:41",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:42",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:43",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:48",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:56",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:7",
+  "category": null,
+  "shipped_correct": false,
+  "sonnet_correct": false
+ },
+ {
+  "arm": "place_organized",
+  "qa_id": "conv-9:89",
+  "category": null,
+  "shipped_correct": true,
+  "sonnet_correct": true
+ }
+]

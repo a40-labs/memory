@@ -83,5 +83,23 @@ def main():
     return ok
 
 
+def sample100():
+    """The head-to-head's LongMemEval-S column, official per-category rubric."""
+    ok = True
+    print("\n== Store-only LongMemEval-S, pre-registered 100-question sample ==")
+    g = load("longmemeval_s", "graphiti_oss_sample100.json")
+    h = load("longmemeval_s", "hybrid_agentloop_sample100.json")
+    sg = sum(bool(r["official_judge"]) for r in g) / len(g)
+    sh = sum(bool(r["official_judge"]) for r in h) / len(h)
+    ok &= check("graphiti oss store-only", sg, 0.350, tol=1e-3)
+    ok &= check("hybrid agent-loop, same sample", sh, 0.720, tol=1e-3)
+    print("  Rows that exist are published; two published scores have none, and why:")
+    print("   - hybrid store-only 0.80 and place-organized 0.60: their runs never persisted")
+    print("     per-question contexts (the arm was fixed forward after this was caught), and")
+    print("     re-deriving contexts now would pair answers with retrievals that did not")
+    print("     produce them. The scores stand in the post with this caveat attached.")
+    return ok
+
+
 if __name__ == "__main__":
-    sys.exit(0 if main() else 1)
+    sys.exit(0 if (main() & sample100()) else 1)
