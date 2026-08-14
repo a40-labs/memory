@@ -10,7 +10,7 @@
   },
   "judge": {
    "model": "gpt-4o-mini",
-   "note": "prompt text is in grades.json \u2014 a grade file without its prompt is not checkable"
+   "note": "full prompt text in data/head_to_head/judge.json (identical for every store)"
   },
   "headline": {
    "correct": 1205,

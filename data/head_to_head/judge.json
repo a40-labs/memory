@@ -1,0 +1,25 @@
+{
+ "note": "Judge configs extracted verbatim from each store bundle's grades.json, so the manifests' judge reference resolves inside this repo. The prompt text is identical across configs; only the judge model differs for the local-35B stack arm.",
+ "configs": [
+  {
+   "judge_model": "gpt-4o-mini",
+   "used_by": [
+    "entity_time_oss_bge",
+    "entity_time_oss",
+    "place_organized",
+    "hybrid",
+    "entity_time_cloud"
+   ],
+   "judge_system": "\n        You are an expert grader that determines if answers to questions match a gold standard answer\n        ",
+   "judge_prompt_template": "\n    Your task is to label an answer to a question as 'CORRECT' or 'WRONG'. You williolw23 be given the following data:\n        (1) a question (posed by one user to another user),\n        (2) a 'gold' (ground truth) answer,\n        (3) a generated answer\n    which you will score as CORRECT/WRONG.\n\n    The point of the question is to ask about something one user should know about the other user based on their prior conversations.\n    The gold answer will usually be a concise and short answer that includes the referenced topic, for example:\n    Question: Do you remember what I got the last time I went to Hawaii?\n    Gold answer: A shell necklace\n    The generated answer might be much longer, but you should be generous with your grading - as long as it touches on the same topic as the gold answer, it should be counted as CORRECT.\n\n    For time related questions, the gold answer will be a specific date, month, year, etc. The generated answer might be much longer or use relative time references (like \"last Tuesday\" or \"next month\"), but you should be generous with your grading - as long as it refers to the same date or time period as the gold answer, it should be counted as CORRECT. Even if the format differs (e.g., \"May 7th\" vs \"7 May\"), consider it CORRECT if it's the same date.\n\n    Now it's time for the real question:\n    Question: {question}\n    Gold answer: {gold}\n    Generated answer: {answer}\n\n    First, provide a short (one sentence) explanation of your reasoning, then finish with CORRECT or WRONG.\n    Do NOT include both CORRECT and WRONG in your response, or it will break the evaluation script.\n\n    Just return the label CORRECT or WRONG in a json format with the key as \"label\".\n    "
+  },
+  {
+   "judge_model": "Qwen3.6-35B-A3B-mxfp4",
+   "used_by": [
+    "hybrid_local35b"
+   ],
+   "judge_system": "\n        You are an expert grader that determines if answers to questions match a gold standard answer\n        ",
+   "judge_prompt_template": "\n    Your task is to label an answer to a question as 'CORRECT' or 'WRONG'. You williolw23 be given the following data:\n        (1) a question (posed by one user to another user),\n        (2) a 'gold' (ground truth) answer,\n        (3) a generated answer\n    which you will score as CORRECT/WRONG.\n\n    The point of the question is to ask about something one user should know about the other user based on their prior conversations.\n    The gold answer will usually be a concise and short answer that includes the referenced topic, for example:\n    Question: Do you remember what I got the last time I went to Hawaii?\n    Gold answer: A shell necklace\n    The generated answer might be much longer, but you should be generous with your grading - as long as it touches on the same topic as the gold answer, it should be counted as CORRECT.\n\n    For time related questions, the gold answer will be a specific date, month, year, etc. The generated answer might be much longer or use relative time references (like \"last Tuesday\" or \"next month\"), but you should be generous with your grading - as long as it refers to the same date or time period as the gold answer, it should be counted as CORRECT. Even if the format differs (e.g., \"May 7th\" vs \"7 May\"), consider it CORRECT if it's the same date.\n\n    Now it's time for the real question:\n    Question: {question}\n    Gold answer: {gold}\n    Generated answer: {answer}\n\n    First, provide a short (one sentence) explanation of your reasoning, then finish with CORRECT or WRONG.\n    Do NOT include both CORRECT and WRONG in your response, or it will break the evaluation script.\n\n    Just return the label CORRECT or WRONG in a json format with the key as \"label\".\n    "
+  }
+ ]
+}

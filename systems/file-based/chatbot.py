@@ -162,8 +162,10 @@ def apply_ops(mem, ops, session_id, log=print):
     check = None
 
     def _index_lines():
-        return (open(mem.index_path).read().splitlines()
-                if os.path.exists(mem.index_path) else [])
+        if not os.path.exists(mem.index_path):
+            return []
+        with open(mem.index_path) as f:
+            return f.read().splitlines()
 
     for op in (ops or [])[:6]:
         if not isinstance(op, dict):
@@ -202,7 +204,12 @@ def apply_ops(mem, ops, session_id, log=print):
                 log(f"  [rejected: {kind} on {path}]")
                 continue
             log(f"  [{kind} {path}]")
-            if c:
+            if c and c.startswith("Error: rejected"):
+                # A rejected op (e.g. replace_line with no matching line) is
+                # not a limit condition; routing it into `check` would fire
+                # the over-limit rewrite round on a non-limit error.
+                log(f"  [rejected: {c[:80]}]")
+            elif c:
                 check = c
         except ValueError as e:
             log(f"  [rejected: {e}]")
@@ -217,17 +224,24 @@ def curate(mem, transcript, session_id, chat_fn=None, log=print):
                         + "\n\nEmit the memory operations JSON now."}]
     ops = parse_fenced_list(chat(msgs, chat_fn))
     check = apply_ops(mem, ops, session_id, log)
-    if check and check.startswith("Error:"):        # over-limit: one rewrite round
-        log("  [over limit — rewrite round]")
+    if check and "over its load limit" in check:    # over-limit: one rewrite round
+        log("  [over limit - rewrite round]")
+        with open(mem.index_path) as f:
+            index_now = f.read()
         msgs += [{"role": "user",
-                  "content": check + "\n\nCurrent MEMORY.md:\n"
-                             + open(mem.index_path).read()
+                  "content": check + "\n\nCurrent MEMORY.md:\n" + index_now
                              + "\nEmit ONE update op for MEMORY.md with the "
                                "full rewritten index."}]
         ops = parse_fenced_list(chat(msgs, chat_fn))
         for op in (ops or [])[:1]:
-            if isinstance(op, dict):
+            # Only a MEMORY.md-targeted rewrite may touch the index here; any
+            # other op in this round is refused rather than misapplied.
+            if (isinstance(op, dict)
+                    and str(op.get("path", "")).strip().strip("/").lower() == "memory.md"
+                    and str(op.get("op", "")).strip().lower() in ("create", "update")):
                 mem.rewrite_index(str(op.get("content", "")))
+            else:
+                log("  [rewrite round: op did not target MEMORY.md; refused]")
 
 
 # ---------------------------------------------------------------------------

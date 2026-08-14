@@ -135,9 +135,11 @@ class CCMemory:
         self.question_date = parse_date(question_date) if question_date else None
         dates_path = os.path.join(self.root, "sessions.json")
         if self.session_dates:
-            json.dump(self.session_dates, open(dates_path, "w"), indent=1)
+            with open(dates_path, "w") as fh:
+                json.dump(self.session_dates, fh, indent=1)
         elif os.path.exists(dates_path):
-            self.session_dates = json.load(open(dates_path))
+            with open(dates_path) as fh:
+                self.session_dates = json.load(fh)
 
     # --- path handling ---------------------------------------------------
     def _resolve(self, relpath):
@@ -169,7 +171,8 @@ class CCMemory:
         [single-source] surfaced form the spec mandates)."""
         if not os.path.exists(self.index_path):
             return EMPTY_STATE_NUDGE
-        raw = open(self.index_path, encoding="utf-8", errors="replace").read()
+        with open(self.index_path, encoding="utf-8", errors="replace") as fh:
+            raw = fh.read()
         stripped = strip_frontmatter_and_comments(raw)
         if not stripped.strip():
             return EMPTY_STATE_NUDGE
@@ -197,8 +200,8 @@ class CCMemory:
         measured against."""
         if not os.path.exists(self.index_path):
             return 0, 0
-        s = strip_frontmatter_and_comments(
-            open(self.index_path, encoding="utf-8", errors="replace").read())
+        with open(self.index_path, encoding="utf-8", errors="replace") as fh:
+            s = strip_frontmatter_and_comments(fh.read())
         s = s.rstrip("\n")
         return (len(s.split("\n")) if s else 0), len(s.encode("utf-8"))
 
@@ -211,7 +214,8 @@ class CCMemory:
         os.makedirs(os.path.dirname(p), exist_ok=True)
         fm = make_frontmatter(name or os.path.basename(relpath),
                               description, mtype, origin_session_id)
-        open(p, "w", encoding="utf-8").write(fm + body.rstrip("\n") + "\n")
+        with open(p, "w", encoding="utf-8") as fh:
+            fh.write(fm + body.rstrip("\n") + "\n")
         return None  # topic-file writes carry no index limit check
 
     def update_topic_file(self, relpath, body):
@@ -222,10 +226,11 @@ class CCMemory:
             return self.rewrite_index(body)
         fm = None
         if os.path.exists(p):
-            fm, _ = split_frontmatter(
-                open(p, encoding="utf-8", errors="replace").read())
+            with open(p, encoding="utf-8", errors="replace") as fh:
+                fm, _ = split_frontmatter(fh.read())
         os.makedirs(os.path.dirname(p), exist_ok=True)
-        open(p, "w", encoding="utf-8").write((fm or "") + body.rstrip("\n") + "\n")
+        with open(p, "w", encoding="utf-8") as fh:
+            fh.write((fm or "") + body.rstrip("\n") + "\n")
         return None
 
     def append_topic_file(self, relpath, text):
@@ -250,14 +255,15 @@ class CCMemory:
         match = str(match).strip()
         if not match or not os.path.exists(self.index_path):
             return f"Error: rejected — no MEMORY.md line matches: {match!r}"
-        lines = open(self.index_path, encoding="utf-8",
-                     errors="replace").read().rstrip("\n").split("\n")
+        with open(self.index_path, encoding="utf-8", errors="replace") as fh:
+            lines = fh.read().rstrip("\n").split("\n")
         idx = next((i for i, ln in enumerate(lines) if ln.strip() == match),
                    next((i for i, ln in enumerate(lines) if match in ln), None))
         if idx is None:
             return f"Error: rejected — no MEMORY.md line matches: {match!r}"
         lines[idx] = new_line.rstrip("\n")
-        open(self.index_path, "w", encoding="utf-8").write("\n".join(lines) + "\n")
+        with open(self.index_path, "w", encoding="utf-8") as fh:
+            fh.write("\n".join(lines) + "\n")
         return self.post_write_check()
 
     def rewrite_index(self, content, force=False):
@@ -278,8 +284,8 @@ class CCMemory:
                     "duplicates, and move details to topic files — do not "
                     "drop content wholesale. Re-emit the full rewritten "
                     "index.")
-        open(self.index_path, "w", encoding="utf-8").write(
-            content.rstrip("\n") + "\n")
+        with open(self.index_path, "w", encoding="utf-8") as fh:
+            fh.write(content.rstrip("\n") + "\n")
         return self.post_write_check()
 
     def post_write_check(self):
@@ -298,7 +304,8 @@ class CCMemory:
         p = self._resolve(relpath)
         if not os.path.exists(p):
             return f"<error: no such memory file: {relpath}>"
-        raw = open(p, encoding="utf-8", errors="replace").read()
+        with open(p, encoding="utf-8", errors="replace") as fh:
+            raw = fh.read()
         notice = ""
         m = re.search(r"originSessionId:\s*\"?([^\"\n]+)\"?", raw)
         if m and self.question_date:
@@ -325,7 +332,8 @@ class CCMemory:
         for rel in self.list_files():
             p = os.path.join(self.mem_dir, rel)
             try:
-                lines = open(p, encoding="utf-8", errors="replace").read().split("\n")
+                with open(p, encoding="utf-8", errors="replace") as fh:
+                    lines = fh.read().split("\n")
             except OSError:
                 continue
             for i, ln in enumerate(lines, 1):

@@ -57,7 +57,8 @@ def main():
     print(f"\n  Level shift uniform: -{max(shifts):.2f} to -{min(shifts):.2f} "
           f"(sonnet grades stricter across the board)")
     print(f"  Agreement spread: {max(agrees) - min(agrees):.2f} "
-          f"(no arm-differential bias at the 0.10 rule)")
+          f"(within the pre-set 0.10 rule; note this bounds agreement only, and")
+    print("   equal agreement can still conceal directionally different errors)")
     ok &= check("agreement spread", max(agrees) - min(agrees), 0.05, tol=1e-3)
 
     print("\n== Verdicts under the independent judge alone ==")
@@ -74,8 +75,9 @@ def main():
           "(the tie holds)")
     bo, co, _, p = mcnemar(aligned["hybrid"], aligned["entity_time_oss"])
     print(f"  hybrid vs graphiti oss: rescued {bo} / lost {co}, p = {p:.2e}")
-    print("  Every ranking from the shipped judge is preserved; the level shifts, "
-          "the order does not.")
+    print("  The supported claim: on this frozen sample, every ranking from the shipped")
+    print("  judge is preserved under the independent judge. The level shifts; the order")
+    print("  does not.")
     return ok
 
 

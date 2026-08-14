@@ -50,12 +50,21 @@ def main():
              "file-based" if rate(cf[c]) > rate(cs[c]) else ""] for c in sorted(cs)]
     table(["category", "n", "structured", "file-based", "winner"], rows, ["<", ">", ">", ">", "<"])
 
-    print("\n== Gap decomposition via the oracle control ==")
+    print("\n== Gap split via the oracle control (descriptive, not causal) ==")
     f, o, s = (post_stratified(arms[a], MIX) for a in ("file_based", "oracle", "structured"))
     read, write = o - f, s - o
     print(f"  file-based {f:.4f} -> oracle {o:.4f} -> structured {s:.4f}")
-    print(f"  read-path friction  {read:+.4f}  ({read/(s-f)*100:.0f}% of the gap)")
-    print(f"  write-path loss     {write:+.4f}  ({write/(s-f)*100:.0f}% of the gap)")
+    print(f"  aggregate read-side  {read:+.4f}  ({read/(s-f)*100:.0f}% of the gap)")
+    print(f"  aggregate write-side {write:+.4f}  ({write/(s-f)*100:.0f}% of the gap)")
+    for hi, lo, lab in ((arms["oracle"], arms["file_based"], "oracle vs file-based"),
+                        (arms["structured"], arms["oracle"], "structured vs oracle")):
+        a2 = sorted(hi, key=lambda r: r["question_id"])
+        b2 = sorted(lo, key=lambda r: r["question_id"])
+        bo2, co2, _, _ = mcnemar(a2, b2)
+        print(f"  {lab}: rescued {bo2}, lost {co2}")
+    print("  The interventions are non-monotonic per question (the oracle also changes how")
+    print("  the context is presented), so this is an aggregate split between arms, not a")
+    print("  per-question identification of where each point was lost.")
 
     print("\n== Paired test, structured vs file-based ==")
     bo, co, chi2, p = mcnemar(arms["structured"], arms["file_based"])

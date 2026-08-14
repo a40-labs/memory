@@ -29,12 +29,27 @@ def by(rows, field):
     return dict(sorted(out.items(), key=lambda kv: str(kv[0])))
 
 
+PAIR_ID_FIELDS = ("qa_id", "question_id", "game", "idx", "session")
+
+
+def assert_aligned(a, b):
+    """Paired stats are only valid on identically ordered questions. If both
+    row sets carry a recognised id field, require the sequences to match."""
+    assert len(a) == len(b), "paired test needs equal-length, aligned rows"
+    for f in PAIR_ID_FIELDS:
+        if a and f in a[0] and f in b[0]:
+            ids_a = [r[f] for r in a]
+            ids_b = [r[f] for r in b]
+            assert ids_a == ids_b, f"paired rows misaligned on {f}"
+            return
+
+
 def mcnemar(a, b, key="correct"):
     """Exact two-sided McNemar over paired rows, matched on position.
 
     Returns (b_only, c_only, chi2, p). b_only = a correct where b wrong.
     """
-    assert len(a) == len(b), "paired test needs equal-length, aligned rows"
+    assert_aligned(a, b)
     bo = sum(1 for x, y in zip(a, b) if x[key] and not y[key])
     co = sum(1 for x, y in zip(a, b) if y[key] and not x[key])
     n = bo + co
@@ -70,6 +85,7 @@ def post_stratified(rows, weights, cat="category"):
 
 def paired_bootstrap(a, b, n=10000, seed=1234, key="correct"):
     """Percentile CI for the paired difference mean(a) - mean(b)."""
+    assert_aligned(a, b)
     rng = random.Random(seed)
     idx = range(len(a))
     diffs = []
@@ -80,6 +96,20 @@ def paired_bootstrap(a, b, n=10000, seed=1234, key="correct"):
         diffs.append(da - db)
     diffs.sort()
     return diffs[int(0.025 * n)], diffs[int(0.975 * n)]
+
+
+def paired_value_bootstrap(a, b, value, n=10000, seed=1234):
+    """Percentile CI for the paired difference of a continuous per-row value
+    (e.g. WebShop reward), resampling pairs."""
+    assert_aligned(a, b)
+    rng = random.Random(seed)
+    d = [x[value] - y[value] for x, y in zip(a, b)]
+    out = []
+    for _ in range(n):
+        s = [d[rng.randrange(len(d))] for _ in d]
+        out.append(sum(s) / len(s))
+    out.sort()
+    return sum(d) / len(d), out[int(0.025 * n)], out[int(0.975 * n)]
 
 
 def cluster_bootstrap(rows, cluster="conv_id", n=10000, seed=1234, key="correct"):

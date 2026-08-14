@@ -6,7 +6,7 @@ partial-credit score (100 x mean reward) and the strict success rate.
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib import load, by, mcnemar, mcnemar_one_sided, table, check
+from lib import load, by, mcnemar, mcnemar_one_sided, paired_value_bootstrap, table, check
 
 PUBLISHED = {
     "alfworld_35b_baseline": 0.603, "alfworld_35b_memory": 0.645,
@@ -106,9 +106,19 @@ def main():
         print(f"  {a} vs {b}: rescued {bo} / cost {co}, two-sided p {p2:.3f}")
         ok &= check(f"swap {a}-vs-{b} discordant b", bo, pub[0], tol=0)
         ok &= check(f"swap {a}-vs-{b} discordant c", co, pub[1], tol=0)
-    print("  Three-way statistical tie: at a frozen actor, neither the trained system's own")
-    print("  released bank nor a different retrieval semantics over it moves the needle. The")
-    print("  published margin is the training, not the bank content or retrieval mechanics.")
+    print("  On partial-credit score, the same pairs (paired bootstrap over reward):")
+    for a, b in (("their_bank", "baseline"), ("situation_match", "baseline"),
+                 ("situation_match", "their_bank")):
+        d, lo2, hi2 = paired_value_bootstrap(swap[a], swap[b], "reward")
+        flag = "" if lo2 <= 0 <= hi2 else "  <- CI excludes zero"
+        print(f"  {a} vs {b}: {d*100:+.2f} points, CI95 [{lo2*100:+.2f}, {hi2*100:+.2f}]{flag}")
+    d, lo2, hi2 = paired_value_bootstrap(swap["situation_match"], swap["baseline"], "reward")
+    ok &= check("situation-match score delta", d * 100, -1.84, tol=0.02)
+    print("  The strict-success comparisons are indistinguishable; on score both memory")
+    print("  arms are nominally BELOW baseline, one CI excluding zero. Neither arm helps")
+    print("  the frozen actor under either metric, which is the claim these rows support:")
+    print("  whatever the published margin is made of, it is not bank content or retrieval")
+    print("  mechanics injected from outside.")
 
     print("\n  Convention note, because the campaign log is not uniform on this: the ablations were")
     print("  pre-registered one-sided (direction: memory helps), and ALFWorld's weak-actor p is quoted")

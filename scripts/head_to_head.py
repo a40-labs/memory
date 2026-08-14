@@ -2,7 +2,7 @@
 """The store-only head-to-head: five retrieval stores, one reader, one judge, the same 1,540 questions."""
 import sys, os, statistics
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib import load, rate, mcnemar, table, check
+from lib import load, rate, mcnemar, paired_bootstrap, table, check
 
 STORES = ["hybrid", "place_organized", "entity_time_cloud", "entity_time_oss", "entity_time_oss_bge"]
 LABEL = {"hybrid": "Hybrid", "place_organized": "Place-organized (MemPalace)",
@@ -47,11 +47,12 @@ def main():
             rows.append([f"{LABEL[a]} vs {LABEL[b]}", f"{bo}/{co}", f"{chi2:.2f}", f"{p:.2e}", verdict])
     table(["pair", "discordant", "chi2", "p", "verdict"], rows, ["<", ">", ">", ">", "<"])
 
-    print("\n== The reader, measured against the architectural differences ==")
+    print("\n== The reader+judge stack, measured against the store differences ==")
     a, b = data["hybrid"]["rows"], data["hybrid_local35b"]["rows"]
     swing = (rate(a) - rate(b)) * 100
-    print(f"  identical retrieval, frontier reader {rate(a):.4f} vs local 35B reader {rate(b):.4f}"
-          f"  ({swing:+.1f} points)")
+    print(f"  identical retrieval, gpt-4o-mini reading AND judging {rate(a):.4f} vs the local 35B"
+          f" doing both {rate(b):.4f}  ({swing:+.1f} points)")
+    print("  (both roles change together, so this measures the evaluation stack, not the reader alone)")
     diffs = sorted(((abs(rate(data[x]["rows"]) - rate(data[y]["rows"])) * 100, x, y)
                     for i, x in enumerate(STORES) for y in STORES[i + 1:]), reverse=True)
     smaller = [d for d in diffs if d[0] < swing]
@@ -60,6 +61,14 @@ def main():
         print(f"     {d:5.1f}  {LABEL[x]} vs {LABEL[y]}")
     print(f"  and smaller than the {len(diffs)-len(smaller)} that involve the starved open engine "
           f"({min(d for d, _, _ in diffs if d > swing):.1f} to {max(d for d, _, _ in diffs):.1f} points).")
+
+    print("\n== The tie, stated as an interval rather than a failure to reject ==")
+    lo, hi = paired_bootstrap(data["hybrid"]["rows"], data["place_organized"]["rows"])
+    print(f"  hybrid minus place-organized: +0.3 points, paired CI95 [{lo*100:.1f}, {hi*100:.1f}]")
+    print("  Non-significance is not equivalence: differences up to ~2 points in either")
+    print("  direction are compatible with these rows.")
+    ok &= check("hybrid-minus-place CI low", lo * 100, -1.8, tol=0.1)
+    ok &= check("hybrid-minus-place CI high", hi * 100, 2.4, tol=0.1)
     return ok
 
 

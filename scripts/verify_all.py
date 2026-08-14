@@ -17,7 +17,14 @@ def main():
     if failed:
         print(f"FAILED: {', '.join(failed)}")
         return 1
-    print("All published numbers reproduced from the per-question data.")
+    print("Every check passed: all published numbers THAT HAVE ROWS IN THIS REPO")
+    print("reproduce from them. Published numbers with no rows here, and why:")
+    print("  - LongMemEval-S store-only: hybrid 0.80, place-organized 0.60")
+    print("      (contexts never persisted at run time; fixed forward)")
+    print("  - LongMemEval-M agent-loop hybrid 0.632 (different harness, rows unpublished)")
+    print("  - Graphiti under the local 35B extractor, 0.29 (study log only)")
+    print("  - Zep Cloud's retrieved contexts (their data; measurements over it are here)")
+    print("These carry their caveats wherever they appear.")
     return 0
 
 if __name__ == "__main__":

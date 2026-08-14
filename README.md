@@ -29,26 +29,35 @@ and is recorded rather than quietly fixed.
 
 The same findings as the post, each with the figure it rests on and the section that rebuilds it.
 
-- **The structured store beats files on accuracy and on cost at once.** +28.7 points on held-out
-  LongMemEval-S questions (0.7361 against 0.4491, post-stratified), at 19.3k reasoning tokens per
-  question against 286.5k. [Details](#longmemeval-s-held-out)
+- **The structured store beats files on accuracy and on measured chat tokens at once.** +28.7
+  points on held-out LongMemEval-S questions (0.7361 against 0.4491, post-stratified), at 19.3k
+  chat tokens per question against 286.5k. The token comparison covers reported prompt-plus-
+  completion tokens only: embedder tokens are a separate currency (107.8k per question), and
+  hidden reasoning, per-token prices, latency and infrastructure are not priced here.
+  [Details](#longmemeval-s-held-out)
 - **Files win where the right answer is "I don't know".** Abstention 0.889 against 0.778, and the
   equivalent LoCoMo category 0.508 against 0.246: eager retrieval needs an abstention discipline
   that sparse memory gets for free. [Details](#locomo)
-- **Against interest: the hybrid ties a plain vector index** on LoCoMo (χ² = 0.06), so
-  place-plus-time buys nothing there. On the long-haystack benchmark the same pair separates:
-  hybrid 0.750 against 0.600, paired on one pre-registered sample, p = 0.008. Structure pays
-  where histories are long, and no single benchmark ranks memory systems.
-  [Details](#longmemeval-m)
-- **The ruler can outweigh the architecture.** Identical retrieval read by `gpt-4o-mini` instead of the local
-  35B scores 0.7825 against 0.7130, a bigger move than any difference between the three stores that work
-  on LoCoMo (0.3 to 3.6 points); on long-haystack LongMemEval-M the same store pair separates by 15, so
-  which factor dominates depends on the benchmark. Numbers do not travel across protocols.
+- **Against interest: the hybrid is statistically indistinguishable from a plain vector index**
+  on LoCoMo (+0.3 points, paired CI95 [-1.8, +2.4]): no detectable gain there, though the
+  interval allows small effects either way. On the long-haystack benchmark the same pair
+  separates: hybrid 0.750 against 0.600 on one pre-drawn sample, p = 0.008. That compares the two
+  implementations end to end, retrieval fusion and reranking included, so it supports "this
+  hybrid beats this flat store at long histories", not a clean mechanism claim. No single
+  benchmark ranks memory systems. [Details](#longmemeval-m)
+- **The ruler can outweigh the architecture.** Identical retrieval evaluated by a `gpt-4o-mini`
+  reader-and-judge stack instead of the local 35B doing both scores 0.7825 against 0.7130. Both roles
+  change together, so this measures the evaluation stack, not the reader alone; either way it is a
+  bigger move than any difference between the three stores that work on LoCoMo (0.3 to 3.6 points),
+  while on long-haystack LongMemEval-M the same store pair separates by 15. Which factor dominates
+  depends on the benchmark, and numbers do not travel across protocols.
   [Details](#store-only-head-to-head)
-- **On agentic benchmarks, memory earns in proportion to the actor's headroom.** Real points for a
-  weak actor (WebShop success +4.2, the agentic benchmarks' only significant memory-ablation effect), noise at
-  the frontier, and a bar that only training reaches: even the trained system's own released bank,
-  injected into its own frozen actor, is a null. [Details](#agentic-benchmarks)
+- **On agentic benchmarks, memory paid only where the actor had headroom.** Real points for a
+  weak actor (WebShop success +4.2, the agentic benchmarks' only significant memory-ablation
+  effect), no detectable effect at the frontier, and a bar that only training reaches: the trained
+  system's own released bank, injected into its own frozen actor, does not help it under either
+  metric. Two actor tiers on two tasks make this an observed pattern, not a law.
+  [Details](#agentic-benchmarks)
 
 ---
 
@@ -110,10 +119,13 @@ mix, so neither arm is flattered by the holdout's sample.
 Paired difference, structured minus file-based: **+0.2869** post-stratified, McNemar discordant
 134/31, exact p ≈ 1.8e-16.
 
-**Where the gap comes from.** The oracle control answers with the file-based arm's *entire* store
-in context and no search tools, so nothing saved can be missed. It lands between the two arms,
-splitting the gap into **read-path friction +0.1215 (42%)** and **write-path loss +0.1654 (58%)**:
-facts that were saved but not found, against facts never written down.
+**Where the gap sits, descriptively.** The oracle control answers with the file-based arm's
+*entire* store in context and no search tools, so nothing saved can be missed. It lands between
+the two arms, splitting the aggregate gap **+0.1215 (42%) on the read side and +0.1654 (58%) on
+the write side**. Read this as an aggregate split, not a per-question identification: the
+interventions are non-monotonic (oracle-versus-file rescued 52 and lost 9; structured-versus-
+oracle rescued 94 and lost 34), and putting the whole directory in context also changes how the
+reader sees it, not only what it can reach.
 
 | Category | n | Structured | File-based |
 | --- | ---: | ---: | ---: |
@@ -152,8 +164,10 @@ currencies are never summed: an embedder token and a reasoning token are not the
 [`scripts/longmemeval_m.py`](scripts/longmemeval_m.py)
 
 The long-haystack variant, ~500-session histories. Both store-only arms ran on the same
-pre-registered 100-question sample (seed 20260812): one retrieval and one reader call each,
-official per-question-type judging, so the comparison is paired.
+100-question sample (seed 20260812; the drawn ids are published as
+[`sample100_ids.json`](data/longmemeval_m/sample100_ids.json), and the study log records the draw
+preceding both runs, though no public timestamped registration exists): one retrieval and one
+reader call each, official per-question-type judging, so the comparison is paired.
 
 | System | Score | Questions |
 | --- | ---: | --- |
@@ -162,11 +176,14 @@ official per-question-type judging, so the comparison is paired.
 | Hybrid (full agent loop) | 0.632 | 500 (complete set; different harness, directional only) |
 | Entity-and-time (Graphiti OSS) | None | Ingest alone ≈ 12 GPU-days, or ≈ $7,000 hosted |
 
-Paired McNemar on the store-only pair: rescued 22 / lost 7, exact two-sided **p = 0.008**. The
-+15-point gap clears the sample's CI95 of ±10, so the question LoCoMo left open is answered:
-place-plus-time buys nothing at short histories, and pays decisively at long ones. The hybrid
-swept the single-session categories (14/14 and 11/11) and won on multi-session content, exactly
-where structure should pay.
+Paired McNemar on the store-only pair: rescued 22 / lost 7, exact two-sided **p = 0.008**, a
++15-point gap that clears the sample's CI95 of ±10. One reading discipline: the two arms differ
+in more than place-plus-time structure (retrieval fusion, reranking, recency handling, atomic
+facts against raw turns, embedder), so the supported claim is that **this hybrid implementation
+beats this flat-store implementation at long histories**, where the same pair is
+indistinguishable at LoCoMo's scale. That is consistent with structure paying as histories grow,
+and the category shape points the same way (single-session categories swept 14/14 and 11/11,
+wins concentrated in multi-session content), but the mechanism is not isolated from the bundle.
 
 ### LoCoMo
 
@@ -228,18 +245,21 @@ Paired McNemar over the same questions:
 | Graphiti OSS vs bge-m3 | 216/208 | 0.12 | Not significant |
 | Every store vs either Graphiti | 442–485 / 80–115 | 191–276 | Significant |
 
-Two findings worth stating against interest. The first: the hybrid **ties a plain vector index** on
-LoCoMo, so place-plus-time buys nothing there.
+Two findings worth stating against interest. The first: the hybrid is **statistically
+indistinguishable from a plain vector index** on LoCoMo (+0.3 points, paired CI95 [-1.8, +2.4],
+recomputed by `head_to_head.py`): no detectable gain from place-plus-time there, with effects
+beyond ~2 points in either direction excluded.
 
-The second is that **on this benchmark the reader outweighs every architectural difference among
+The second is that **on this benchmark the reader-and-judge stack outweighs every difference among
 the stores that work** (the ordering inverts on [LongMemEval-M](#longmemeval-m), where the same
-hybrid-versus-flat pair separates by 15 points). Reading byte-identical retrieval with a weaker
-model scores 0.7130 instead of 0.7825. Set that swing beside the architectural gaps it is
-competing with:
+hybrid-versus-flat pair separates by 15 points). Evaluating byte-identical retrieval with the local
+35B as both reader and judge scores 0.7130 instead of 0.7825; because both roles change together,
+the 6.9 points belong to the evaluation stack as a whole, not to reader quality alone. Set that
+swing beside the store gaps it is competing with:
 
 | What changed | From | To | Points lost |
 | --- | --- | --- | ---: |
-| **The reader**, same retrieval | **`gpt-4o-mini` 0.7825** | **`Qwen3.6-35B-A3B-mxfp4` 0.7130** | **6.9** |
+| **The reader+judge stack**, same retrieval | **`gpt-4o-mini` 0.7825** | **`Qwen3.6-35B-A3B-mxfp4` 0.7130** | **6.9** |
 | The store, same reader | Hybrid 0.7825 | Place-organized 0.7792 | 0.3 |
 | The store, same reader | Hybrid 0.7825 | Zep Cloud 0.7461 | 3.6 |
 | The store, same reader | Place-organized 0.7792 | Zep Cloud 0.7461 | 3.3 |
@@ -253,7 +273,7 @@ other five store-to-Graphiti pairings cost 21.8 to 25.4. Three things sit behind
 conflated:
 
 - **The reader** answers from whatever context it receives. Identical for every store, which is
-  what makes the store comparison valid; swapping it is the 6.9-point row.
+  what makes the store comparison valid; the 6.9-point row swaps it together with the judge.
 - **The extractor** runs inside the store at ingest and decides what is ever written down. Part of
   the store being compared, not of the harness around it.
 - **The pipeline** is what the extractor runs in: how many passes per message, what it resolves,
@@ -289,9 +309,11 @@ The head-to-head's judge could favour answers that resemble its own style, so an
 frontier judge from a different vendor (`claude-sonnet-5`) re-judged all five stores' published
 responses on a frozen 100-question sample. Recomputed here from the per-question rows: the
 independent judge grades a uniform 4 to 7 points stricter, agreement is 0.91 to 0.96 with kappa
-0.82 to 0.89 and a 0.05 agreement spread (no arm-differential bias), and **every ranking is
-preserved**, with the hybrid's win over Zep Cloud significant under the independent judge alone
-(21/8, p = 0.024) and the hybrid-MemPalace tie holding. The level shifts; the order does not.
+0.82 to 0.89 and a 0.05 agreement spread, and **every ranking is preserved**, with the hybrid's
+win over Zep Cloud significant under the independent judge alone (21/8, p = 0.024) and the
+hybrid-MemPalace tie holding. The supported claim is exactly that: rankings preserved on this
+frozen sample. Equal agreement rates do not rule out directionally different errors per arm, and
+the audit rows carry verdicts, not the independent judge's reasoning.
 
 ### Agentic benchmarks
 
@@ -329,12 +351,15 @@ fixed on WebShop (full catalog, n=500) and swap what its memory holds.
 | Its own released bank, its own retrieval semantics | 69.5 | 0.306 |
 | The same bank, situation-match retrieval | 69.1 | 0.298 |
 
-A three-way statistical tie (all pairwise two-sided p ≥ 0.52; every delta ≤ 1.9 points): at a
-frozen actor, not even the trained system's own bank helps, under either retrieval semantics. Its
-published margin is carried by the training, not by the bank content or retrieval mechanics,
-which is the untrained-side confirmation of its own ablation showing raw replay *hurts* the
-trained policy. The law that survives the whole campaign: **memory's value is inversely
-proportional to the actor's headroom.**
+On strict success the three arms are statistically indistinguishable (all pairwise two-sided
+p ≥ 0.52). On partial-credit score both memory arms are nominally *below* baseline (their bank
+-1.5, CI95 [-3.1, +0.1]; situation-match -1.8, CI95 [-3.5, -0.1], exploratory), so "no effect" is
+too kind to memory here, not too harsh. Either way, at a frozen actor the trained system's own
+bank does not help it under either retrieval semantics, which is the untrained-side counterpart
+of its own ablation showing raw replay *hurts* the trained policy: whatever its published margin
+is made of, it is not bank content or retrieval mechanics injected from outside. The pattern that
+survives the whole study: **memory helped only where the actor had headroom**; two actor tiers on
+two tasks, so a pattern, not a law.
 
 ---
 
@@ -363,6 +388,7 @@ data/
                     {graphiti_oss,hybrid_agentloop}_sample100.json          the store-only sample
   locomo/           {no_memory,file_based,structured}.json                  300 rows each
   longmemeval_m/    {hybrid_storeonly,place_organized}_sample100.json       100 paired rows each
+                    sample100_ids.json                                      the drawn sample
   head_to_head/     {hybrid,place_organized,entity_time_cloud,...}.json     1,540 rows each
   agentic/          {alfworld,webshop}_{35b,frontier}_{baseline,memory}.json
                     webshop_frozen7b_{baseline,their_bank,situation_match}.json   the store swap
@@ -375,10 +401,15 @@ systems/
                     chatbot.py        a toy chatbot running the whole loop live
 ```
 
-Rows carry the per-question verdict, category, token counts, and (for the conversational arms)
-the model's answer and the gold answer, so the grading can be re-examined and not merely
-re-tallied. The head-to-head rows carry each question's retrieved-context *length* and verdict
-rather than the context itself; see the provenance note below.
+Rows carry the per-question verdict, category, token counts, and (for the main-experiment
+conversational arms) the model's answer and the gold answer, so that grading can be re-examined
+and not merely re-tallied. The head-to-head rows are thinner: qa_id, verdict, hit count, and
+retrieved-context *length*, not the contexts, questions, answers, or gold (see the provenance
+note below); their shared judge prompt is published in
+[`data/head_to_head/judge.json`](data/head_to_head/judge.json). The judge-audit rows carry the
+two verdicts per question, not the independent judge's transcripts. In short: the head-to-head
+and audit artifacts support re-tallying and re-deriving the statistics, not independent
+re-judging.
 
 ### What these artifacts can and cannot settle
 
@@ -436,4 +467,6 @@ benchmarks themselves keep their own licenses.
 - **One model family judged the main experiment.** An independent frontier judge audited the
   head-to-head stores and preserved every ranking (`scripts/judge_audit.py` recomputes it); the
   main experiment's file-versus-structured judge remains unaudited.
-- **Consolidation never ran during a scored question**, so the structured arm's numbers are a floor.
+- **Consolidation never ran during a scored question**, so it contributed nothing to the scored
+  numbers. Whether running it would raise or lower them is unmeasured: consolidation can merge
+  usefully or lose information.
