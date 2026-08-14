@@ -355,12 +355,13 @@ fixed on WebShop (full catalog, n=500) and swap what its memory holds.
 On strict success the three arms are statistically indistinguishable (all pairwise two-sided
 p ≥ 0.52). On partial-credit score both memory arms are nominally *below* baseline (their bank
 -1.5, CI95 [-3.1, +0.1]; situation-match -1.8, CI95 [-3.5, -0.1], exploratory), so "no effect" is
-too kind to memory here, not too harsh. Either way, at a frozen actor the trained system's own
-bank does not help it under either retrieval semantics, which is the untrained-side counterpart
-of its own ablation showing raw replay *hurts* the trained policy: whatever its published margin
-is made of, it is not bank content or retrieval mechanics injected from outside. The pattern that
-survives the whole study: **memory helped only where the actor had headroom**; two actor tiers on
-two tasks, so a pattern, not a law.
+too kind to memory here, not too harsh. Scope, stated plainly: this port of the frozen actor
+falls well short of the published baselines, so these rows establish that the tested injections
+did not help *this port*; they cannot rule bank content or retrieval out of the *published*
+system, and they do not identify the training as the cause. The training remains the leading
+explanation via the system's own ablation (raw replay hurts its trained policy), which points the
+same way from the trained side. The pattern that survives the whole study: **memory helped only
+where the actor had headroom**; two actor tiers on two tasks, so a pattern, not a law.
 
 ---
 
