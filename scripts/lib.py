@@ -29,19 +29,23 @@ def by(rows, field):
     return dict(sorted(out.items(), key=lambda kv: str(kv[0])))
 
 
-PAIR_ID_FIELDS = ("qa_id", "question_id", "game", "idx", "session")
+PAIR_ID_FIELDS = ("qa_id", "question_id", "qa_index", "conv_id", "game", "idx", "session")
 
 
 def assert_aligned(a, b):
-    """Paired stats are only valid on identically ordered questions. If both
-    row sets carry a recognised id field, require the sequences to match."""
+    """Paired stats are only valid on identically ordered questions. Every
+    recognised id field present in both row sets must match pairwise; a
+    single field is not enough where ids repeat across clusters (LoCoMo's
+    qa_index restarts per conversation, so conv_id must agree too)."""
     assert len(a) == len(b), "paired test needs equal-length, aligned rows"
+    checked = False
     for f in PAIR_ID_FIELDS:
         if a and f in a[0] and f in b[0]:
             ids_a = [r[f] for r in a]
             ids_b = [r[f] for r in b]
             assert ids_a == ids_b, f"paired rows misaligned on {f}"
-            return
+            checked = True
+    return checked
 
 
 def mcnemar(a, b, key="correct"):

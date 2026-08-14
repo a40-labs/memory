@@ -72,7 +72,7 @@ def main():
     ok &= check("hybrid-vs-cloud p", p, 0.024, tol=5e-4)
     bo, co, _, p = mcnemar(aligned["hybrid"], aligned["place_organized"])
     print(f"  hybrid vs place-organized: rescued {bo} / lost {co}, p = {p:.3f} "
-          "(the tie holds)")
+          "(not significant; equivalence not established at n=100)")
     bo, co, _, p = mcnemar(aligned["hybrid"], aligned["entity_time_oss"])
     print(f"  hybrid vs graphiti oss: rescued {bo} / lost {co}, p = {p:.2e}")
     print("  The supported claim: on this frozen sample, every ranking from the shipped")

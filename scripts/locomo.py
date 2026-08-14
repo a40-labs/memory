@@ -37,7 +37,7 @@ def main():
         print(f"  {label:18} {rate(s) - rate(f):+.3f}")
 
     print("\n== Cluster bootstraps over the 10 conversations ==")
-    key = lambda r: (r["conv_id"], str(r.get("qa_id") or r.get("question_id") or ""))
+    key = lambda r: (r["conv_id"], r["qa_index"])
     st = sorted(arms["structured"], key=key)
     fb = sorted(arms["file_based"], key=key)
     lo_d, hi_d = cluster_paired_bootstrap(st, fb)

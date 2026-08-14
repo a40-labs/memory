@@ -71,24 +71,34 @@ def main():
     lo, hi = paired_bootstrap(arms["structured"], arms["file_based"], n=2000)
     print(f"  discordant {bo}/{co}   chi2 {chi2:.2f}   exact p {p:.2e}")
     print(f"  unweighted paired difference CI95 [{lo:+.4f}, {hi:+.4f}] (2k resamples)")
-    # The published CI is post-stratified: each resample is re-weighted to the
-    # full category mix before differencing, matching the headline estimate.
+    # The published CI procedure, encoded exactly (the study's compare_arms_ps.py):
+    # per category, resample that category's qids with replacement (paired: the
+    # same picks feed both arms), post-stratify each arm to the full mix,
+    # difference; 10,000 resamples, seed 1234, categories in sorted-qid
+    # first-appearance order.
     import random as _random
+    A = {r["question_id"]: r for r in arms["structured"]}
+    B = {r["question_id"]: r for r in arms["file_based"]}
+    qids = sorted(set(A) & set(B))
+    qids_by_cat = {}
+    for q in qids:
+        qids_by_cat.setdefault(A[q]["category"], []).append(q)
     rng = _random.Random(1234)
-    st, fb = arms["structured"], arms["file_based"]
-    n_rows = len(st)
+    tot = sum(MIX.values())
     diffs = []
     for _ in range(10000):
-        idx = [rng.randrange(n_rows) for _ in range(n_rows)]
-        diffs.append(post_stratified([st[i] for i in idx], MIX)
-                     - post_stratified([fb[i] for i in idx], MIX))
+        da = db = 0.0
+        for c, pool in qids_by_cat.items():
+            n_c = len(pool)
+            picks = [pool[rng.randrange(n_c)] for _ in range(n_c)]
+            da += MIX[c] / tot * sum(1 for q in picks if A[q]["correct"]) / n_c
+            db += MIX[c] / tot * sum(1 for q in picks if B[q]["correct"]) / n_c
+        diffs.append(da - db)
     diffs.sort()
     plo, phi = diffs[250], diffs[9750]
     print(f"  post-stratified paired difference CI95 [{plo:+.4f}, {phi:+.4f}]")
-    print("  (published as [22.1, 35.1] points; bootstrap endpoints wobble ~0.1pt with")
-    print("   seed and resampling detail)")
-    ok &= check("post-strat CI low (pts)", plo * 100, 22.1, tol=0.2)
-    ok &= check("post-strat CI high (pts)", phi * 100, 35.1, tol=0.2)
+    ok &= check("post-strat CI low (pts)", plo * 100, 22.13, tol=0.01)
+    ok &= check("post-strat CI high (pts)", phi * 100, 35.40, tol=0.01)
 
     print("\n== Token ledger, dev-144 (Table 2) ==")
     g = lambda r, k: r.get(k) or 0

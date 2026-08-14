@@ -13,7 +13,7 @@ noting mem0's own number has been [cited at both 67 and 92.5](https://arxiv.org/
 One benchmark, one system, a 25-point spread, and the memory architecture never changed. Two more
 habits compound it: **retrieval recall and answer accuracy quoted side by side** as if they
 measured the same thing, and **the reader and judge behind a figure left unstated**, though
-swapping the reader alone moves a score by
+swapping the reader-and-judge stack moves a score by
 [more than the architecture does](#store-only-head-to-head). A number published without its frame
 cannot be checked, only believed.
 
@@ -370,7 +370,7 @@ where the actor had headroom**; two actor tiers on two tasks, so a pattern, not 
 ```bash
 git clone https://github.com/a40-labs/memory
 cd memory
-python3 scripts/verify_all.py          # every table above, rebuilt and checked
+python3 scripts/verify_all.py          # every row-backed figure above, rebuilt and checked
 python3 scripts/longmemeval_s.py       # or run one benchmark at a time
 python3 systems/file-based/test_ccmem.py   # the file-based mechanism against its survey
 ```

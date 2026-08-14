@@ -30,6 +30,11 @@ def mem(**kw):
     return CCMemory(tempfile.mkdtemp(), **kw)
 
 
+def read(path):
+    with open(path) as fh:
+        return fh.read()
+
+
 class LoadingTest(unittest.TestCase):
     """README §1 "Loading": first 200 lines or 25KB, whichever cuts first,
     measured after stripping frontmatter and HTML comments; topic files are
@@ -128,7 +133,7 @@ class WritePathTest(unittest.TestCase):
         m.create_topic_file("auth.md", "body", name="auth",
                             description="how auth works", mtype="project",
                             origin_session_id="sess-1")
-        raw = open(os.path.join(m.mem_dir, "auth.md")).read()
+        raw = read(os.path.join(m.mem_dir, "auth.md"))
         self.assertTrue(raw.startswith("---\n"))
         self.assertIn("type: project", raw)
         self.assertIn('originSessionId: "sess-1"', raw)
@@ -136,8 +141,7 @@ class WritePathTest(unittest.TestCase):
     def test_unknown_type_coerced_to_reference(self):
         m = mem()
         m.create_topic_file("x.md", "body", mtype="banana")
-        self.assertIn("type: reference",
-                      open(os.path.join(m.mem_dir, "x.md")).read())
+        self.assertIn("type: reference", read(os.path.join(m.mem_dir, "x.md")))
         self.assertIn("reference", MEMORY_TYPES)
 
     def test_update_keeps_frontmatter(self):
@@ -145,7 +149,7 @@ class WritePathTest(unittest.TestCase):
         m.create_topic_file("t.md", "old body", mtype="user",
                             origin_session_id="s9")
         m.update_topic_file("t.md", "new body")
-        raw = open(os.path.join(m.mem_dir, "t.md")).read()
+        raw = read(os.path.join(m.mem_dir, "t.md"))
         self.assertIn("type: user", raw)
         self.assertIn("new body", raw)
         self.assertNotIn("old body", raw)
@@ -155,7 +159,7 @@ class WritePathTest(unittest.TestCase):
         m.append_index("- alpha beta")
         m.append_index("- beta")
         m.replace_index_line("- beta", "- BETA")   # exact match wins
-        lines = open(m.index_path).read().rstrip("\n").split("\n")
+        lines = read(m.index_path).rstrip("\n").split("\n")
         self.assertEqual(lines, ["- alpha beta", "- BETA"])
 
     def test_replace_rejects_without_writing(self):
@@ -163,7 +167,7 @@ class WritePathTest(unittest.TestCase):
         m.append_index("- only line")
         out = m.replace_index_line("no such line", "- new")
         self.assertIn("rejected", out)
-        self.assertEqual(open(m.index_path).read(), "- only line\n")
+        self.assertEqual(read(m.index_path), "- only line\n")
 
     def test_shrink_guard_rejects_then_force_overrides(self):
         m = mem()
