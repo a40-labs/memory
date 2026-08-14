@@ -74,6 +74,37 @@ def main():
         _, _, p1 = mcnemar_one_sided(m, b)
         bo, co, _, p2 = mcnemar(m, b)
         print(f"  {tier:9} memory rescued {bo}, cost {co}   one-sided p {p1:.3f}   two-sided p {p2:.3f}")
+    print("\n== The store swap: the trained system's own bank on its own frozen actor (Table 12) ==")
+    swap = {a: load("agentic", f"webshop_frozen7b_{a}.json") for a in
+            ("baseline", "their_bank", "situation_match")}
+    for a in swap.values():
+        a.sort(key=lambda r: r["idx"])
+    rows = []
+    for a, r in swap.items():
+        score = 100 * sum(x["reward"] for x in r) / len(r)
+        sr = sum(1 for x in r if x["success"]) / len(r)
+        rows.append([a, len(r), f"{score:.1f}", f"{sr:.3f}"])
+    table(["arm", "n", "score", "success rate"], rows, ["<", ">", ">", ">"])
+    PUB_SWAP = {"baseline": (71.0, 0.300), "their_bank": (69.5, 0.306),
+                "situation_match": (69.1, 0.298)}
+    for a, r in swap.items():
+        score = 100 * sum(x["reward"] for x in r) / len(r)
+        sr = sum(1 for x in r if x["success"]) / len(r)
+        ok &= check(f"frozen7b {a} score", score, PUB_SWAP[a][0], tol=0.05)
+        ok &= check(f"frozen7b {a} success rate", sr, PUB_SWAP[a][1], tol=1e-3)
+    for x in swap["baseline"] + swap["their_bank"] + swap["situation_match"]:
+        x["correct"] = x["success"]
+    for a, b, pub in (("their_bank", "baseline", (14, 11)),
+                      ("situation_match", "baseline", (14, 15)),
+                      ("situation_match", "their_bank", (9, 13))):
+        bo, co, _, p2 = mcnemar(swap[a], swap[b])
+        print(f"  {a} vs {b}: rescued {bo} / cost {co}, two-sided p {p2:.3f}")
+        ok &= check(f"swap {a}-vs-{b} discordant b", bo, pub[0], tol=0)
+        ok &= check(f"swap {a}-vs-{b} discordant c", co, pub[1], tol=0)
+    print("  Three-way statistical tie: at a frozen actor, neither the trained system's own")
+    print("  released bank nor a different retrieval semantics over it moves the needle. The")
+    print("  published margin is the training, not the bank content or retrieval mechanics.")
+
     print("\n  Convention note, because the campaign log is not uniform on this: the ablations were")
     print("  pre-registered one-sided (direction: memory helps), and ALFWorld's weak-actor p is quoted")
     print("  one-sided (0.164). The three others are quoted two-sided (0.022, 0.500, 0.801). Both")

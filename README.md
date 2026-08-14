@@ -4,36 +4,26 @@ Per-question results and verification scripts for a controlled comparison of age
 architectures: **files the model curates**, an **auto-mined structured store**, and a **trained
 experience bank**.
 
-This repository exists because published memory numbers are, at present, hard to compare.
-
-One system's LoCoMo result has appeared as **84**, **58.44** and **75.14**: Zep first reported 84;
-mem0's CTO [filed an issue against Zep's evaluation code](https://github.com/getzep/zep-papers/issues/5)
-arguing the correct figure was 58.44, the adversarial category having been counted in the numerator
-but excluded from the denominator; Zep
-[re-ran with that error fixed and reported 75.14](https://blog.getzep.com/lies-damn-lies-statistics-is-mem0-really-sota-in-agent-memory/),
-while noting mem0's own LoCoMo number has been
-[cited at both 67 and 92.5](https://arxiv.org/abs/2504.19413). One benchmark, one system, a
-25-point spread, and the memory architecture never changed.
-
-Two more habits make figures incomparable. **Retrieval recall and answer accuracy get quoted side
-by side** as though they measured the same thing: [MemPalace](https://github.com/mempalace/mempalace)
-publishes R@N and says so plainly, while the QA numbers people quote elsewhere are LLM-judged
-answer accuracy, and the two differ by a wide margin on the same store. And **the reader and judge
-behind a figure usually go unstated**, though swapping them can outweigh the architecture: in
-[the head-to-head below](#store-only-head-to-head), the same retrieval read by a different model
-scores 0.7130 instead of 0.7825, a 6.9-point swing that exceeds every difference between the three
-stores that work.
-
-A number published without those attached cannot be checked, only believed.
+This repository exists because published memory numbers are hard to compare. One system's LoCoMo
+result has appeared as **84**, **58.44** and **75.14**: Zep reported 84; mem0's CTO
+[filed an issue](https://github.com/getzep/zep-papers/issues/5) arguing the correct figure was
+58.44 (the adversarial category counted in the numerator but excluded from the denominator); Zep
+[re-ran with the error fixed and reported 75.14](https://blog.getzep.com/lies-damn-lies-statistics-is-mem0-really-sota-in-agent-memory/),
+noting mem0's own number has been [cited at both 67 and 92.5](https://arxiv.org/abs/2504.19413).
+One benchmark, one system, a 25-point spread, and the memory architecture never changed. Two more
+habits compound it: **retrieval recall and answer accuracy quoted side by side** as if they
+measured the same thing, and **the reader and judge behind a figure left unstated**, though
+swapping the reader alone moves a score by
+[more than the architecture does](#store-only-head-to-head). A number published without its frame
+cannot be checked, only believed.
 
 So the aim here is narrow and complete: **publish the evidence, not the conclusions.** Every
 per-question row behind every table in
 [*The Shapes of Agent Memory*](https://pinglin.tw/blog/the-shapes-of-agent-memory) is committed,
-together with a script that recomputes each published figure from those rows and fails loudly if
-it does not match. A reader can re-tally the scores, inspect what each system answered against the
-gold answer, re-run the statistics under different assumptions, or discover that a number is wrong,
-which has already happened twice and is recorded rather than quietly fixed. Nothing here is a
-summary you have to trust.
+with a script that recomputes each published figure from those rows and fails loudly on any
+mismatch. A reader can re-tally the scores, inspect answers against gold, re-run the statistics
+under different assumptions, or discover that a number is wrong, which has already happened twice
+and is recorded rather than quietly fixed.
 
 ## TL;DR
 
@@ -46,24 +36,27 @@ The same findings as the post, each with the figure it rests on and the section 
   equivalent LoCoMo category 0.508 against 0.246: eager retrieval needs an abstention discipline
   that sparse memory gets for free. [Details](#locomo)
 - **Against interest: the hybrid ties a plain vector index** on LoCoMo (χ² = 0.06), so
-  place-plus-time buys nothing there. Whether structure pays once histories grow long is still
-  open, and the run that would settle it was unfinished at publication.
-  [Details](#store-only-head-to-head)
+  place-plus-time buys nothing there. On the long-haystack benchmark the same pair separates:
+  hybrid 0.750 against 0.600, paired on one pre-registered sample, p = 0.008. Structure pays
+  where histories are long, and no single benchmark ranks memory systems.
+  [Details](#longmemeval-m)
 - **The ruler can outweigh the architecture.** Identical retrieval read by `gpt-4o-mini` instead of the local
   35B scores 0.7825 against 0.7130, a bigger move than any difference between the three stores that work
-  (0.3 to 3.6 points). Numbers do not travel across protocols.
+  on LoCoMo (0.3 to 3.6 points); on long-haystack LongMemEval-M the same store pair separates by 15, so
+  which factor dominates depends on the benchmark. Numbers do not travel across protocols.
   [Details](#store-only-head-to-head)
 - **On agentic benchmarks, memory earns in proportion to the actor's headroom.** Real points for a
-  weak actor (WebShop success +4.2, the only significant memory effect in the campaign), noise at
-  the frontier, and a bar that only training reaches. [Details](#agentic-benchmarks)
+  weak actor (WebShop success +4.2, the agentic benchmarks' only significant memory-ablation effect), noise at
+  the frontier, and a bar that only training reaches: even the trained system's own released bank,
+  injected into its own frozen actor, is a null. [Details](#agentic-benchmarks)
 
 ---
 
 ## What was measured
 
 One fixed open-weight model ([`Qwen3.6-35B-A3B-mxfp4`](https://huggingface.co/mlx-community/Qwen3.6-35B-A3B-mxfp4),
-temperature 0) answers long-term-memory
-benchmarks through one shared minimal agent loop. Only the memory layer changes between arms.
+temperature 0) answers long-term-memory benchmarks through one shared minimal agent loop. Only
+the memory layer changes between arms.
 
 Architectures are named by what they do, not by who ships them: **file-based**, **place-organized**,
 **entity-and-time**, and **hybrid** (place plus time). Where a named system is measured, it is named
@@ -76,28 +69,22 @@ and linked, and the description is drawn from its own documentation.
 | **Structured** | Atomic dated facts, embedded, no LLM on the write path | Ranked hybrid search | The other: memory as a store that keeps everything and ranks at read time. |
 | **Oracle** | The file-based arm's store, unchanged | The entire memory directory in context, no tools | Splits the file-based arm's losses in two. With its whole store in context nothing saved can be missed, so what it still gets wrong was never written down, and what it recovers was saved but not found. |
 
-Two of these arms were built for this study and have no external documentation to draw from, so
-they are specified here:
+Two of these arms were built for this study, so they are specified here rather than drawn from
+anyone's documentation:
 
-- **Structured (the hybrid).** A place-organized write path files dated atomic facts with no LLM at
-  ingest. Validity windows, borrowed from the entity-and-time lineage, let a new fact close an old
-  one's window rather than compete with it at recall. A third layer neither lineage has, an
-  associative graph learned from which places co-occur in retrievals beyond chance, lets recall
-  reach items the query never ranked. The place-plus-time combination is not unique to it, since
-  [MemPalace](https://github.com/mempalace/mempalace) ships validity windows of its own; the
+- **Structured (the hybrid).** A place-organized write path files dated atomic facts with no LLM
+  at ingest; validity windows, borrowed from the entity-and-time lineage, let a new fact close an
+  old one's rather than compete with it at recall; and an associative graph learned from which
+  places co-occur in retrievals beyond chance lets recall reach items the query never ranked. The
+  place-plus-time combination is not unique
+  ([MemPalace](https://github.com/mempalace/mempalace) ships validity windows too); the
   usage-learned layer is what differs. It deliberately omits the graph lineage's expensive half:
-  no LLM at ingest, so no entity resolution and no maintained entity summaries.
-- **File-based.** A reconstruction of a shipping coding agent's auto-memory, a `MEMORY.md` index
-  over model-curated topic files, rather than a reimplementation written to lose. The original is
-  closed-source, so it cannot be lifted: every mechanism decision is instead traced to a cited
-  public source in [`systems/file-based/`](systems/file-based), where the survey it implements and the
-  harness-side machinery, [`ccmem.py`](systems/file-based/ccmem.py), are published together (stdlib
-  only). The survey labels every
-  claim `[official]`, `[corroborated]`, `[single-source]` or `[rumor]`, so a reader can see exactly
-  how well-evidenced each behaviour is. Validation against the shipping CLI was deliberately
-  re-scoped out: a closed-product run is a snapshot of whatever version shipped that week, which
-  cannot serve a reproducibility-first artifact. The spec's envelope check (save rates, index
-  shapes, read patterns) is published instead, for anyone with the real tool to falsify it.
+  no LLM at ingest, so no entity resolution and no maintained summaries.
+- **File-based.** A reconstruction of a shipping coding agent's auto-memory (a `MEMORY.md` index
+  over model-curated topic files), not a reimplementation written to lose. The original is
+  closed-source, so [`systems/file-based/`](systems/file-based) publishes the per-claim sourced
+  survey it is built from, the mechanism itself, its tests, and a toy chatbot that runs the loop
+  live, plus an open envelope check for anyone with the real tool to falsify it.
 
 The judge is identical across arms: a model judge plus a deterministic pass that re-classifies
 refusals, so "I don't know" scores correct only when the answer genuinely was not in the history.
@@ -138,13 +125,11 @@ facts that were saved but not found, against facts never written down.
 | Single-session-preference | 18 | 0.611 | 0.333 |
 | **Abstention** | 18 | 0.778 | **0.889** |
 
-Abstention, questions whose right answer is "I don't know", is the one category the file-based arm
-wins here (0.889 against 0.778). It wins the equivalent category on LoCoMo too, where it is called
-adversarial (0.508 against 0.246, with the no-memory floor scoring 1.000 by refusing everything).
-The mechanism is the same in both places. Ranked retrieval nearly always surfaces *something*
-plausible enough to tempt an answer, so the structured arm answers when it should have declined. A
-curation-limited store often has nothing to offer, and the model then correctly says it does not
-know. Eager retrieval needs an abstention discipline bolted on; sparse memory gets one for free.
+Abstention, questions whose right answer is "I don't know", is the one category the file-based
+arm wins, both here (0.889 vs 0.778) and in LoCoMo's adversarial category (0.508 vs 0.246). Same
+mechanism both times: ranked retrieval nearly always surfaces *something* plausible enough to
+tempt an answer, while a curation-limited store often has nothing to offer, so the model correctly
+declines. Eager retrieval needs an abstention discipline bolted on; sparse memory gets one free.
 
 **Cost**, dev-144, chat tokens per question. The two arms pay in different currencies, so
 embedder tokens are never summed into the total.
@@ -157,27 +142,31 @@ embedder tokens are never summed into the total.
 | Total per *correct* answer | 665,447 | 27,013 |
 | Embedder tokens (separate currency) | 0 | 107,797 |
 
-The structured arm's zero on the write path is measured, not assumed: its ingest path only embeds
-and upserts, with no model call in it, and a live query over the orchestration layer across the
-whole ingest window found no model-invoking jobs running. Completion-token counts are lower bounds
-throughout, since hidden reasoning tokens are not always reported, and the two currencies are never
-summed or differenced: an embedder token and a reasoning token are not the same thing.
+The structured arm's zero on the write path is measured, not assumed: its ingest only embeds and
+upserts, and a live query across the ingest window found no model-invoking jobs. Completion-token
+counts are lower bounds throughout (hidden reasoning tokens are not always reported), and the two
+currencies are never summed: an embedder token and a reasoning token are not the same thing.
 
 ### LongMemEval-M
 
 [`scripts/longmemeval_m.py`](scripts/longmemeval_m.py)
 
-The long-haystack variant, ~500-session histories.
+The long-haystack variant, ~500-session histories. Both store-only arms ran on the same
+pre-registered 100-question sample (seed 20260812): one retrieval and one reader call each,
+official per-question-type judging, so the comparison is paired.
 
 | System | Score | Questions |
 | --- | ---: | --- |
-| Hybrid (full agent loop) | 0.632 | 500 (complete set) |
-| Place-organized (MemPalace, store-only) | 0.600 | 100 (pre-registered sample, seed 20260812) |
+| **Hybrid (store-only)** | **0.750** | 100 (pre-registered sample, seed 20260812) |
+| Place-organized (MemPalace, store-only) | 0.600 | The same 100 |
+| Hybrid (full agent loop) | 0.632 | 500 (complete set; different harness, directional only) |
 | Entity-and-time (Graphiti OSS) | None | Ingest alone ≈ 12 GPU-days, or ≈ $7,000 hosted |
 
-Only the place-organized row is reproducible here. The two scored rows use different harnesses
-*and* different samples, so the gap between them is directional; the store-only hybrid run on the
-same sample was still going at publication.
+Paired McNemar on the store-only pair: rescued 22 / lost 7, exact two-sided **p = 0.008**. The
++15-point gap clears the sample's CI95 of ±10, so the question LoCoMo left open is answered:
+place-plus-time buys nothing at short histories, and pays decisively at long ones. The hybrid
+swept the single-session categories (14/14 and 11/11) and won on multi-session content, exactly
+where structure should pay.
 
 ### LoCoMo
 
@@ -236,9 +225,11 @@ Paired McNemar over the same questions:
 Two findings worth stating against interest. The first: the hybrid **ties a plain vector index** on
 LoCoMo, so place-plus-time buys nothing there.
 
-The second is that **the reader outweighs every architectural difference among the stores that
-work.** Reading byte-identical retrieval with a weaker model scores 0.7130 instead of 0.7825. Set
-that swing beside the architectural gaps it is competing with:
+The second is that **on this benchmark the reader outweighs every architectural difference among
+the stores that work** (the ordering inverts on [LongMemEval-M](#longmemeval-m), where the same
+hybrid-versus-flat pair separates by 15 points). Reading byte-identical retrieval with a weaker
+model scores 0.7130 instead of 0.7825. Set that swing beside the architectural gaps it is
+competing with:
 
 | What changed | From | To | Points lost |
 | --- | --- | --- | ---: |
@@ -280,9 +271,9 @@ here kept.
 
 None of this suggests their published number is wrong. It reproduces from their own released grades, and
 their contexts re-scored under this study's reader and judge give 0.7461, within a point of their
-published 75.14. The 21-point gap is real
-and reproducible; its cause is not observable from outside. Read "the hosted pipeline" as a label for the
-unobserved remainder, not a mechanism verified here.
+published 75.14. The 21-point gap is real and reproducible; its cause is not observable from
+outside. Read "the hosted pipeline" as a label for the unobserved remainder, not a mechanism
+verified here.
 
 ### Agentic benchmarks
 
@@ -309,8 +300,23 @@ Paired ablations, memory rescued / cost:
 | **WebShop, 35B** | **49** | **28** | **0.011** | **0.022** |
 | WebShop, frontier | 33 | 30 | 0.401 | 0.801 |
 
-One significant memory effect in the whole campaign, and it is the weak actor on WebShop. The law
-that survives: **memory's value is inversely proportional to the actor's headroom.**
+One significant memory effect in the whole campaign, and it is the weak actor on WebShop.
+
+The complementary probe runs the other direction: hold the *trained* system's frozen 7B actor
+fixed on WebShop (full catalog, n=500) and swap what its memory holds.
+
+| Arm (frozen trained 7B) | Score | SR |
+| --- | ---: | ---: |
+| No memory | 71.0 | 0.300 |
+| Its own released bank, its own retrieval semantics | 69.5 | 0.306 |
+| The same bank, situation-match retrieval | 69.1 | 0.298 |
+
+A three-way statistical tie (all pairwise two-sided p ≥ 0.52; every delta ≤ 1.9 points): at a
+frozen actor, not even the trained system's own bank helps, under either retrieval semantics. Its
+published margin is carried by the training, not by the bank content or retrieval mechanics,
+which is the untrained-side confirmation of its own ablation showing raw replay *hurts* the
+trained policy. The law that survives the whole campaign: **memory's value is inversely
+proportional to the actor's headroom.**
 
 ---
 
@@ -321,12 +327,14 @@ git clone https://github.com/a40-labs/memory
 cd memory
 python3 scripts/verify_all.py          # every table above, rebuilt and checked
 python3 scripts/longmemeval_s.py       # or run one benchmark at a time
+python3 systems/file-based/test_ccmem.py   # the file-based mechanism against its survey
 ```
 
-No install step and no dependencies: standard library only, Python 3.9+ (for `math.comb`). Every
-script exits non-zero if any published number fails to reproduce, so the results carry their own
-regression test: edit a row or implement a statistic differently and the run goes red rather than
-silently disagreeing with the post.
+No install step and no dependencies: standard library only, Python 3.9+. Every script exits
+non-zero if any published number fails to reproduce, so the results carry their own regression
+test. [`systems/file-based/`](systems/file-based) also ships a toy chatbot that runs the
+file-based loop live against any OpenAI-compatible endpoint: chat, curate at session end, recall
+in a fresh session.
 
 ### What the data files contain
 
@@ -335,9 +343,10 @@ data/
   longmemeval_s/    holdout_{no_memory,file_based,structured,oracle}.json   356 rows each
                     dev144_{file_based,structured}.json                     the token ledger
   locomo/           {no_memory,file_based,structured}.json                  300 rows each
-  longmemeval_m/    place_organized_sample100.json                          100 rows
+  longmemeval_m/    {hybrid_storeonly,place_organized}_sample100.json       100 paired rows each
   head_to_head/     {hybrid,place_organized,entity_time_cloud,...}.json     1,540 rows each
   agentic/          {alfworld,webshop}_{35b,frontier}_{baseline,memory}.json
+                    webshop_frozen7b_{baseline,their_bank,situation_match}.json   the store swap
 systems/
   file-based/       ccmem.py          the file-based arm's mechanism, stdlib only
                     README.md         the per-claim sourced survey it implements
@@ -357,35 +366,31 @@ answers, and re-run the statistics. Every row is a single run, and the hosted re
 bit-deterministic at temperature 0: identical re-runs drifted 0.3 to 0.4 points, so the fourth
 decimal is noise.
 
-Rebuilding the systems is a separate matter, and only partly possible here. The structured, place-organized
-and entity-and-time stores need memory services that are not in this repo. For the file-based arm,
-`systems/file-based/` publishes the mechanism and the spec it implements, which is enough to inspect or
-re-implement how memory was written, capped, aged and searched, but not enough to re-run the arm
-end to end: the curation prompt, the agent loop and the benchmark runner stay unpublished, and the
-answering model was served locally. Read it as an auditable specification of the arm, not a
-turnkey reproduction of it.
+Rebuilding the systems is a separate matter. The structured, place-organized and entity-and-time
+stores need memory services that are not in this repo. The file-based arm's mechanism is published
+in `systems/file-based/`: enough to inspect or re-implement how memory was written, capped, aged
+and searched, but the benchmark runner and its curation prompt stay unpublished: an auditable
+specification of the arm, not a turnkey reproduction.
 
 ---
 
 ## Provenance and credit
 
-**Zep Cloud's row is Zep's data, not ours.** The retrieval contexts for that row are the
-published outputs from [`getzep/zep-papers`](https://github.com/getzep/zep-papers), used verbatim
-so their production system speaks for itself rather than through a proxy. This repo therefore
-publishes only *measurements over* that data (per-question verdict, context length), never the
-contexts themselves; fetch those from their repository under their license. Their published
-LoCoMo result reproduces from their own artifacts, and 0.7461 is that same context re-scored
-under this comparison's shared reader and judge, which is a different number for a stated reason,
-not a contradiction of theirs.
+**Zep Cloud's row is Zep's data, not ours.** Its retrieval contexts are the published outputs
+from [`getzep/zep-papers`](https://github.com/getzep/zep-papers), used verbatim so their
+production system speaks for itself. This repo publishes only *measurements over* that data
+(per-question verdict, context length), never the contexts; fetch those from their repository
+under their license. Their published result reproduces from their own artifacts; 0.7461 is the
+same context re-scored under this comparison's shared reader and judge, a different number for a
+stated reason rather than a contradiction of theirs.
 
-**MemPalace** (MIT, [mempalace/mempalace](https://github.com/mempalace/mempalace)) is measured here
-through its own retrieval, read by the shared reader. Worth stating plainly, since a comparison
-should describe a rival accurately: it stores conversation text verbatim rather than extracting
-facts, indexes it spatially (wings, rooms, drawers), and ships a temporal entity graph with
-validity windows of its own. It also publishes its own per-question results and reproduction
-commands, which is the standard this repo is trying to meet. Its published benchmark numbers are
-retrieval recall (R@N), not QA accuracy, so they are not comparable to the answer-accuracy figures
-above; the 0.7792 here is its retrieval read end-to-end by this comparison's reader and judge.
+**MemPalace** (MIT, [mempalace/mempalace](https://github.com/mempalace/mempalace)) is measured
+through its own retrieval, read by the shared reader. Stated plainly, because a comparison should
+describe a rival accurately: it stores conversation text verbatim, indexes it spatially (wings,
+rooms, drawers), and ships a temporal entity graph with validity windows of its own. It publishes
+per-question results and reproduction commands, the standard this repo is trying to meet. Its own
+published numbers are retrieval recall (R@N), not QA accuracy; the 0.7792 here is its retrieval
+read end-to-end by this comparison's reader and judge.
 
 Also measured: [Graphiti](https://github.com/getzep/graphiti), and
 [MemHarness](https://github.com/KnowledgeXLab/MemHarness), whose ALFWorld and WebShop figures are

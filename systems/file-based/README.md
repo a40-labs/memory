@@ -1,28 +1,31 @@
 # File-based agent memory: a reconstruction
 
-`ccmem.py` is a dependency-free reconstruction of the file-based memory mechanism that shipping coding
-agents use: a `MEMORY.md` index the model curates, topic files it writes and reads on demand, and no
-retrieval beyond keeping the index in context and grepping the rest.
+The file-based memory shape, reconstructed and runnable: a `MEMORY.md` index the model curates,
+topic files written and read on demand, and no retrieval beyond keeping the index in context and
+grepping the rest.
 
-The best-documented instance of that mechanism is Claude Code's auto-memory, so this document is a
-survey of it, and `ccmem.py` implements what the survey establishes. The original is closed-source and
-cannot be lifted, so fidelity rests on traceability instead: **every claim below is labelled**
-**[official]** = documented by Anthropic, **[corroborated]** = multiple independent community sources,
-**[single-source]** = one analysis, **[rumor]** = leak-derived or unverified. A reader can therefore see
-exactly how well-evidenced each behaviour is, rather than taking "faithful" on trust.
+| File | What it is |
+| --- | --- |
+| [`ccmem.py`](ccmem.py) | The mechanism, stdlib only |
+| [`test_ccmem.py`](test_ccmem.py) | 22 tests, each citing the survey section whose claim it pins: `python3 test_ccmem.py` |
+| [`chatbot.py`](chatbot.py) | A toy chatbot running the whole loop live |
 
-Compiled 2026-07-21 from official docs, release notes, GitHub issues, and community forensics. Anything
-here may have changed since: the mechanism is under active development, and §3 is about the direction it
-is moving.
+The best-documented instance of the shape is Claude Code's auto-memory, which is closed-source and
+cannot be lifted. Fidelity therefore rests on traceability: the survey below (compiled 2026-07-21,
+and the mechanism moves) labels **every claim** as **[official]** (documented by Anthropic),
+**[corroborated]** (multiple independent community sources), **[single-source]**, or **[rumor]**
+(leak-derived or unverified), and `ccmem.py` implements what the survey establishes. How
+well-evidenced each behaviour is can be read off, rather than taking "faithful" on trust.
 
-## Using it
+## The mechanism
 
 ```python
 from ccmem import CCMemory
 
 mem = CCMemory("/some/dir")                     # creates <dir>/memory/
 mem.append_index("- [Auth](auth.md) - tokens refresh every 15 min")
-mem.create_topic_file("auth.md", "auth", "How auth works", "project", "Tokens refresh every 15 minutes.")
+mem.create_topic_file("auth.md", "Tokens refresh every 15 minutes.",
+                      name="auth", description="How auth works", mtype="project")
 
 mem.load_index()        # the first 200 lines / 25KB, frontmatter stripped, overflow warning appended
 mem.grep("refresh")     # literal or regex, bounded output, the only retrieval there is
@@ -30,28 +33,43 @@ mem.read_file("auth.md")  # injects a staleness notice if the file is aged
 mem.post_write_check()  # the near-limit nag / over-limit error the harness issues after a write
 ```
 
-Standard library only, no install step. The limits are module constants (`INDEX_MAX_LINES`,
-`INDEX_MAX_BYTES`, `STALENESS_DAYS`) so they can be swept rather than hard-coded into an experiment.
+The limits are module constants (`INDEX_MAX_LINES`, `INDEX_MAX_BYTES`, `STALENESS_DAYS`), so an
+experiment can sweep them rather than hard-code them.
 
-`test_ccmem.py` pins the behaviour to the survey: each test cites the section whose claim it
-verifies, from the 200-line/25KB cutoff measured after frontmatter stripping, through the
-near-limit and over-limit post-write checks, to the staleness notice, bounded grep, and the
-disclosed shrink-guard deviation. Run it with `python3 test_ccmem.py`.
+## The toy chatbot
 
-`chatbot.py` is the same mechanism running live: a toy chatbot against any OpenAI-compatible
-endpoint (Ollama, LM Studio, a hosted key) that chats, curates what mattered into the memory
-directory at session end, and in the *next* session, whose only link to the last one is what
-curation wrote to disk, finds it again by index preload, grep and read:
+Chat; `/end` runs one curation round and writes the memory directory; rerun on the same directory
+and the new session's only link to the last one is what curation saved:
 
 ```
 export CCMEM_BASE_URL=http://localhost:11434/v1
 export CCMEM_MODEL=<any chat model>
+export CCMEM_NO_THINK=1             # reasoning models: skip the thinking phase
 python3 chatbot.py ~/ccmem-demo     # tell it something; /end to curate
 python3 chatbot.py ~/ccmem-demo     # a fresh session; ask it back
 ```
 
-Its curation and chat prompts are the survey-derived reconstruction (README §1 "Writing"): the
-documented discretion phrasing, the four-type taxonomy, and the index contract.
+| Env | Default | What it does |
+| --- | --- | --- |
+| `CCMEM_BASE_URL` | `http://localhost:11434/v1` | Any OpenAI-compatible chat endpoint |
+| `CCMEM_MODEL` | `gemma4:26b-a4b-it-qat` | Model name the endpoint expects |
+| `CCMEM_API_KEY` | unset | Bearer token, only if the server wants one |
+| `CCMEM_MAX_TOKENS` | `4096` | Per-reply budget |
+| `CCMEM_NO_THINK` | unset | `1` sends `chat_template_kwargs: {"enable_thinking": false}` |
+
+Two things to know before they surprise you:
+
+- **Nothing is written mid-session.** The shipping mechanism saves at the model's discretion during
+  a conversation; the toy batches one curation round at `/end`, which is how the study's harness
+  ingested sessions. Until then `/memory` shows an empty index however much you have said, and the
+  bot recalling earlier turns is context, not memory. The memory test is always the *second* run.
+- **`CCMEM_NO_THINK` is worth setting where honoured** (`mlx_lm`, vLLM): Qwen-style templates leave
+  thinking on by default, so a reasoning model deliberates at length over small talk. Measured
+  here, the two-session loop dropped from minutes to ~30 seconds; memory writes and recall are
+  unaffected. Leave it unset for servers that reject unknown request fields.
+
+The curation and chat prompts are the survey-derived reconstruction (§1 "Writing"): the documented
+discretion phrasing, the four-type taxonomy, and the index contract.
 
 ---
 
@@ -107,13 +125,11 @@ This matters for anyone comparing the shapes: background consolidation, temporal
 
 ## 4. The API memory tool (secondary reference)
 
-For completeness, since a harness could equally be built on it: tool type `memory_20250818`, GA, six client-side commands (`view` with `view_range`, `create` as create-or-overwrite, `str_replace` with uniqueness errors, `insert` at line, `delete` root-protected, `rename` no-overwrite), your code executes them against storage you control with path-traversal protection. The API auto-injects an aggressive protocol prompt: "ALWAYS VIEW YOUR MEMORY DIRECTORY BEFORE DOING ANYTHING ELSE... ASSUME INTERRUPTION: your context window might be reset at any moment." Anthropic reports memory tool + context editing at +39% over baseline on an internal agentic-search eval (internal, unverifiable). [official]
+For completeness, since a harness could equally be built on it: tool type `memory_20250818`, GA, six client-side file commands (`view`, `create`, `str_replace`, `insert`, `delete`, `rename`) that your code executes against storage you control. The API auto-injects an aggressive protocol prompt ("ALWAYS VIEW YOUR MEMORY DIRECTORY BEFORE DOING ANYTHING ELSE..."). Anthropic reports memory tool + context editing at +39% over baseline on an internal, unverifiable eval. [official]
 
 ## 5. Benchmark landscape: the field is open
 
-**No published evaluation of Claude Code's memory system on any conversational-memory dataset existed** as of 2026-07-21 (searched: LongMemEval, LoCoMo, ConvoMem, MemBench). Any number measured against it is therefore the first of its kind, which raises rather than lowers the burden on the reconstruction it is measured through.
-
-Vendor self-reported numbers on adjacent systems exist and should never be cross-compared with a number measured here, because the judge and protocol differ: Mem0 claims 94.4% on LongMemEval and 92.5% on LoCoMo, and an open-source agentmemory project measures 95.2% Recall@5 on LongMemEval-S for BM25+vector. LongMemEval-V2 (arXiv 2605.12493) is emerging as a successor benchmark. [all vendor/self-reported]
+**No published evaluation of Claude Code's memory system on any conversational-memory dataset existed** as of 2026-07-21 (searched: LongMemEval, LoCoMo, ConvoMem, MemBench), so any number measured against it is the first of its kind — which raises, not lowers, the burden on the reconstruction it is measured through. Vendor self-reported numbers on adjacent systems (Mem0's 94.4% LongMemEval / 92.5% LoCoMo, agentmemory's 95.2% Recall@5) should never be cross-compared with a number measured here: the judge and protocol differ. [all vendor/self-reported]
 
 ## 6. Fidelity checklist
 
@@ -130,7 +146,7 @@ What `ccmem.py` reimplements:
 9. Index injection placed to match whatever it is being compared against (a disclosed deviation: the original's exact placement is unsettled, and holding placement equal across arms removes a confound rather than adding one).
 10. An open envelope check, below, rather than validation against the shipping CLI: a closed-product run is a snapshot of whatever version shipped that week, so it cannot serve as a reproducible reference.
 
-**Deviations from the original, disclosed.** Real Claude Code edits MEMORY.md with freeform Write/Edit tools; this reconstruction is slightly more protective: curation-time index writes are line-ops only (`append`, `replace_line`), a full-index rewrite is permitted solely in the over-limit rewrite round, and any single rewrite that would drop the index below 50% of its current line count is rejected with a corrective message and one retry (added after a live curation round collapsed a 50-line index to a handful of lines). The A3 envelope check must therefore compare index-rewrite behavior explicitly: if the real CLI routinely performs legitimate large index rewrites that the guard would block, the guard threshold (or its existence) must be revisited before scored runs.
+**Deviations from the original, disclosed.** Real Claude Code edits MEMORY.md with freeform Write/Edit tools; this reconstruction is slightly more protective: curation-time index writes are line-ops only (`append`, `replace_line`), a full-index rewrite is permitted solely in the over-limit rewrite round, and any single rewrite that would drop the index below 50% of its current line count is rejected with a corrective message and one retry (added after a live curation round collapsed a 50-line index to a handful of lines). The envelope check (§7) must therefore compare index-rewrite behaviour explicitly: if the real CLI routinely performs legitimate large index rewrites the guard would block, the guard threshold (or its existence) is wrong and should be revisited.
 
 ## 7. Open gaps the docs and community cannot answer
 

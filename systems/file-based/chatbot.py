@@ -13,6 +13,8 @@ server, or a hosted key):
     export CCMEM_BASE_URL=http://localhost:11434/v1   # default shown
     export CCMEM_MODEL=gemma4:26b-a4b-it-qat
     export CCMEM_API_KEY=...                          # only if the server wants one
+    export CCMEM_NO_THINK=1                           # reasoning models: skip thinking
+    export CCMEM_MAX_TOKENS=4096                      # per-reply budget
     python3 chatbot.py ~/ccmem-demo
 
 Talk normally. `/end` closes the session and runs the curation round (watch
@@ -26,6 +28,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -34,6 +37,11 @@ import ccmem  # noqa: E402
 BASE_URL = os.environ.get("CCMEM_BASE_URL", "http://localhost:11434/v1")
 MODEL = os.environ.get("CCMEM_MODEL", "gemma4:26b-a4b-it-qat")
 API_KEY = os.environ.get("CCMEM_API_KEY", "")
+MAX_TOKENS = int(os.environ.get("CCMEM_MAX_TOKENS", "4096"))
+# CCMEM_NO_THINK=1 asks the server to skip reasoning-model thinking via
+# chat_template_kwargs (honoured by mlx_lm and vLLM for Qwen-style models;
+# unset it for servers that reject unknown request fields).
+NO_THINK = os.environ.get("CCMEM_NO_THINK", "") not in ("", "0")
 
 # ---------------------------------------------------------------------------
 # The two prompts. Both are written from the survey (README.md §1 "Writing"):
@@ -84,11 +92,16 @@ def chat(messages, chat_fn=None):
     req = urllib.request.Request(
         BASE_URL.rstrip("/") + "/chat/completions",
         data=json.dumps({"model": MODEL, "messages": messages,
-                         "temperature": 0}).encode(),
+                         "temperature": 0, "max_tokens": MAX_TOKENS,
+                         **({"chat_template_kwargs": {"enable_thinking": False}}
+                            if NO_THINK else {})}).encode(),
         headers={"Content-Type": "application/json",
                  **({"Authorization": f"Bearer {API_KEY}"} if API_KEY else {})})
     with urllib.request.urlopen(req, timeout=600) as r:
-        return json.load(r)["choices"][0]["message"]["content"]
+        msg = json.load(r)["choices"][0]["message"]
+        # Reasoning models can burn the whole budget thinking and return no
+        # content; surface that instead of crashing on a missing key.
+        return msg.get("content") or "<error: model returned no content>"
 
 
 def parse_fenced_list(text):
@@ -226,8 +239,10 @@ def main():
     mem = ccmem.CCMemory(root)
     session_id = f"session-{len(mem.list_files())}-{os.getpid()}"
     print(f"memory dir: {mem.mem_dir}\nmodel: {MODEL} via {BASE_URL}")
-    print("chat away — /end curates & exits, /memory shows the index, "
-          "/quit exits without saving\n")
+    print("chat away. NOTHING IS SAVED MID-SESSION: /end runs the one "
+          "curation round, writes memory, and exits; rerun on the same "
+          "directory to see recall. /memory shows the index, /quit exits "
+          "without saving\n")
     print("--- loaded memory index ---\n" + mem.load_index()
           + "\n---------------------------\n")
     history = []
@@ -243,16 +258,23 @@ def main():
             return
         if user == "/memory":
             print(mem.load_index())
+            if history:
+                print("(nothing is written until /end runs the curation "
+                      "round - so far this conversation exists only in "
+                      "context)")
             continue
         if user == "/end":
             transcript = "\n".join(f"[{m['role']}] {m['content']}"
                                    for m in history) or "(empty session)"
-            print("curating...")
+            print("curating... (one more model call)", flush=True)
             curate(mem, transcript, session_id)
             print("saved. files now: " + ", ".join(mem.list_files() or ["none"]))
             return
+        t0 = time.time()
+        print("(waiting on the model; CCMEM_NO_THINK=1 makes "
+              "reasoning models much faster. Ctrl-C aborts)", flush=True)
         reply = answer(mem, history, user)
-        print("bot> " + reply.strip() + "\n")
+        print(f"bot> ({time.time() - t0:.0f}s) " + reply.strip() + "\n")
         history += [{"role": "user", "content": user},
                     {"role": "assistant", "content": reply}]
 
