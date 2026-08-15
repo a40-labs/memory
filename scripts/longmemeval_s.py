@@ -103,20 +103,42 @@ def main():
     print("\n== Token ledger, dev-144 (Table 2) ==")
     g = lambda r, k: r.get(k) or 0
     rows = []
+    ledger = {}
     for a in ("file_based", "structured"):
         d = load("longmemeval_s", f"dev144_{a}.json")
         n = len(d)
+        ip = sum(g(r, "ingest_prompt_tokens") for r in d) / n
+        ic = sum(g(r, "ingest_completion_tokens") for r in d) / n
         ans = sum(g(r, "answer_prompt_tokens") + g(r, "answer_completion_tokens") for r in d) / n
-        ing = sum(g(r, "ingest_prompt_tokens") + g(r, "ingest_completion_tokens") for r in d) / n
         emb = sum(g(r, "ingest_embed_tokens") for r in d) / n
         ss = sum(g(r, "session_start_tokens") for r in d) / n
         acc = rate(d)
+        ing = ip + ic
+        ledger[a] = {"ingest_prompt": ip, "ingest_completion": ic, "write": ing,
+                     "answer": ans + ss, "total": ing + ans + ss,
+                     "per_correct": (ing + ans + ss) / acc, "embedder": emb}
         rows.append([a, f"{ing:,.0f}", f"{ans+ss:,.0f}", f"{ing+ans+ss:,.0f}",
                      f"{(ing+ans+ss)/acc:,.0f}", f"{emb:,.0f}"])
     table(["arm", "write (ingest)", "answer", "total/question", "total/correct", "embedder"],
           rows, ["<", ">", ">", ">", ">", ">"])
     print("  note: the file-based ingest figure here is the results-row value; the report's 246.1k")
     print("  comes from the arm-separated ledger (the two arms shared a workdir on this run).")
+
+    # Every token figure the report publishes, asserted rather than merely printed.
+    for a, field, want in (("file_based", "write", 246118), ("file_based", "answer", 40393),
+                           ("file_based", "total", 286512), ("file_based", "per_correct", 665447),
+                           ("file_based", "embedder", 0),
+                           ("structured", "write", 0), ("structured", "answer", 19322),
+                           ("structured", "total", 19322), ("structured", "per_correct", 27013),
+                           ("structured", "embedder", 107797)):
+        ok &= check(f"{a} {field} tokens", ledger[a][field], want, tol=1)
+    # The write path split, because "the cost is the curation" rests on it: two
+    # thirds is context sent to the curator, one third is memory generated back.
+    ok &= check("file_based ingest prompt", ledger["file_based"]["ingest_prompt"], 160081, tol=1)
+    ok &= check("file_based ingest completion", ledger["file_based"]["ingest_completion"], 86038, tol=1)
+    share = ledger["file_based"]["ingest_prompt"] / ledger["file_based"]["write"]
+    print(f"  write path is {share*100:.0f}% prompt (context sent to the curator), "
+          f"{100-share*100:.0f}% completion (memory written back)")
     return ok
 
 
